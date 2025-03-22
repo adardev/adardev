@@ -1,0 +1,58 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<div class="columns_2">
+		<div>
+			<img src="/dist/img/cuadrada.jpg" class="profile_picture" >
+		</div>
+		<div class="profile_info">
+			<div>
+				<div class="profile_info_bar">
+					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
+					<p class="text_medium text_color_light" >BRANDON ADAIR LOPEZ LOPEZ</p>
+				</div>
+
+				<div class="profile_info_bar">
+					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
+					<p class="text_medium text_color_light" >08/05/2006</p>
+				</div>
+
+				<div class="profile_info_bar">
+					<a href="https://github.com/adarlpz"><img src="/dist/img/maps_icon.svg" width="25x"></a>
+					<p class="text_medium text_color_light" >Jalisco, Mx.</p>
+				</div>
+
+				<div class="profile_info_bar_button">
+					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
+					<p class="text_medium text_color_light" >adarlopz.dev@gmail.com</p>
+					<a href="https://github.com/adarlpz"><img src="/dist/img/copy_icon.svg" width="15px"></a>
+				</div>
+
+				<div class="profile_info_bar">
+					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
+					<p class="text_medium text_color_light" >33 3036 2181</p>
+				</div>
+				<div class="social_bar">
+					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
+					<a href="https://github.com/adarlpz"><img src="/dist/img/linkedin_logo.svg" width="25px"></a>
+				</div>
+			</div>
+			<div>
+				<p class="text_medium text_color_light" >Busco oportunidades para adquirir experiencia profesional que complemente mis estudios en desarrollo de software, diseño de interfaces y mantenimiento de computadoras</p>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+	<style>
+		.profile_picture {
+			width: 250px;
+			border-radius: 50%;
+		}
+	</style>
