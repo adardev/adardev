@@ -1,58 +1,83 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<div class="columns_2">
-		<div>
-			<img src="/dist/img/cuadrada.jpg" class="profile_picture" >
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-screen-lg mx-auto">
+		<!-- Perfil de la imagen -->
+		<div class="flex justify-center items-center">
+			<img src="/dist/img/cuadrada.jpg" class="w-56 h-56 rounded-full object-cover border-4 border-white shadow-lg" alt="Foto de perfil" />
 		</div>
-		<div class="profile_info">
-			<div>
-				<div class="profile_info_bar">
-					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
-					<p class="text-xl font-bold text-white" >BRANDON ADAIR LOPEZ LOPEZ</p>
+
+		<!-- Información del perfil -->
+		<div class="text-white space-y-6">
+			<!-- Barra de información -->
+			<div class="space-y-4">
+				<div class="flex items-center space-x-4">
+					<a href="https://github.com/adarlpz">
+						<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="GitHub Logo" />
+					</a>
+					<p class="text-2xl font-semibold">BRANDON ADAIR LOPEZ LOPEZ</p>
 				</div>
 
-				<div class="profile_info_bar">
-					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
-					<p class="text-xl font-bold text-white" >08/05/2006</p>
+				<div class="flex items-center space-x-4">
+					<a href="https://github.com/adarlpz">
+						<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="GitHub Logo" />
+					</a>
+					<p class="text-lg">08/05/2006</p>
 				</div>
 
-				<div class="profile_info_bar">
-					<a href="https://github.com/adarlpz"><img src="/dist/img/maps_icon.svg" width="25x"></a>
-					<p class="text-xl font-bold text-white" >Jalisco, Mx.</p>
+				<div class="flex items-center space-x-4">
+					<a href="https://github.com/adarlpz">
+						<img src="/dist/img/maps_icon.svg" class="w-6 h-6" alt="Location Icon" />
+					</a>
+					<p class="text-lg">Jalisco, Mx.</p>
 				</div>
 
-				<div class="profile_info_bar_button">
-					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
-					<p class="text-xl font-bold text-white" >adarlopz.dev@gmail.com</p>
-					<a href="https://github.com/adarlpz"><img src="/dist/img/copy_icon.svg" width="15px"></a>
+				<div class="flex items-center justify-between">
+					<div class="flex items-center space-x-4">
+						<a href="mailto:adarlopz.dev@gmail.com">
+							<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="Email Icon" />
+						</a>
+						<p class="text-lg">adarlopz.dev@gmail.com</p>
+					</div>
+					<a href="mailto:adarlopz.dev@gmail.com">
+						<img src="/dist/img/copy_icon.svg" class="w-5 h-5 cursor-pointer" alt="Copy Email" />
+					</a>
 				</div>
 
-				<div class="profile_info_bar">
-					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
-					<p class="text-xl font-bold  text-white" >33 3036 2181</p>
+				<div class="flex items-center space-x-4">
+					<a href="tel:3330362181">
+						<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="Phone Icon" />
+					</a>
+					<p class="text-lg">33 3036 2181</p>
 				</div>
-				<div class="social_bar">
-					<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" width="25x"></a>
-					<a href="https://github.com/adarlpz"><img src="/dist/img/linkedin_logo.svg" width="25px"></a>
+
+				<!-- Redes sociales -->
+				<div class="flex space-x-6">
+					<a href="https://github.com/adarlpz">
+						<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="GitHub" />
+					</a>
+					<a href="https://www.linkedin.com/in/adarlpz">
+						<img src="/dist/img/linkedin_logo.svg" class="w-6 h-6" alt="LinkedIn" />
+					</a>
 				</div>
 			</div>
+
+			<!-- Descripción -->
 			<div>
-				<p class="text-xl font-bold text-white" >Busco oportunidades para adquirir experiencia profesional que complemente mis estudios en desarrollo de software, diseño de interfaces y mantenimiento de computadoras</p>
+				<p class="text-xl font-semibold">
+					Busco oportunidades para adquirir experiencia profesional que complemente mis estudios en desarrollo de software, diseño de interfaces y mantenimiento de computadoras.
+				</p>
 			</div>
 		</div>
 	</div>
 </Layout>
 
-	<style>
-		.profile_picture {
-			width: 250px;
-			border-radius: 50%;
-		}
-	</style>
+<style>
+	/* Personalización opcional si deseas ajustar algo más específico */
+	.profile_picture {
+		width: 250px;
+		border-radius: 50%;
+	}
+</style>
