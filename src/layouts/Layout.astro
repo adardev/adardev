@@ -1,183 +1,55 @@
 ---
 import "../styles/global.css";
+import { ViewTransitions } from "astro:transitions"
+
+const currentYear = new Date().getFullYear();
 ---
+
 <!doctype html>
-<html lang="en">
+<html class="bg-[#001c2c] h-full flex flex-col" lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="icon" href="/src/img/tekkure_logo.svg" type="image/x-icon">
+		<link rel="icon" href="/dist/img/tekkure_logo.svg" type="image/x-icon">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>adarlpz</title>
 	</head>
-	<header>
-		<div class="navbar">
-			<div class="nav_left">
-				<a href="/proyectos" class="text_titles text_color_light">Proyectos</a>
-				<a href="/habilidades" class="text_titles text_color_light">Habilidades</a>
-				<a href="/experiencia" class="text_titles text_color_light">Experiencia</a>
+	<body class="bg-[#001c2c] min-h-screen flex flex-col">
+
+		<header>
+			<div class="flex items-center relative w-5/6 justify-center p-12 h-3 m-auto max-w-96">
+				<div class="flex items-center absolute justify-between gap-14 right-2/3">
+					<a href="/proyectos" class="text-xl font-bold text-white">Proyectos</a>
+					<a href="/habilidades" class="text-xl font-bold text-white">Habilidades</a>
+					<a href="/experiencia" class="text-xl font-bold text-white">Experiencia</a>
+				</div>
+				<div class="absolute left-1/2 transform -translate-x-1/2">
+					<a href="/">
+						<img src="/dist/img/signature_white.svg" width="50px" alt="Imagen">
+					</a>
+				</div>
+				<div class="flex items-center absolute justify-between gap-14 left-2/3">
+					<a href="/educacion" class="text-xl font-bold text-white">Educacion</a>
+					<a href="/idiomas" class="text-xl font-bold text-white">Idiomas</a>
+					<a href="/certificaciones" class="text-xl font-bold text-white">Certificaciones</a>
+				</div>
 			</div>
-			<div class="logo_navbar">
-				<a href="https://tekkure.com/almacenamiento/">
-					<img src="/dist/img/signature_white.svg" width="50px" alt="Imagen">
-				</a>
-			</div>
-			<div class="nav_right">
-				<a href="/educacion" class="text-3xl font-bold underline text-cyan-400">Educacion</a>
-				<a href="/idiomas" class="text_titles text_color_light">Idiomas</a>
-				<a href="/certificaciones" class="text_titles text_color_light">Certificaciones</a>
-			</div>
-		</div>
-	</header>
-	<body>
-		<slot />
+		</header>
+
+		<main class="flex-1">
+			<slot />
+		</main>
+
+		<footer class="bg-[#001c2c] text-center py-4 mt-auto">
+			<p class="text-thin text-gray-300">
+				adarlpz &copy; <span>{currentYear}</span>
+			</p>
+		</footer>
+
 	</body>
-	<footer>
-		<p class="text_thin text_color_light">
-			adarlpz &copy; <span id="year"></span>
-		</p>
-	</footer>
 </html>
-
-<style>
-	/* ajustes de pagina y elementos */
-	html, body {
-		background-color: #001c2c;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-	main {
-		flex: 1;
-		padding: 1.5rem;
-	}
-	#content {
-		flex: 1;
-	}
-	a {
-		text-decoration: none;
-	}
-	/* barra de navegación */
-	.navbar {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0.625rem 2.5vw;
-		height: 4.06rem;
-		position: relative;
-		max-width: 25vw;
-		width: 80%;
-		margin: auto;
-	}
-	.logo_navbar {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	.nav_left, .nav_right {
-		display: flex;
-		align-items: center;
-		position: absolute;
-		justify-content: space-between;
-		gap: 3.125rem;
-	}
-	.nav_left {
-		right: 65%;
-	}
-	.nav_right {
-		left: 65%;
-	}
-	/* pie de pagina */
-	footer {
-		background-color: #001c2c;
-		text-align: center;
-		padding-bottom: 1.875rem;
-		height: 1.25rem;
-	}
-	/* ajustes para textos (tamaños, grosores y colores) */
-	.text_titles    {
-		font-size: 1.125rem;
-		font-weight: 700;
-		font-family: Alata, serif;
-	}
-	.text_medium{
-		font-size: 0.9375rem;
-		font-weight: 500;
-		font-family: Montserrat, serif;
-	}
-	.text_thin  {
-		font-size: 0.8125rem;
-		font-weight: 300;
-		font-family: Montserrat, serif;
-	}
-	.text_color_light   {
-		color: #f4f4f4;
-	}
-	.text_color_primary {
-		color: #FFCC3F;
-	}
-	/* Diseño responsive */
-	@media screen and (max-width: 48rem) { /* 768px ≈ 48rem */
-		.navbar {
-			flex-direction: column;
-			height: auto;
-			padding: 0.625rem; /* 10px ≈ 0.625rem */
-		}
-		.nav_left, .nav_right {
-			position: static;
-			justify-content: center;
-			gap: 0.9375rem; /* 15px ≈ 0.9375rem */
-		}
-		.logo_navbar {
-			position: static;
-			transform: none;
-			margin-bottom: 0.625rem; /* 10px ≈ 0.625rem */
-		}
-	}
-	/* Elementos */
-	.button {
-		display: inline-block;
-		padding: 10px 20px;
-		background-color: #007bff;
-		color: white;
-		text-align: center;
-		border: none;
-		border-radius: 25px;
-		text-decoration: none;
-		cursor: pointer;
-	}
-
-	/* estructuras */
-	.columns_2 {
-		display: flex;
-		width: 100%;
-		gap: 25px;
-		align-items: center;
-	}
-	.profile_info {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 50px;
-	}
-	.social_bar {
-		display: flex;
-		gap: 10px;
-	}
-	.profile_info_bar {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-	}
-	.profile_info_bar_button {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-	}
-</style>
