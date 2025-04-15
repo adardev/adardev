@@ -1,11 +1,10 @@
 ---
 import "../styles/global.css";
-import { ViewTransitions } from "astro:transitions"
+import {ClientRouter} from 'astro:transitions';
 
 const currentYear = new Date().getFullYear();
 ---
 
-<!doctype html>
 <html class="bg-[#001c2c] h-full flex flex-col" lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -18,6 +17,7 @@ const currentYear = new Date().getFullYear();
 
 		<meta name="generator" content={Astro.generator} />
 		<title>adarlpz</title>
+		<ClientRouter/>
 	</head>
 	<body class="bg-[#001c2c] min-h-screen flex flex-col">
 
