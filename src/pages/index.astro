@@ -3,72 +3,269 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-screen-lg mx-auto">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-screen-lg mx-auto items-center">
 		<div class="flex justify-center items-center">
 			<img src="/dist/img/cuadrada.jpg" class="w-56 h-56 rounded-full object-cover border-4 border-white shadow-lg" alt="Foto de perfil" />
 		</div>
+		<div class="flex flex-col gap-10">
+			<div>
+				<p class="text-4xl font-semibold text-white">BRANDON ADAIR LOPEZ LOPEZ</p>
+				<p class="text-2xl font-medium !m-0 text-white">Desarrollador De Software</p>
+			</div>
 
+			<div class="flex flex-row gap-5">
+				<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="GitHub Logo" /></a>
+				<a href="https://github.com/adarlpz"><img src="/dist/img/linkedin_logo.svg" class="w-6 h-6" alt="GitHub Logo" /></a>
+				<a href="https://github.com/adarlpz"><img src="/dist/img/mail_icon.png" class="w-6 h-6" alt="GitHub Logo" /></a>
+				<a href="https://github.com/adarlpz"><img src="/dist/img/phone_icon.png" class="w-6 h-6" alt="GitHub Logo" /></a>
+				<a href="https://github.com/adarlpz"><img src="/dist/img/maps_icon.svg" class="w-6 h-6" alt="GitHub Logo" /></a>
+			</div>
 
+		</div>
+	</div>
 
-		<div class="text-white space-y-6">
+	<div class="flex flex-col items-center justify-center m-64">
+		<div>
+			<p class="text-5xl font-semibold text-white">Sobre Mi</p>
+		</div>
+		<div>
+			<p class="text-xl font-semibold text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		</div>
+	</div>
 
-			<div class="space-y-4">
-				<div class="flex items-center space-x-4">
-					<a href="https://github.com/adarlpz">
-						<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="GitHub Logo" />
-					</a>
-					<p class="text-2xl font-semibold">BRANDON ADAIR LOPEZ LOPEZ</p>
-				</div>
+	<div class="flex flex-col items-center justify-center m-64 gap-14">
+		<div>
+			<p class="text-5xl font-semibold text-white">Proyectos</p>
+		</div>
+	</div>
 
-				<div class="flex items-center space-x-4">
-					<a href="https://github.com/adarlpz">
-						<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="GitHub Logo" />
-					</a>
-					<p class="text-lg">08/05/2006</p>
-				</div>
+	<div class="flex flex-row justify-center items-center gap-10 relative h-[600px]">
+		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-64 bg-[#16aed2] rounded-2xl p-5 w-[750px] h-[400px] z-10 cursor-pointer flex flex-col items-center justify-center gap-4">
 
-				<div class="flex items-center space-x-4">
-					<a href="https://github.com/adarlpz">
-						<img src="/dist/img/maps_icon.svg" class="w-6 h-6" alt="Location Icon" />
-					</a>
-					<p class="text-lg">Jalisco, Mx.</p>
-				</div>
+			<div class="flex flex-row justify-between w-full">
 
-				<div class="flex items-center justify-between">
-					<div class="flex items-center space-x-4">
-						<a href="mailto:adarlopz.dev@gmail.com">
-							<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="Email Icon" />
-						</a>
-						<p class="text-lg">adarlopz.dev@gmail.com</p>
+				<div>
+					<div class="flex flex-row items-center gap-5">
+						<img src="/dist/img/signature_white.svg" width="50px" alt="Imagen">
+						<p class="text-3xl font-semibold text-white">Densora</p>
 					</div>
-					<a href="mailto:adarlopz.dev@gmail.com">
-						<img src="/dist/img/copy_icon.svg" class="w-5 h-5 cursor-pointer" alt="Copy Email" />
-					</a>
 				</div>
 
-				<div class="flex items-center space-x-4">
-					<a href="tel:3330362181">
-						<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="Phone Icon" />
-					</a>
-					<p class="text-lg">33 3036 2181</p>
-				</div>
+				<div class="flex flex-row">
+					<div class="flex flex-row gap-2">
+						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+					</div>
+					<div class="w-[2px] h-auto rounded-2xl bg-white mx-4">
 
-				<div class="flex space-x-6">
-					<a href="https://github.com/adarlpz">
-						<img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="GitHub" />
-					</a>
-					<a href="https://www.linkedin.com/in/adarlpz">
-						<img src="/dist/img/linkedin_logo.svg" class="w-6 h-6" alt="LinkedIn" />
-					</a>
+					</div>
+					<div class="flex flex-row gap-2">
+						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+					</div>
 				</div>
 			</div>
-			<div>
-				<p class="text-xl font-semibold">
-					Busco oportunidades para adquirir experiencia profesional que complemente mis estudios en desarrollo de software, diseño de interfaces y mantenimiento de computadoras.
-				</p>
+
+			<p class="text-white text-xl text-center text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			<div class="flex flex-row gap-4 w-full  justify-between">
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center w-full">
+					<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
+					<p class="text-white font-semibold">Ver código</p>
+				</div>
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center px-5">
+					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
+					<p class="text-white font-semibold">Visitar</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -ml-32 bg-[#16aed2] p-5 w-[640px] h-[360px] z-0 cursor-pointer flex flex-col items-center justify-center gap-4 p-0 rounded-2xl">
+			<img src="/dist/img/cuadrada.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
+		</div>
+	</div>
+
+	<div class="flex flex-row justify-center items-center gap-10 relative h-[600px]">
+		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-64 bg-[#16aed2] rounded-2xl p-5 w-[750px] h-[400px] z-10 cursor-pointer flex flex-col items-center justify-center gap-4">
+
+			<div class="flex flex-row justify-between w-full">
+				<div class="flex flex-row items-center gap-5">
+					<img src="/dist/img/signature_white.svg" width="50px" alt="Imagen">
+					<p class="text-3xl font-semibold text-white">Densora</p>
+				</div>
+				<div class="flex flex-row gap-2">
+					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+				</div>
+			</div>
+
+			<p class="text-white text-xl text-center text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+			<div class="flex flex-row gap-4 w-full justify-between">
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center w-full">
+					<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
+					<p class="text-white font-semibold">Ver código</p>
+				</div>
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
+					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
+				</div>
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
+					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
+				</div>
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
+					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
+				</div>
+			</div>
+		</div>
+
+		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -ml-0 bg-[#16aed2] p-5 w-[240px] h-[360px] z-0 cursor-pointer flex flex-col items-center justify-center gap-4 p-0 rounded-2xl">
+			<img src="/dist/img/cuadrada.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
+		</div>
+	</div>
+
+	<div class="flex flex-row justify-center items-center gap-10 relative h-[600px]">
+		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-64 bg-[#16aed2] rounded-2xl p-5 w-[750px] h-[400px] z-10 cursor-pointer flex flex-col items-center justify-center gap-4">
+
+			<div class="flex flex-row justify-between w-full">
+				<div class="flex flex-row items-center gap-5">
+					<img src="/dist/img/signature_white.svg" width="50px" alt="Imagen">
+					<p class="text-3xl font-semibold text-white">Densora</p>
+				</div>
+
+				<div class="flex flex-row gap-2">
+					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+				</div>
+			</div>
+
+			<p class="text-white text-xl text-center text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+			<div class="flex flex-row gap-4 w-full justify-between">
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center w-full">
+					<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
+					<p class="text-white font-semibold">Ver código</p>
+				</div>
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
+					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
+				</div>
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
+					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
+				</div>
+				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
+					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="flex flex-row transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -ml-32 p-5 w-[880px] h-[360px] z-0 cursor-pointer items-center justify-center gap-4 rounded-2xl">
+			<div class="w-[640px] h-[360px]">
+				<img src="/dist/img/cuadrada.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
+			</div>
+			<div class="w-[240px] h-[360px]">
+				<img src="/dist/img/cuadrada.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
 			</div>
 		</div>
 	</div>
+
+	<div class="flex flex-col items-center justify-center m-64">
+		<div>
+			<p class="text-5xl font-semibold text-white">Habiliades</p>
+		</div>
+		<div class="flex flex-row my-8 gap-8">
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">JS</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Kotlin</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">JS</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Kotlin</p>
+			</div>
+		</div>
+		<div class="flex flex-row my-8 gap-8">
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">JS</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Kotlin</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">JS</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Kotlin</p>
+			</div>
+		</div>
+		<div class="flex flex-row my-8 gap-8">
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">JS</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Kotlin</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">JS</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Kotlin</p>
+			</div>
+		</div>
+		<div class="flex flex-row my-8 gap-8">
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">JS</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Kotlin</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">JS</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Kotlin</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex flex-row items-center justify-center m-64 gap-14">
+		<div class="flex flex-row gap-2">
+			<div class="flex flex-row bg-[#16aed2] rounded-2xl p-5">
+				<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
+				<p class="text-3xl font-semibold text-white">Español</p>
+			</div>
+			<div class="flex flex-row bg-[#16aed2] rounded-2xl p-5">
+				<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
+				<p class="text-3xl font-semibold text-white">Ingles</p>
+			</div>
+		</div>
+		<div>
+			<p class="text-5xl font-semibold text-white">Idiomas</p>
+		</div>
+	</div>
+
+	<div class="flex flex-row items-center justify-center m-64 gap-14">
+		<div>
+			<p class="text-5xl font-semibold text-white">Educacion</p>
+		</div>
+
+		<div class="gap-2">
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">CETI Colomos</p>
+				<p class="text-3xl font-medium text-white">Software Development Technologist</p>
+			</div>
+			<div class="bg-[#16aed2] rounded-2xl p-5">
+				<p class="text-3xl font-semibold text-white">Instituto Cultural Mexicano Norteamericano de Jalisco</p>
+				<p class="text-3xl font-medium text-white">English Student</p>
+			</div>
+		</div>
+	</div>
+
 </Layout>
 
 <style>
