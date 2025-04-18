@@ -3,244 +3,459 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-screen-lg mx-auto items-center">
-		<div class="flex justify-center items-center">
-			<img src="/dist/img/cuadrada.jpg" class="w-56 h-56 rounded-full object-cover border-4 border-white shadow-lg" alt="Foto de perfil" />
+	<div class="flex flex-col mx-[20rem] my-32">
+		<div class="flex flex-row gap-10 my-8">
+			<div class="flex justify-center items-center">
+				<img src="/dist/photos/profile_photo.jpg" class="w-20 h-20 rounded-full object-cover shadow-lg" alt="Foto de perfil" />
+			</div>
+			<div class="flex flex-col">
+				<p class="text-4xl font-semibold text-white">Hola, soy Brandon Lopez</p>
+				<p class="text-2xl font-medium !m-0 text-white">Desarrollador De Web/Movil</p>
+			</div>
+			<div class="flex flex-row bg-[#094758] rounded-2xl p-5 items-center justify-center gap-10">
+				<p class="text-xl font-medium !m-0 text-white">Curriculum</p>
+				<div class="flex flex-row bg-[#094758] rounded-2xl items-center justify-center gap-10">
+					<a href="/dist/cvs/english_cv.pdf"><img src="/dist/icons/cv_icon.svg" class="w-6 h-6" alt="GitHub Logo" /></a>
+				</div>
+				<div class="flex flex-row bg-[#094758] rounded-2xl items-center justify-center gap-10">
+					<a href="https://github.com/adarlpz"><img src="/dist/icons/download_icon.svg" class="w-6 h-6" alt="GitHub Logo" /></a>
+				</div>
+			</div>
 		</div>
-		<div class="flex flex-col gap-10">
+
+		<div>
+			<p class="text-2xl font-medium !m-0 text-white">Developer in training, with no professional experience but a great passion for programming and technology. Motivated by my learning, eager to grow and contribute my knowledge to innovative projects.</p>
+		</div>
+		<div class="flex flex-row gap-5 my-4">
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-3">
+					<img src="/dist/logos/github_logo.svg" class="w-6 h-6" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-3">
+					<img src="/dist/logos/linkedin_logo.svg" class="w-6 h-6" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-3">
+					<img src="/dist/icons/email_icon.svg" class="w-6 h-6" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-3">
+					<img src="/dist/icons/phone_icon.svg" class="w-6 h-6" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-3">
+					<img src="/dist/icons/map_icon.svg" class="w-6 h-6" alt="GitHub Logo" />
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="flex flex-col mx-[20rem] my-32">
+		<div class="flex flex-row gap-10 my-8 items-center">
+			<div class="flex items-center justify-center w-20 h-20">
+				<img src="/dist/icons/profile_icon.svg" class="w-12 h-12" alt="GitHub Logo" />
+			</div>
 			<div>
-				<p class="text-4xl font-semibold text-white">BRANDON ADAIR LOPEZ LOPEZ</p>
-				<p class="text-2xl font-medium !m-0 text-white">Desarrollador De Software</p>
+				<p class="text-4xl font-semibold text-white">Sobre Mi</p>
+			</div>
+		</div>
+		<div>
+			<p class="text-2xl font-medium !m-0 text-white">Developer in training, with no professional experience but a great passion for programming and technology. Motivated by my learning, eager to grow and contribute my knowledge to innovative projects.</p>
+		</div>
+	</div>
+
+	<div class="flex flex-col mx-[20rem] my-32">
+		<div class="flex flex-row gap-10 my-8 items-center">
+			<div class="flex items-center justify-center w-20 h-20">
+				<img src="/dist/icons/code_icon.svg" class="w-12 h-12" alt="GitHub Logo" />
+			</div>
+			<div>
+				<p class="text-4xl font-semibold text-white">Proyectos</p>
+			</div>
+		</div>
+
+		<div class="flex flex-row justify-center items-center gap-10 relative h-[600px]">
+			<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-[40rem] bg-[#094758] rounded-2xl p-5 w-[750px] h-[400px] z-10 flex flex-col items-center  gap-4">
+				<div class="flex flex-row justify-between w-full">
+					<div>
+						<div class="flex flex-row items-center gap-5">
+							<img src="/dist/logos/adarlpz_logo.svg" width="50px" alt="Imagen">
+							<p class="text-3xl font-semibold text-white">Densora</p>
+						</div>
+					</div>
+
+					<div class="flex flex-row">
+						<div class="flex flex-row gap-2">
+							<img src="/dist/logos/android_logo.svg" width="30px" alt="Imagen">
+							<img src="/dist/logos/iOS_logo.svg" width="30px" alt="Imagen">
+						</div>
+						<div class="w-[2px] h-auto rounded-2xl bg-white mx-4">
+
+						</div>
+						<div class="flex flex-row gap-2">
+							<img src="/dist/logos/nodejs_logo.svg" width="30px" alt="Imagen">
+							<img src="/dist/logos/tailwind_logo.svg" width="30px" alt="Imagen">
+							<img src="/dist/logos/csharp_logo.svg" width="30px" alt="Imagen">
+						</div>
+					</div>
+				</div>
+
+				<p class="text-white text-xl text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<div class="flex flex-row gap-4 w-full  justify-between">
+					<div class="flex bg-[#0e6c86] p-2 rounded-2xl gap-3 items-center justify-center w-full">
+						<img src="/dist/logos/github_logo.svg" width="30px" alt="Imagen">
+						<p class="text-white font-semibold">Ver código</p>
+					</div>
+					<div class="flex bg-[#0e6c86] p-2 rounded-2xl gap-3 items-center justify-center px-5">
+						<img src="/dist/icons/web_icon.svg" class="w-[30px]" alt="Imagen">
+						<p class="text-white font-semibold">Visitar</p>
+					</div>
+				</div>
 			</div>
 
-			<div class="flex flex-row gap-5">
-				<a href="https://github.com/adarlpz"><img src="/dist/img/github_logo_white.svg" class="w-6 h-6" alt="GitHub Logo" /></a>
-				<a href="https://github.com/adarlpz"><img src="/dist/img/linkedin_logo.svg" class="w-6 h-6" alt="GitHub Logo" /></a>
-				<a href="https://github.com/adarlpz"><img src="/dist/img/mail_icon.png" class="w-6 h-6" alt="GitHub Logo" /></a>
-				<a href="https://github.com/adarlpz"><img src="/dist/img/phone_icon.png" class="w-6 h-6" alt="GitHub Logo" /></a>
-				<a href="https://github.com/adarlpz"><img src="/dist/img/maps_icon.svg" class="w-6 h-6" alt="GitHub Logo" /></a>
+			<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-32 p-0 w-[640px] h-[360px] z-0 flex flex-col items-center justify-center gap-4 rounded-2xl">
+				<img src="/dist/demos/tekkure_demo.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
 			</div>
-
 		</div>
-	</div>
 
-	<div class="flex flex-col items-center justify-center m-64">
-		<div>
-			<p class="text-5xl font-semibold text-white">Sobre Mi</p>
-		</div>
-		<div>
-			<p class="text-xl font-semibold text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-		</div>
-	</div>
+		<div class="flex flex-row justify-center items-center gap-10 relative w-auto h-auto pl-[8.3rem]">
+			<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-[20.5rem] bg-[#094758] rounded-2xl p-5 w-[750px] h-[400px] z-10 cursor-pointer flex flex-col items-center justify-center gap-4">
 
-	<div class="flex flex-col items-center justify-center m-64 gap-14">
-		<div>
-			<p class="text-5xl font-semibold text-white">Proyectos</p>
-		</div>
-	</div>
-
-	<div class="flex flex-row justify-center items-center gap-10 relative h-[600px]">
-		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-64 bg-[#16aed2] rounded-2xl p-5 w-[750px] h-[400px] z-10 cursor-pointer flex flex-col items-center justify-center gap-4">
-
-			<div class="flex flex-row justify-between w-full">
-
-				<div>
+				<div class="flex flex-row justify-between w-full">
 					<div class="flex flex-row items-center gap-5">
-						<img src="/dist/img/signature_white.svg" width="50px" alt="Imagen">
+						<img src="/dist/logos/adarlpz_logo.svg" width="50px" alt="Imagen">
 						<p class="text-3xl font-semibold text-white">Densora</p>
 					</div>
-				</div>
+					<div class="flex flex-row">
+						<div class="flex flex-row gap-2">
+							<img src="/dist/logos/windows_logo.svg" width="30px" alt="Imagen">
+						</div>
+						<div class="w-[2px] h-auto rounded-2xl bg-white mx-4">
 
-				<div class="flex flex-row">
-					<div class="flex flex-row gap-2">
-						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-					</div>
-					<div class="w-[2px] h-auto rounded-2xl bg-white mx-4">
-
-					</div>
-					<div class="flex flex-row gap-2">
-						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-						<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+						</div>
+						<div class="flex flex-row gap-2">
+							<img src="/dist/logos/c++_logo.svg" width="30px" alt="Imagen">
+							<img src="/dist/logos/astro_logo.svg" width="30px" alt="Imagen">
+							<img src="/dist/logos/react_logo.svg" width="30px" alt="Imagen">
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<p class="text-white text-xl text-center text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-			<div class="flex flex-row gap-4 w-full  justify-between">
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center w-full">
-					<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
-					<p class="text-white font-semibold">Ver código</p>
-				</div>
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center px-5">
-					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
-					<p class="text-white font-semibold">Visitar</p>
-				</div>
-			</div>
-		</div>
+				<p class="text-white text-xl text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -ml-32 bg-[#16aed2] p-5 w-[640px] h-[360px] z-0 cursor-pointer flex flex-col items-center justify-center gap-4 p-0 rounded-2xl">
-			<img src="/dist/img/cuadrada.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
-		</div>
-	</div>
-
-	<div class="flex flex-row justify-center items-center gap-10 relative h-[600px]">
-		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-64 bg-[#16aed2] rounded-2xl p-5 w-[750px] h-[400px] z-10 cursor-pointer flex flex-col items-center justify-center gap-4">
-
-			<div class="flex flex-row justify-between w-full">
-				<div class="flex flex-row items-center gap-5">
-					<img src="/dist/img/signature_white.svg" width="50px" alt="Imagen">
-					<p class="text-3xl font-semibold text-white">Densora</p>
-				</div>
-				<div class="flex flex-row gap-2">
-					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+				<div class="flex flex-row gap-4 w-full justify-between">
+					<div class="flex bg-[#0e6c86] p-2 rounded-2xl gap-3 items-center justify-center w-full">
+						<img src="/dist/logos/github_logo.svg" class="w-[30px]" alt="Imagen">
+						<p class="text-white font-semibold">Ver código</p>
+					</div>
+					<div class="flex bg-[#0e6c86] p-2 rounded-2xl gap-3 items-center justify-center">
+						<img src="/dist/icons/web_icon.svg" class="w-[30px]" alt="Imagen">
+					</div>
+					<div class="flex bg-[#0e6c86] p-2 rounded-2xl gap-3 items-center justify-center">
+						<img src="/dist/icons/web_icon.svg" class="w-[30px]" alt="Imagen">
+					</div>
+					<div class="flex bg-[#0e6c86] p-2 rounded-2xl gap-3 items-center justify-center">
+						<img src="/dist/icons/web_icon.svg" class="w-[30px]" alt="Imagen">
+					</div>
 				</div>
 			</div>
 
-			<p class="text-white text-xl text-center text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-			<div class="flex flex-row gap-4 w-full justify-between">
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center w-full">
-					<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
-					<p class="text-white font-semibold">Ver código</p>
-				</div>
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
-					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
-				</div>
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
-					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
-				</div>
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
-					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
+			<div class="flex flex-row transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 ml-[9.5rem] p-0 w-[180px] h-[360px] z-0 cursor-pointer items-center justify-center gap-4 rounded-2xl">
+				<div class="w-[180px] h-[360px]">
+					<img src="/dist/demos/densora_demo.png" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
 				</div>
 			</div>
 		</div>
 
-		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -ml-0 bg-[#16aed2] p-5 w-[240px] h-[360px] z-0 cursor-pointer flex flex-col items-center justify-center gap-4 p-0 rounded-2xl">
-			<img src="/dist/img/cuadrada.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
-		</div>
-	</div>
+		<div class="flex flex-row justify-center items-center gap-10 relative h-[600px]">
+			<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-[40rem] bg-[#094758] rounded-2xl p-5 w-[750px] h-[400px] z-10 flex flex-col items-center  gap-4">
+				<div class="flex flex-row justify-between w-full">
+					<div>
+						<div class="flex flex-row items-center gap-5">
+							<img src="/dist/logos/adarlpz_logo.svg" width="50px" alt="Imagen">
+							<p class="text-3xl font-semibold text-white">Densora</p>
+						</div>
+					</div>
 
-	<div class="flex flex-row justify-center items-center gap-10 relative h-[600px]">
-		<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-64 bg-[#16aed2] rounded-2xl p-5 w-[750px] h-[400px] z-10 cursor-pointer flex flex-col items-center justify-center gap-4">
+					<div class="flex flex-row">
+						<div class="flex flex-row gap-2">
+							<img src="/dist/icons/web_icon.svg" width="30px" alt="Imagen">
+						</div>
+						<div class="w-[2px] h-auto rounded-2xl bg-white mx-4">
 
-			<div class="flex flex-row justify-between w-full">
-				<div class="flex flex-row items-center gap-5">
-					<img src="/dist/img/signature_white.svg" width="50px" alt="Imagen">
-					<p class="text-3xl font-semibold text-white">Densora</p>
+						</div>
+						<div class="flex flex-row gap-2">
+							<img src="/dist/logos/html5_logo.svg" width="30px" alt="Imagen">
+							<img src="/dist/logos/css3_logo.svg" width="30px" alt="Imagen">
+							<img src="/dist/logos/astro_logo.svg" width="30px" alt="Imagen">
+						</div>
+					</div>
 				</div>
 
-				<div class="flex flex-row gap-2">
-					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
-					<img src="/dist/img/signature_white.svg" width="30px" alt="Imagen">
+				<p class="text-white text-xl text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<div class="flex flex-row gap-4 w-full  justify-between">
+					<div class="flex bg-[#0e6c86] p-2 rounded-2xl gap-3 items-center justify-center w-full">
+						<img src="/dist/logos/github_logo.svg" width="30px" alt="Imagen">
+						<p class="text-white font-semibold">Ver código</p>
+					</div>
+					<div class="flex bg-[#0e6c86] p-2 rounded-2xl gap-3 items-center justify-center px-5">
+						<img src="/dist/icons/web_icon.svg" class="w-[30px]" alt="Imagen">
+						<p class="text-white font-semibold">Visitar</p>
+					</div>
 				</div>
 			</div>
 
-			<p class="text-white text-xl text-center text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-			<div class="flex flex-row gap-4 w-full justify-between">
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center w-full">
-					<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
-					<p class="text-white font-semibold">Ver código</p>
-				</div>
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
-					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
-				</div>
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
-					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
-				</div>
-				<div class="flex bg-[#445a5f] p-2 rounded-2xl gap-3 items-center justify-center">
-					<img src="/dist/img/web_icon.png" width="30px" alt="Imagen">
-				</div>
-			</div>
-		</div>
-
-
-		<div class="flex flex-row transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -ml-32 p-5 w-[880px] h-[360px] z-0 cursor-pointer items-center justify-center gap-4 rounded-2xl">
-			<div class="w-[640px] h-[360px]">
-				<img src="/dist/img/cuadrada.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
-			</div>
-			<div class="w-[240px] h-[360px]">
-				<img src="/dist/img/cuadrada.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
+			<div class="transition-transform duration-300 ease-in-out transform scale-100 hover:scale-105 hover:z-50 -mr-32 p-0 w-[640px] h-[360px] z-0 flex flex-col items-center justify-center gap-4 rounded-2xl">
+				<img src="/dist/demos/tekkure_demo.jpg" class="w-full h-full object-cover rounded-2xl" alt="Foto de perfil" />
 			</div>
 		</div>
 	</div>
 
-	<div class="flex flex-col items-center justify-center m-64">
+	<div class="flex flex-col mx-[20rem] my-32">
+		<div class="flex flex-row gap-10 my-8 items-center">
+			<div class="flex items-center justify-center w-20 h-20">
+				<img src="/dist/icons/profile_icon.svg" class="w-12 h-12" alt="GitHub Logo" />
+			</div>
+			<div>
+				<p class="text-4xl font-semibold text-white">Tecnologias</p>
+			</div>
+		</div>
+
+		<div class="flex flex-row mb-8 gap-8 items-center justify-center">
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+		</div>
+		<div class="flex flex-row mb-8 gap-8 items-center justify-center">
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+		</div>
+		<div class="flex flex-row mb-8 gap-8 items-center justify-center">
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+		</div>
+		<div class="flex flex-row mb-8 gap-8 items-center justify-center">
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+		</div>
+		<div class="flex flex-row mb-8 gap-8 items-center justify-center">
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-4">
+					<img src="/dist/logos/angular_logo.svg" class="w-16 h-16" alt="GitHub Logo" />
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="flex flex-col mx-[20rem] my-32">
+		<div class="flex flex-row gap-10 my-8 items-center">
+			<div class="flex items-center justify-center w-20 h-20">
+				<img src="/dist/icons/profile_icon.svg" class="w-12 h-12" alt="GitHub Logo" />
+			</div>
+			<div>
+				<p class="text-4xl font-semibold text-white">Habilidades Tecnicas</p>
+			</div>
+			<a href="https://github.com/adarlpz">
+				<div class="bg-[#094758] rounded-2xl p-3">
+					<img src="/dist/icons/map_icon.svg" class="w-6 h-6" alt="GitHub Logo" />
+				</div>
+			</a>
+		</div>
+		<a href="https://github.com/adarlpz">
+			<div class="bg-[#094758] rounded-2xl p-3 w-auto">
+				<img src="/dist/icons/map_icon.svg" class="w-6 h-6" alt="GitHub Logo" />
+			</div>
+		</a>
+	</div>
+
+	<div class="flex flex-col mx-[20rem] my-32">
+		<div class="flex flex-row gap-10 my-8 items-center">
+			<div class="flex items-center justify-center w-20 h-20">
+				<img src="/dist/icons/profile_icon.svg" class="w-12 h-12" alt="GitHub Logo" />
+			</div>
+			<div>
+				<p class="text-4xl font-semibold text-white">Habilidades Blandas</p>
+			</div>
+		</div>
 		<div>
-			<p class="text-5xl font-semibold text-white">Habiliades</p>
-		</div>
-		<div class="flex flex-row my-8 gap-8">
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">JS</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">Kotlin</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">JS</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">Kotlin</p>
-			</div>
-		</div>
-		<div class="flex flex-row my-8 gap-8">
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">JS</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">Kotlin</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">JS</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">Kotlin</p>
-			</div>
-		</div>
-		<div class="flex flex-row my-8 gap-8">
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">JS</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">Kotlin</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">JS</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">Kotlin</p>
-			</div>
-		</div>
-		<div class="flex flex-row my-8 gap-8">
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">JS</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">Kotlin</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">JS</p>
-			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
-				<p class="text-3xl font-semibold text-white">Kotlin</p>
-			</div>
+			<p class="text-2xl font-medium !m-0 text-white">Developer in training, with no professional experience but a great passion for programming and technology. Motivated by my learning, eager to grow and contribute my knowledge to innovative projects.</p>
 		</div>
 	</div>
 
 	<div class="flex flex-row items-center justify-center m-64 gap-14">
 		<div class="flex flex-row gap-2">
-			<div class="flex flex-row bg-[#16aed2] rounded-2xl p-5">
-				<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
+			<div class="flex flex-row bg-[#094758] rounded-2xl p-5">
+				<img src="/dist/flags/mexico_flag.svg" width="30px" alt="Imagen">
 				<p class="text-3xl font-semibold text-white">Español</p>
 			</div>
-			<div class="flex flex-row bg-[#16aed2] rounded-2xl p-5">
-				<img src="/dist/img/github_logo_white.svg" width="30px" alt="Imagen">
+			<div class="flex flex-row bg-[#094758] rounded-2xl p-5">
+				<img src="/dist/flags/unitedkingdom_flag.svg" width="30px" alt="Imagen">
 				<p class="text-3xl font-semibold text-white">Ingles</p>
 			</div>
 		</div>
@@ -255,11 +470,11 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 
 		<div class="gap-2">
-			<div class="bg-[#16aed2] rounded-2xl p-5">
+			<div class="bg-[#094758] rounded-2xl p-5">
 				<p class="text-3xl font-semibold text-white">CETI Colomos</p>
 				<p class="text-3xl font-medium text-white">Software Development Technologist</p>
 			</div>
-			<div class="bg-[#16aed2] rounded-2xl p-5">
+			<div class="bg-[#094758] rounded-2xl p-5">
 				<p class="text-3xl font-semibold text-white">Instituto Cultural Mexicano Norteamericano de Jalisco</p>
 				<p class="text-3xl font-medium text-white">English Student</p>
 			</div>
