@@ -1,0 +1,12 @@
+---
+const {iconSrc, label, link} = Astro.props;
+---
+
+<a href={link} class="relative group">
+    <div class="bg-[#002a2e] rounded-2xl p-3 hover:brightness-150 transition duration-200">
+        <img src={iconSrc} alt="Ícono" class="w-6 h-6"/>
+    </div>
+    <p class="absolute -bottom-2 left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm font-semibold bg-[#00393e] text-[#0fa79c] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10">
+        {label}
+    </p>
+</a>

@@ -5,6 +5,8 @@ import Experience from "../sections/experience.astro";
 import Projects from "../sections/projects.astro";
 import Skills from "../sections/skills.astro";
 import Section from "../components/section.astro";
+import ButtonToolTip from "../components/buttonToolTip.astro";
+import ButtonExpand from "../components/buttonExpand.astro";
 ---
 
 <Layout>
@@ -16,54 +18,46 @@ import Section from "../components/section.astro";
 
             <div class="flex flex-row justify-between w-full">
                 <div class="flex flex-col">
-                    <p class="text-4xl font-semibold text-[#0fa79c]">Hola, soy Brandon Lopez</p>
-                    <p class="text-2xl font-medium !m-0 text-[#0b7972]">Desarrollador De Web/Movil</p>
+                    <p class="text-4xl font-semibold text-primary">Hola, soy Brandon López</p>
+                    <p class="text-2xl font-medium !m-0 text-secondary">Desarrollador Web y Móvil</p>
                 </div>
 
-                <div class="flex flex-row rounded-2xl items-center justify-center gap-10">
-                    <a href="/dist/cvs/english_cv.pdf">
-                        <div class="bg-[#002a2e] rounded-2xl p-3">
-                            <img src="/dist/icons/cv_icon.svg" class="w-6 h-6" alt="CV Icon"/>
-                        </div>
-                    </a>
-
-                    <a href="https://github.com/adarlpz">
-                        <div class="bg-[#002a2e] rounded-2xl p-3">
-                            <img src="/dist/icons/download_icon.svg" class="w-6 h-6" alt="Download Icon"/>
-                        </div>
-                    </a>
-                </div>
+                <ButtonToolTip
+                        iconSrc="/dist/icons/cv_icon.svg"
+                        label="Ver curriculum Vitae"
+                        link="/dist/cvs/english_cv.pdf"
+                />
             </div>
         </div>
         <div class="flex flex-row gap-5 justify-start">
-            <a href="https://github.com/adarlpz">
-                <div class="bg-[#002a2e] rounded-2xl p-3">
-                    <img src="/dist/logos/github_logo.svg" class="w-6 h-6" alt="GitHub Logo"/>
-                </div>
-            </a>
-            <a href="https://linkedin.com/in/adarlpz">
-                <div class="bg-[#002a2e] rounded-2xl p-3">
-                    <img src="/dist/logos/linkedin_logo.svg" class="w-6 h-6" alt="LinkedIn Logo"/>
-                </div>
-            </a>
-            <a href="mailto:tuemail@example.com">
-                <div class="bg-[#002a2e] rounded-2xl p-3">
-                    <img src="/dist/icons/email_icon.svg" class="w-6 h-6" alt="Email Icon"/>
-                </div>
-            </a>
-            <a href="tel:+521234567890">
-                <div class="bg-[#002a2e] rounded-2xl p-3">
-                    <img src="/dist/icons/phone_icon.svg" class="w-6 h-6" alt="Phone Icon"/>
-                </div>
-            </a>
-            <a href="https://maps.google.com">
-                <div class="bg-[#002a2e] rounded-2xl p-3">
-                    <img src="/dist/icons/map_icon.svg" class="w-6 h-6" alt="Map Icon"/>
-                </div>
-            </a>
+            <ButtonExpand
+                    link="https://github.com/adardev"
+                    iconSrc="/dist/logos/github_logo.svg"
+                    label="/adardev"
+                    hoverClass="hover:w-[7.2rem]"
+                    altIconSrc={null}
+            />
+            <ButtonExpand
+                    link="https://www.linkedin.com/in/adardev"
+                    iconSrc="/dist/logos/linkedin_logo.svg"
+                    label="/adardev"
+                    hoverClass="hover:w-[7.2rem]"
+            />
+            <ButtonExpand
+                    link="mailto:adarlopz.dev@gmail.com"
+                    iconSrc="/dist/icons/email_icon.svg"
+                    label="adarlopz.dev@gmail.com"
+                    hoverClass="hover:w-[16rem]"
+                    altIconSrc="/dist/icons/email_icon.svg"
+            />
+            <ButtonExpand
+                    link="https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7"
+                    iconSrc="/dist/icons/map_icon.svg"
+                    label="Guadalajara, México"
+                    hoverClass="hover:w-[11.8rem]"
+            />
         </div>
     </Section>
-
     <About/>
     <Experience/>
     <Projects/>
