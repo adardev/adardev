@@ -1,0 +1,20 @@
+---
+import Epam from "./experiences/epam.astro";
+import Freelance from "./experiences/freelance.astro";
+import TitleSection from "../components/titleSection.astro";
+import Section from "../components/section.astro";
+---
+
+<Section id="experience">
+    <TitleSection
+            imageSrc="/dist/icons/portfolio_icon.svg"
+            imageAlt="Ícono de perfil"
+            title="Experiencia"
+    />
+    <div class="container mx-auto">
+        <div class="relative border-l-4 border-[#096871] ml-5">
+            <Epam/>
+            <Freelance/>
+        </div>
+    </div>
+</Section>

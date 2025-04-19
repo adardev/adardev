@@ -1,52 +1,55 @@
 ---
 import '../styles/global.css';
 import {ClientRouter} from 'astro:transitions';
-
-const currentYear = new Date().getFullYear();
 ---
 
-<html class="bg-[#001c2c] h-full flex flex-col" lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" href="/dist/logos/tekkure_logo.svg" type="image/x-icon">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<html class="bg-[#000f17] h-full flex flex-col scroll-smooth" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="/dist/logos/tekkure_logo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
 
-		<meta name="generator" content={Astro.generator} />
-		<title>adarlpz</title>
-		<ClientRouter/>
-	</head>
-	<body class="bg-[#001c2c] min-h-screen flex flex-col">
+    <meta name="generator" content={Astro.generator}/>
+    <title>adarlpz</title>
+    <ClientRouter/>
+</head>
+<body class="bg-[#000f17] min-h-screen flex flex-col scroll-smooth">
 
-		<header class="flex flex-row justify-between items-center mx-10 my-5">
-			<div class="">
-				<a href="/">
-					<img src="/dist/logos/adarlpz_logo.svg" width="50px" alt="Imagen">
-				</a>
-			</div>
-			<div class="flex flex-row gap-14">
-				<div><a href="/proyectos" class="text-xl font-bold text-white">Proyectos</a></div>
-				<div><a href="/habilidades" class="text-xl font-bold text-white">Habilidades</a></div>
-				<div><a href="/educacion" class="text-xl font-bold text-white">Educacion</a></div>
-				<div><a href="/idiomas" class="text-xl font-bold text-white">Idiomas</a></div>
-				<div><a href="/certificaciones" class="text-xl font-bold text-white">Certificaciones</a></div>
-			</div>
-			<div class="flex flex-row bg-[#094758] rounded-2xl p-3">
-				<img src="/dist/flags/mexico_flag.svg" width="30px" alt="Imagen">
-			</div>
-		</header>
+<header class="fixed top-0 left-0 w-full z-50 bg-[#000f17] flex flex-row justify-between items-center px-[20rem] py-5">
+    <div>
+        <a href="/">
+            <img src="/dist/logos/adarlpz_logo.svg" class="w-12 h-12" alt="Imagen">
+        </a>
+    </div>
+    <div class="flex flex-row gap-12">
+        <a href="/">
+            <p class="text-xl font-bold !m-0 text-[#0fa79c]">Inicio</p>
+        </a>
+        <a href="#about">
+            <p class="text-xl font-bold !m-0 text-[#0b7972]">Sobre Mi</p>
+        </a>
+        <a href="#experience">
+            <p class="text-xl font-bold !m-0 text-[#0b7972]">Experiencia</p>
+        </a>
+        <a href="#projects">
+            <p class="text-xl font-bold !m-0 text-[#0b7972]">Proyectos</p>
+        </a>
+        <a href="#skills">
+            <p class="text-xl font-bold !m-0 text-[#0b7972]">Habilidades</p>
+        </a>
+    </div>
+    <a href="/">
+        <img src="/dist/flags/mexico_flag.svg" class="w-12" alt="Imagen">
+    </a>
+</header>
 
-		<main class="flex-1 t">
-			<slot />
-		</main>
+<main class="pt-[5.5rem] flex flex-col mx-[20rem]">
+    <slot/>
+</main>
 
-		<footer class="bg-[#001c2c] text-center py-4 mt-auto">
-			<p class="text-thin text-gray-300">
-				adarlpz &copy; <span>{currentYear}</span>
-			</p>
-		</footer>
-
-	</body>
+</body>
 </html>
