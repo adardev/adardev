@@ -150,4 +150,4 @@ con sincronización en tiempo real.
 
 ---
 
-Gracias por visitar mi perfil, ahora denme chamba :)
+Actualmente buscando chamba y experiencia :)
