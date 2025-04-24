@@ -6,25 +6,25 @@
 
 ---
 <p>
-  <img src="lightgray-sardine-268341.hostingersite.com/dist/icons/github_logo.svg" alt="GitHub" width="18"/>
+  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/github_logo.svg" alt="GitHub" width="18"/>
   <a href="https://github.com/adardev" style="color: inherit; text-decoration: none;">
     /adardev
   </a>
 </p>
 <p>
-  <img src="lightgray-sardine-268341.hostingersite.com/dist/icons/linkedin_logo.svg" alt="LinkedIn" width="18"/>
+  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/linkedin_logo.svg" alt="LinkedIn" width="18"/>
   <a href="https://www.linkedin.com/in/adardev" style="color: inherit; text-decoration: none;">
     /in/adardev
   </a>
 </p>
 <p>
-  <img src="lightgray-sardine-268341.hostingersite.com/dist/icons/email_icon.svg" alt="Email" width="18"/>
+  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/email_icon.svg" alt="Email" width="18"/>
   <a href="mailto:adarlopz.dev@gmail.com" style="color: inherit; text-decoration: none;">
     adarlopz.dev@gmail.com
   </a>
 </p>
 <p>
-  <img src="lightgray-sardine-268341.hostingersite.com/dist/icons/map_icon.svg" alt="Ubicación" width="18"/>
+  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/map_icon.svg" alt="Ubicación" width="18"/>
   <a href="https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7" style="color: inherit; text-decoration: none;">
     Guadalajara, México
   </a>
