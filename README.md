@@ -6,13 +6,13 @@
 
 ---
 <p>
-  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/github_logo.svg" alt="GitHub" width="18"/>
+  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/logos/github_logo.svg" alt="GitHub" width="18"/>
   <a href="https://github.com/adardev" style="color: inherit; text-decoration: none;">
     /adardev
   </a>
 </p>
 <p>
-  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/linkedin_logo.svg" alt="LinkedIn" width="18"/>
+  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/logos/linkedin_logo.svg" alt="LinkedIn" width="18"/>
   <a href="https://www.linkedin.com/in/adardev" style="color: inherit; text-decoration: none;">
     /in/adardev
   </a>
