@@ -1,33 +1,31 @@
-# 👋 Hola, soy Brandon López
-
-## 💻 Desarrollador Web y Móvil
-
-¡Bienvenido/a a mi portafolio!
-
-Soy un desarrollador enfocado en crear soluciones digitales modernas, funcionales y visualmente atractivas tanto para aplicaciones web como móviles. Me apasiona construir experiencias intuitivas que resuelvan problemas reales.
+# ![Perfil](https://lightgray-sardine-268341.hostingersite.com/dist/photos/profile_photo.jpg)  
+### Hola, soy Brandon López  
+**Desarrollador Web y Móvil**
 
 ---
 
-### 📄 [Ver Curriculum Vitae (PDF)](./dist/cvs/english_cv.pdf)
+## ![CV Icon](https://lightgray-sardine-268341.hostingersite.com/dist/icons/cv_icon.svg) [Ver Curriculum Vitae](https://lightgray-sardine-268341.hostingersite.com/dist/cvs/english_cv.pdf)
 
 ---
 
-## 🌐 Conecta conmigo
+## Conecta conmigo
 
-- 🐙 [GitHub: @adardev](https://github.com/adardev)
-- 💼 [LinkedIn: @adardev](https://www.linkedin.com/in/adardev)
-- 📧 [Correo: adarlopz.dev@gmail.com](mailto:adarlopz.dev@gmail.com)
-- 📍 [Ubicación: Guadalajara, México](https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7)
+| Enlace | Descripción |
+|--------|-------------|
+| ![GitHub](https://lightgray-sardine-268341.hostingersite.com/dist/logos/github_logo.svg) [@adardev](https://github.com/adardev) | Repositorios y código abierto |
+| ![LinkedIn](https://lightgray-sardine-268341.hostingersite.com/dist/logos/linkedin_logo.svg) [@adardev](https://www.linkedin.com/in/adardev) | Red profesional y networking |
+| ![Email](https://lightgray-sardine-268341.hostingersite.com/dist/icons/email_icon.svg) [adarlopz.dev@gmail.com](mailto:adarlopz.dev@gmail.com) | Escríbeme por correo |
+| ![Mapa](https://lightgray-sardine-268341.hostingersite.com/dist/icons/map_icon.svg) [Guadalajara, México](https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7) | Mi ubicación |
 
 ---
 
 ## 🧠 Secciones del Portafolio
 
-- [`Sobre mí`](#) – Conoce un poco más sobre quién soy y mi enfoque profesional.
-- [`Experiencia`](#) – Algunos de los lugares donde he trabajado y los proyectos que he desarrollado.
-- [`Proyectos`](#) – Una selección de proyectos personales y profesionales destacados.
-- [`Habilidades`](#) – Tecnologías y herramientas con las que trabajo día a día.
+- [Sobre mí](https://lightgray-sardine-268341.hostingersite.com/#about)
+- [Experiencia](https://lightgray-sardine-268341.hostingersite.com/#experience)
+- [Proyectos](https://lightgray-sardine-268341.hostingersite.com/#projects)
+- [Habilidades](https://lightgray-sardine-268341.hostingersite.com/#skills)
 
 ---
 
-Gracias por visitar mi perfil. Si estás interesado en colaborar o tienes alguna propuesta, ¡no dudes en escribirme!
+Gracias por visitar mi portafolio. Si tienes una idea, proyecto o simplemente quieres saludar, ¡no dudes en contactarme!
