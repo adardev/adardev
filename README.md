@@ -6,10 +6,12 @@
 
 ---
 
-**<img src="https://lightgray-sardine-268341.hostingersite.com/dist/logos/github_logo.svg" alt="GitHub" width="14"/> [/adardev](https://github.com/adardev) 
-**<img src="https://lightgray-sardine-268341.hostingersite.com/dist/logos/linkedin_logo.svg" alt="LinkedIn" width="14"/> [/in/adardev](https://www.linkedin.com/in/adardev)
-**<img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/email_icon.svg" alt="Email" width="14"/> [adarlopz.dev@gmail.com](mailto:adarlopz.dev@gmail.com)
-**<img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/map_icon.svg" alt="Ubicación" width="14"/> [Guadalajara, México](https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7)
+<div>
+  <a href="https://github.com/adardev">/adardev</a><br>
+  <a href="https://www.linkedin.com/in/adardev">/in/adardev</a><br>
+  <a href="mailto:adarlopz.dev@gmail.com">adarlopz.dev@gmail.com</a><br>
+  <a href="https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7">Guadalajara, México</a>
+</div>
 
 ---
 
