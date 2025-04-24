@@ -2,9 +2,11 @@
 **Desarrollador Web y Móvil**
 
 ---
+
 ## <img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/cv_icon.svg" alt="CV Icon" width="18"/> [Ver Curriculum](https://lightgray-sardine-268341.hostingersite.com/dist/cvs/adardevCV.pdf)
 
 ---
+
 <p>
   <img src="https://lightgray-sardine-268341.hostingersite.com/dist/logos/github_logo.svg" alt="GitHub" width="18"/>
   <a href="https://github.com/adardev" style="color: inherit; text-decoration: none;">
@@ -30,14 +32,17 @@
   </a>
 </p>
 
-
 ---
 
-## Secciones De Mi Portafolio
-[Sobre mí](https://lightgray-sardine-268341.hostingersite.com/#about)  
+## 👤 Sobre Mí
+
+**Developer in training**, sin experiencia profesional pero con una gran pasión por la programación y la tecnología.  
+Motivado por el aprendizaje, con ganas de crecer y aportar mis conocimientos a proyectos innovadores.
+
 [Experiencia](https://lightgray-sardine-268341.hostingersite.com/#experience)  
 [Proyectos](https://lightgray-sardine-268341.hostingersite.com/#projects)  
 [Habilidades](https://lightgray-sardine-268341.hostingersite.com/#skills)
+
 ---
 
 Gracias por visitar mi perfil, ahora denme chamba :)
