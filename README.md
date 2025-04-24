@@ -3,7 +3,7 @@
 
 ---
 
-## <img src="https://adardev.com/dist/icons/cv_icon.svg" alt="CV Icon" width="18"/> [Ver Curriculum](https://adardev.com/dist/cvs/adardevCV.pdf)
+## <img src="https://adardev.com/dist/icons/cv_icon.svg" alt="CV Icon" width="16"/> [Ver Curriculum](https://adardev.com/dist/cvs/adardevCV.pdf)
 
 ---
 
