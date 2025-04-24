@@ -39,6 +39,7 @@
 **Desarrollador en formación**, sin experiencia profesional pero con una gran pasión por la programación y la tecnología.  
 Motivado por el aprendizaje, con ganas de crecer y aportar mis conocimientos a proyectos innovadores.
 
+<!--
 ## 🧳 Experiencia
 
 ### 🟢 Freelance — Desarrollo Web y Móvil *(2022)*
@@ -68,6 +69,7 @@ Disponible en Android, iOS y Web.
 con sincronización en tiempo real.
 
 🔗 [Ver código](#) | 🌐 [Visitar sitio](#)
+-->
 
 # 🛠 Habilidades Técnicas
 
