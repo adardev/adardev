@@ -5,13 +5,31 @@
 ## <img src="https://lightgray-sardine-268341.hostingersite.com/dist/icons/cv_icon.svg" alt="CV Icon" width="18"/> [Ver Curriculum](https://lightgray-sardine-268341.hostingersite.com/dist/cvs/adardevCV.pdf)
 
 ---
+<p>
+  <img src="icons/github_logo.svg" alt="GitHub" width="18"/>
+  <a href="https://github.com/adardev" style="color: inherit; text-decoration: none;">
+    /adardev
+  </a>
+</p>
+<p>
+  <img src="icons/linkedin_logo.svg" alt="LinkedIn" width="18"/>
+  <a href="https://www.linkedin.com/in/adardev" style="color: inherit; text-decoration: none;">
+    /in/adardev
+  </a>
+</p>
+<p>
+  <img src="icons/email_icon.svg" alt="Email" width="18"/>
+  <a href="mailto:adarlopz.dev@gmail.com" style="color: inherit; text-decoration: none;">
+    adarlopz.dev@gmail.com
+  </a>
+</p>
+<p>
+  <img src="icons/map_icon.svg" alt="Ubicación" width="18"/>
+  <a href="https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7" style="color: inherit; text-decoration: none;">
+    Guadalajara, México
+  </a>
+</p>
 
-<div>
-  <a href="https://github.com/adardev">/adardev</a><br>
-  <a href="https://www.linkedin.com/in/adardev">/in/adardev</a><br>
-  <a href="mailto:adarlopz.dev@gmail.com">adarlopz.dev@gmail.com</a><br>
-  <a href="https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7">Guadalajara, México</a>
-</div>
 
 ---
 
