@@ -73,7 +73,7 @@ con sincronización en tiempo real.
 
 # 🛠 Habilidades Técnicas
 
-  <img src="https://adardev.com/dist/screenshoots/skills.jpg" alt="GitHub" width="500px"/>
+  <img src="https://adardev.com/dist/screenshots/skills.jpg" alt="GitHub" width="750px"/>
 
 ## Lenguajes de Programación
 <div align="center">
