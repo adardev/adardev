@@ -73,6 +73,8 @@ con sincronización en tiempo real.
 
 # 🛠 Habilidades Técnicas
 
+  <img src="https://lightgray-sardine-268341.hostingersite.com/dist/screenshoots/skills.jpg" alt="GitHub" width="500px"/>
+
 ## Lenguajes de Programación
 <div align="center">
   
