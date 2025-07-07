@@ -8,54 +8,25 @@ import Section from "../components/section.astro";
 import ButtonToolTip from "../components/buttonToolTip.astro";
 import ButtonExpand from "../components/buttonExpand.astro";
 ---
-
 <Layout>
     <Section>
         <div class="flex flex-row gap-10 mb-8">
             <div class="w-24 h-20 rounded-full overflow-hidden shadow-lg">
                 <img src="/dist/photos/profile_photo.jpg" class="w-full h-full object-cover" alt="Foto de perfil"/>
             </div>
-
             <div class="flex flex-row justify-between w-full">
                 <div class="flex flex-col">
                     <p class="text-4xl font-semibold text-primary">Hola, soy Brandon López</p>
                     <p class="text-2xl font-medium !m-0 text-secondary">Desarrollador Web y Móvil</p>
                 </div>
-
-                <ButtonToolTip
-                        iconSrc="/dist/icons/cv_icon.svg"
-                        label="Ver curriculum Vitae"
-                        link="/dist/cvs/adardevCV.pdf"
-                />
+                <ButtonToolTip iconSrc="/dist/icons/cv_icon.svg" label="Ver curriculum Vitae" link="/dist/cvs/adardevCV.pdf"/>
             </div>
         </div>
         <div class="flex flex-row gap-5 justify-start">
-            <ButtonExpand
-                    link="https://github.com/adardev"
-                    iconSrc="/dist/logos/github_logo.svg"
-                    label="/adardev"
-                    hoverClass="hover:w-[7.2rem]"
-                    altIconSrc={null}
-            />
-            <ButtonExpand
-                    link="https://www.linkedin.com/in/adardev"
-                    iconSrc="/dist/logos/linkedin_logo.svg"
-                    label="/in/adardev"
-                    hoverClass="hover:w-[8.3rem]"
-            />
-            <ButtonExpand
-                    link="mailto:adarlopz.dev@gmail.com"
-                    iconSrc="/dist/icons/email_icon.svg"
-                    label="adarlopz.dev@gmail.com"
-                    hoverClass="hover:w-[16rem]"
-                    altIconSrc="/dist/icons/email_icon.svg"
-            />
-            <ButtonExpand
-                    link="https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7"
-                    iconSrc="/dist/icons/map_icon.svg"
-                    label="Guadalajara, México"
-                    hoverClass="hover:w-[11.8rem]"
-            />
+            <ButtonExpand link="https://github.com/adardev" iconSrc="/dist/logos/github_logo.svg" label="/adardev" hoverClass="hover:w-[7.2rem]" altIconSrc={null}/>
+            <ButtonExpand link="https://www.linkedin.com/in/adardev" iconSrc="/dist/logos/linkedin_logo.svg" label="/in/adardev" hoverClass="hover:w-[8.3rem]"/>
+            <ButtonExpand link="mailto:adarlopz.dev@gmail.com" iconSrc="/dist/icons/email_icon.svg" label="adarlopz.dev@gmail.com" hoverClass="hover:w-[16rem]" altIconSrc="/dist/icons/email_icon.svg"/>
+            <ButtonExpand link="https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7" iconSrc="/dist/icons/map_icon.svg" label="Guadalajara, México" hoverClass="hover:w-[11.8rem]"/>
         </div>
     </Section>
     <About/>
