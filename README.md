@@ -7,7 +7,7 @@
 
 ---
 
-<p>
+<p>w
   <img src="https://adardev.com/dist/logos/github_logo.svg" alt="GitHub" width="18"/>
   <a href="https://github.com/adardev" style="color: inherit; text-decoration: none;">
     /adardev

@@ -5,7 +5,6 @@ import {ClientRouter} from 'astro:transitions';
 import Text from "../components/text.astro";
 import Section from "../components/section.astro";
 import Button from "../components/button.astro";
-import SubSection from "../components/subSection.astro";
 import adardev_logo from "../assets/logos/adardev_logo.svg";
 import Mexico_flag from "../assets/flags/mexico_flag.svg";
 import Unitedkingdom_flag from "../assets/flags/unitedkingdom_flag.svg";
@@ -44,11 +43,11 @@ if (align == "right") {
 </head>
 <body class="flex flex-col scroll-smooth font-sans bg-background min-h-screen">
 <header>
-    <SubSection orientation="col" align="center">
-        <SubSection>
+    <Section orientation="row" align="center">
+        <Section padding="false">
             <Button design="icon" icon={adardev_logo} href="/"/>
-        </SubSection>
-        <SubSection extraClass="gap-12">
+        </Section>
+        <Section orientation="row" extraClass="gap-12" padding="false">
             <Button design="slot" href="/">
                 <Text type="subTitle" text="Inicio"/>
             </Button>
@@ -64,7 +63,7 @@ if (align == "right") {
             <Button design="slot" href="#skills">
                 <Text type="subTitle" text="Habilidades"/>
             </Button>
-        </SubSection>
+        </Section>
         <ToolTip text="Cambiar idioma">
             <a href="/" class="relative w-12 h-12 group  overflow-visible pt-3">
                 <div class="rounded-2xl p-3 transition duration-200 relative z-0">
@@ -75,7 +74,7 @@ if (align == "right") {
                 </div>
             </a>
         </ToolTip>
-    </SubSection>
+    </Section>
 </header>
 <main class="flex-grow p-12 pt-0 ${contentWraper} ${layoutOrientation}">
     <slot/>

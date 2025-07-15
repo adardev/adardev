@@ -1,6 +1,50 @@
 ---
-const {id = "index"} = Astro.props;
+const {id = "index", importance, mt, mb, ml, mr, orientation, align, extraClass, padding} = Astro.props;
+let containerClass = "";
+let marginTop = "mt-none";
+let marginBottom = "mb-none";
+let marginLeft = "ml-none";
+let marginRight = "mr-none";
+let flexOrientation = "flex-col";
+let alignment = "justify-center";
+let p = "p-4";
+if (mt == "true") {
+    marginTop = "mt-24";
+}
+if (mb == "true") {
+    marginBottom = "mb-24";
+}
+if (ml == "true") {
+    marginLeft = "ml-24";
+}
+if (mr == "true") {
+    marginRight = "mr-24";
+}
+if(importance == "primary") {
+    containerClass = "bg-primaryBackground-light dark:bg-primaryBackground-dark";
+}
+if(importance == "secondary") {
+    containerClass = "bg-secondaryBackground-light dark:bg-secondaryBackground-dark";
+}
+if(orientation == "col"){
+    flexOrientation = "flex-col";
+}
+if(orientation == "row"){
+    flexOrientation = "flex-row";
+}
+if (align == "center") {
+    alignment = "items-center justify-center"
+}
+if (align == "left") {
+    alignment = "items-start"
+}
+if (align == "right") {
+    alignment = "items-end"
+}
+if (padding == "false") {
+    p = "p-none"
+}
 ---
-<section id={id} class="flex flex-col justify-center py-24">
+<section id={id} class={`flex ${flexOrientation} ${marginTop} ${marginBottom} ${marginLeft} ${marginRight} ${alignment} ${extraClass} ${p} ${containerClass} rounded`}>
     <slot/>
 </section>
