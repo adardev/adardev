@@ -1,0 +1,84 @@
+---
+import TitleSection from "/src/components/titleSection.astro";
+import Section from "/src/components/section.astro";
+---
+<Section id="projects">
+    <TitleSection imageSrc="/src/assets/icons/code_icon.svg" imageAlt="Ícono de perfil" title="Proyectos"/>
+    <div class="w-full max-w-[1400px] px-4 mx-auto flex flex-col gap-10 items-center justify-center">
+        <div class="w-full bg-backgroundPrimary rounded-2xl p-5 flex flex-col md:flex-row gap-6 shadow-xl">
+            <div class="w-full md:w-1/2 h-[250px] bg-white rounded-xl overflow-hidden flex items-center justify-center">
+                <img src="/src/assets/demos/tekkure_demo.jpg" alt="Preview Densora" class="object-cover w-full h-full"/>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col gap-4 justify-between">
+                <div class="flex flex-row justify-between flex-wrap">
+                    <div class="flex flex-row items-center gap-5">
+                        <img src="/src/assets/logos/adardev_logo.svg" width="50px" alt="Logo"/>
+                        <p class="text-3xl font-semibold text-white">Spotify</p>
+                    </div>
+                    <div class="flex flex-row mt-4 sm:mt-0">
+                        <div class="flex flex-row gap-2">
+                            <img src="/src/assets/icons/web_icon.svg" width="30px" alt="Android"/>
+                        </div>
+                        <div class="w-[2px] h-auto rounded-2xl bg-white mx-4"></div>
+                        <div class="flex flex-row gap-2">
+                            <img src="/src/assets/logos/astro_logo.svg" width="30px" alt="NodeJS"/>
+                            <img src="/src/assets/logos/tailwind_logo.svg" width="30px" alt="Tailwind"/>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-white text-justify text-lg">
+                    Aplicación que muestra estadísticas personalizadas sobre tus hábitos de escucha en Spotify y te
+                    conecta con personas con gustos musicales similares.
+                </p>
+                <div class="flex justify-between">
+                    <div class="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
+                        <img src="/src/assets/logos/github_logo.svg" width="25px" alt="GitHub"/>
+                        <p class="text-white font-semibold">Ver código</p>
+                    </div>
+                    <div class="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
+                        <img src="/src/assets/icons/web_icon.svg" class="w-[25px]" alt="Sitio Web"/>
+                        <p class="text-white font-semibold">Visitar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full bg-backgroundPrimary rounded-2xl p-5 flex flex-col md:flex-row gap-6 shadow-xl">
+            <div class="w-full md:w-1/2 h-[250px] bg-white rounded-xl overflow-hidden flex items-center justify-center">
+                <img src="/src/assets/demos/tekkure_demo.jpg" alt="Preview Tekkure" class="object-cover w-full h-full"/>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col gap-4 justify-between">
+                <div class="flex flex-row justify-between flex-wrap">
+                    <div class="flex flex-row items-center gap-5">
+                        <img src="/src/assets/logos/adardev_logo.svg" width="50px" alt="Logo"/>
+                        <p class="text-3xl font-semibold text-white">Bytemana</p>
+                    </div>
+                    <div class="flex flex-row mt-4 sm:mt-0">
+                        <div class="flex flex-row gap-2">
+                            <img src="/src/assets/logos/windows_logo.svg" width="30px" alt="Windows"/>
+                        </div>
+                        <div class="w-[2px] h-auto rounded-2xl bg-white mx-4"></div>
+                        <div class="flex flex-row gap-2">
+                            <img src="/src/assets/logos/php_logo.svg" width="30px" alt="C++"/>
+                            <img src="/src/assets/logos/electron_logo.svg" width="30px" alt="Astro"/>
+                            <img src="/src/assets/logos/sql_logo.svg" width="30px" alt="React"/>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-white text-justify text-lg">
+                    Sistema utilizado en un minisúper para la gestión de productos, usuarios y recursos en el almacén.
+                    Desarrollado con tecnologías web y empaquetado con Electron.
+                </p>
+                <div class="flex justify-between">
+                    <div class="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
+                        <img src="/src/assets/logos/github_logo.svg" width="25px" alt="GitHub"/>
+                        <p class="text-white font-semibold">Ver código</p>
+                    </div>
+                    <div class="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
+                        <img src="/src/assets/icons/web_icon.svg" class="w-[25px]" alt="Sitio Web"/>
+                        <p class="text-white font-semibold">Visitar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Section>

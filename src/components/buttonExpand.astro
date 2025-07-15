@@ -1,0 +1,39 @@
+---
+const { iconSrc, label, hoverClass, link, altIconSrc } = Astro.props;
+---
+<div class={`group relative flex items-center bg-backgroundPrimary hover:brightness-150 rounded-2xl h-12 w-12 ${hoverClass} transition-all duration-300 overflow-hidden pl-3`}>
+    <a href={link} class="block flex items-center">
+        <img src={iconSrc} class="w-6 h-8 transition-all duration-300" alt="Ícono"/>
+        <p class="ml-3 text-sm font-semibold text-secondary w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            {label}
+        </p>
+    </a>
+    {altIconSrc && (
+            <div role="button" class="w-6 h-8 transition-all duration-300 ml-3 cursor-pointer relative" id="copy-icon">
+                <img src={altIconSrc} class="w-6 h-8 transition-all duration-300" alt="Icono alternativo"/>
+                <span id="tooltip" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black text-white text-xs rounded opacity-0 pointer-events-none transition-opacity duration-300">Copiado al portapapeles</span>
+            </div>
+    )}
+</div>
+<script>
+    if (typeof window !== "undefined") {
+        const copyIcon = document.getElementById("copy-icon");
+        const tooltip = document.getElementById("tooltip");
+        if (copyIcon) {
+            copyIcon.addEventListener("click", function() {
+                const label = `adarlopz.dev@gmail.com`; // Este es el texto que se va a copiar al portapapeles
+                navigator.clipboard.writeText(label).then(() => {
+                    console.log('Texto copiado al portapapeles');
+                    tooltip.classList.remove("opacity-0");
+                    tooltip.classList.add("opacity-100");
+                    setTimeout(() => {
+                        tooltip.classList.remove("opacity-100");
+                        tooltip.classList.add("opacity-0");
+                    }, 1500);
+                }).catch(err => {
+                    console.error('Error al copiar al portapapeles:', err);
+                });
+            });
+        }
+    }
+</script>

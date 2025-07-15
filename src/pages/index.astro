@@ -1,0 +1,36 @@
+---
+import Layout from "/src/layouts/layout.astro"
+import About from "/src/sections/about.astro";
+import Experience from "/src/sections/experience.astro";
+import Projects from "/src/sections/projects.astro";
+import Skills from "/src/sections/skills.astro";
+import Section from "/src/components/section.astro";
+import ButtonToolTip from "/src/components/buttonToolTip.astro";
+import ButtonExpand from "/src/components/buttonExpand.astro";
+---
+<Layout>
+    <Section>
+        <div class="flex flex-row gap-10 mb-8">
+            <div class="w-24 h-20 rounded-full overflow-hidden shadow-lg">
+                <img src="/src/assets/photos/profile_photo.jpg" class="w-full h-full object-cover" alt="Foto de perfil"/>
+            </div>
+            <div class="flex flex-row justify-between w-full">
+                <div class="flex flex-col">
+                    <p class="text-4xl font-semibold text-primary">Hola, soy Brandon López</p>
+                    <p class="text-2xl font-medium !m-0 text-secondary">Desarrollador Web y Móvil</p>
+                </div>
+                <ButtonToolTip iconSrc="/src/assets/icons/cv_icon.svg" label="Ver curriculum Vitae" link="/cvs/adardevCV.pdf"/>
+            </div>
+        </div>
+        <div class="flex flex-row gap-5 justify-start">
+            <ButtonExpand link="https://github.com/adardev" iconSrc="/src/assets/logos/github_logo.svg" label="/adardev" hoverClass="hover:w-[7.2rem]" altIconSrc={null}/>
+            <ButtonExpand link="https://www.linkedin.com/in/adardev" iconSrc="/src/assets/logos/linkedin_logo.svg" label="/in/adardev" hoverClass="hover:w-[8.3rem]"/>
+            <ButtonExpand link="mailto:adarlopz.dev@gmail.com" iconSrc="/src/assets/icons/email_icon.svg" label="adarlopz.dev@gmail.com" hoverClass="hover:w-[16rem]" altIconSrc="/src/assets/icons/email_icon.svg"/>
+            <ButtonExpand link="https://maps.app.goo.gl/jgDoBZkpe1rsiSNm7" iconSrc="/src/assets/icons/map_icon.svg" label="Guadalajara, México" hoverClass="hover:w-[11.8rem]"/>
+        </div>
+    </Section>
+    <About/>
+    <Experience/>
+    <Projects/>
+    <Skills/>
+</Layout>

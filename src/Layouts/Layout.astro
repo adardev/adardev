@@ -1,0 +1,58 @@
+---
+import '@fontsource-variable/montserrat';
+import '/src/styles/global.css';
+import {ClientRouter} from 'astro:transitions';
+---
+<html class="bg-background h-full flex flex-col scroll-smooth" lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="../assets/logos/" type="image/x-icon">
+    <meta name="generator" content={Astro.generator}/>
+    <title>adardev</title>
+    <ClientRouter/>
+</head>
+<body class="bg-background min-h-screen flex flex-col scroll-smooth">
+<header class="fixed top-0 left-0 w-full z-50 bg-background flex flex-row justify-between items-center px-[20rem] py-5">
+    <div>
+        <a href="/">
+            <img src="/src/assets/logos/adardev_logo.svg" class="w-12 h-12" alt="Imagen">
+        </a>
+    </div>
+    <div class="flex flex-row gap-12">
+        <a href="/">
+            <p class="text-xl font-bold !m-0 text-primary">Inicio</p>
+        </a>
+        <a href="#about">
+            <p class="text-xl font-bold !m-0 text-secondary">Sobre Mi</p>
+        </a>
+        <a href="#experience">
+            <p class="text-xl font-bold !m-0 text-secondary">Experiencia</p>
+        </a>
+        <a href="#projects">
+            <p class="text-xl font-bold !m-0 text-secondary">Proyectos</p>
+        </a>
+        <a href="#skills">
+            <p class="text-xl font-bold !m-0 text-secondary">Habilidades</p>
+        </a>
+    </div>
+    <a href="/" class="relative w-12 h-12 group  overflow-visible pt-3">
+        <div class="rounded-2xl p-3 transition duration-200 relative z-0">
+            <img src="/src/assets/flags/mexico_flag.svg" alt="Bandera de México" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"/>
+            <img src="/src/assets/flags/unitedkingdom_flag.svg" alt="Bandera de United Kingdom" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"/>
+        </div>
+        <p class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm font-semibold bg-backgroundPrimary text-[#15a4a2] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10">
+            Cambiar idioma
+        </p>
+    </a>
+</header>
+<main class="pt-[5.5rem] flex flex-col mx-[20rem]">
+    <slot/>
+</main>
+</body>
+</html>
+<style>
+    body {
+        font-family: 'Montserrat Variable', sans-serif;
+    }
+</style>
