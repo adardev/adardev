@@ -11,20 +11,20 @@ if (mb == "true"){
     marginBottom = "mb-4"
 }
 if (type == "text") {
-    textSize = "text-xl";
+    textSize = "text-2xl";
     textWeight = "font-medium"
 }
 if (type == "title") {
-    textWeight = "font-bold"
-    textSize = "text-3xl";
+    textWeight = "font-semibold"
+    textSize = "text-4xl";
 }
-if (type == "bigTitle") {
-    textWeight = "font-black"
-    textSize = "text-6xl";
+if (type == "subTitle") {
+    textWeight = "font-bold"
+    textSize = "text-xl";
 }
 if (type == "mini") {
     textSize = "text-sm";
     textWeight = "font-light";
 }
 ---
-<p class={`${textSize} ${marginTop} ${marginBottom} ${textWeight} text-primaryText-light dark:text-primaryText-dark`}>{text}</p>
+<p class={`${textSize} ${marginTop} ${marginBottom} ${textWeight} text-primary`}>{text}</p>

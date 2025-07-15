@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from "/src/layouts/layout.astro"
 import About from "/src/sections/about.astro";
 import Experience from "/src/sections/experience.astro";
@@ -7,17 +8,21 @@ import Skills from "/src/sections/skills.astro";
 import Section from "/src/components/section.astro";
 import ButtonToolTip from "/src/components/buttonToolTip.astro";
 import ButtonExpand from "/src/components/buttonExpand.astro";
+import Text from "../components/text.astro";
+import Profile_Photo from "../assets/photos/profile_photo.jpg";
+
 ---
-<Layout>
+<Layout align="center">
+
     <Section>
         <div class="flex flex-row gap-10 mb-8">
             <div class="w-24 h-20 rounded-full overflow-hidden shadow-lg">
-                <img src="/src/assets/photos/profile_photo.jpg" class="w-full h-full object-cover" alt="Foto de perfil"/>
+                <Image src={Profile_Photo} alt=""/>
             </div>
             <div class="flex flex-row justify-between w-full">
                 <div class="flex flex-col">
-                    <p class="text-4xl font-semibold text-primary">Hola, soy Brandon López</p>
-                    <p class="text-2xl font-medium !m-0 text-secondary">Desarrollador Web y Móvil</p>
+                    <Text type="title" text="Hola, soy adardev"/>
+                    <Text type="subtitle" text="Desarrollador Web y Movil"/>
                 </div>
                 <ButtonToolTip iconSrc="/src/assets/icons/cv_icon.svg" label="Ver curriculum Vitae" link="/cvs/adardevCV.pdf"/>
             </div>

@@ -1,0 +1,91 @@
+---
+import Text from "./text.astro";
+const {text, mt, mb, href, type, design, id, icon: Icon, customClass, fill} = Astro.props;
+let marginTop = "mt-none";
+let marginBottom = "mb-none";
+let isLink = false;
+let isSlot = false;
+let primaryButton = false;
+let secondaryButton = false;
+let noBackgroundButton = false;
+let iconButton = false;
+
+if (mt === "true") {
+    marginTop = "mt-4";
+}
+if (mb === "true") {
+    marginBottom = "mb-4";
+}
+if (href && href !== "") {
+    isLink = true;
+}
+if (design == "primary") {
+    primaryButton = true;
+}
+if (design == "secondary") {
+    secondaryButton = true;
+}
+if (design == "noBg") {
+    noBackgroundButton = true;
+}
+if (design == "icon") {
+    iconButton = true;
+}
+if (design == "slot") {
+    isSlot = true;
+}
+const primaryDesign = `flex items-center justify-center w-128 max-w-md border-3 ${marginTop} ${marginBottom} border-primary bg-primary px-16 py-2 rounded text-white`;
+const secondaryDesign = `flex items-center justify-center w-128 max-w-md border-3 px-16 py-2 rounded ${marginTop} ${marginBottom} border-primary bg-hover-light dark:bg-hover-dark text-white`;
+const noBgDesign = `flex items-center justify-center w-128 max-w-md ${marginTop} ${marginBottom} bg-none px-16 py-2 rounded text-white`;
+const iconDesign = `flex items-center justify-center w-10 h-10 bg-none text-white ${marginTop} ${marginBottom} ${customClass}`;
+---
+{isLink && primaryButton && (
+<a href={href} class={primaryDesign}>
+    <Text text={text} type="title"/>
+</a>
+    )}
+{!isLink && primaryButton && (
+<button id={id} class={`${primaryDesign} cursor-pointer`} type={type} onClick={() => alert("Botón presionado")}>
+    <Text text={text} type="title"/>
+</button>
+    )}
+{isLink && secondaryButton && (
+<a href={href} class={secondaryDesign}>
+    <Text text={text} type="title"/>
+</a>
+    )}
+{!isLink && secondaryButton && (
+<button id={id} type={type} class={`${secondaryDesign} cursor-pointer`} onClick={() => alert("Botón presionado")}>
+    <Text text={text} type="title"/>
+</button>
+    )}
+{isLink && noBackgroundButton && (
+<a href={href} class={noBgDesign}>
+    <Text text={text} type="title"/>
+</a>
+    )}
+{!isLink && noBackgroundButton && (
+<button id={id} type={type} class={`${noBgDesign} cursor-pointer`} onClick={() => alert("Botón presionado")}>
+    <Text text={text} type="title"/>
+</button>
+    )}
+{isLink && iconButton && (
+<a href={href} class={iconDesign}>
+    <Icon class="transform translate-y-2.5" width='28' height='28' class={`${fill}`}/>
+</a>
+    )}
+{!isLink && iconButton && (
+<button id={id} type={type} class={`${iconDesign} cursor-pointer`} onClick={() => alert("Botón presionado")}>
+    <Icon class="transform translate-y-2.5" width='28' height='28' class={`${fill}`}/>
+</button>
+    )}
+{isSlot && (
+<a href={href}>
+    <slot/>
+</a>
+    )}
+{!isSlot  && (
+<button id={id} type={type} class={`cursor-pointer`} onClick={() => alert("Botón presionado")}>
+    <slot/>
+</button>
+    )}

@@ -2,6 +2,36 @@
 import '@fontsource-variable/montserrat';
 import '/src/styles/global.css';
 import {ClientRouter} from 'astro:transitions';
+import Text from "../components/text.astro";
+import Section from "../components/section.astro";
+import Button from "../components/button.astro";
+import SubSection from "../components/subSection.astro";
+import adardev_logo from "../assets/logos/adardev_logo.svg";
+import Mexico_flag from "../assets/flags/mexico_flag.svg";
+import Unitedkingdom_flag from "../assets/flags/unitedkingdom_flag.svg";
+import ToolTip from "../components/toolTip.astro";
+
+const {align, orientation} = Astro.props;
+let contentWraper = "";
+let layoutOrientation = "";
+if(orientation == "row"){
+    layoutOrientation = "flex-col"
+}
+if (orientation == "column"){
+    layoutOrientation = "flex-row"
+}
+if (orientation == "row") {
+    layoutOrientation = "flex-col"
+}
+if (align == "center") {
+    contentWraper = 'flex items-center justify-center ';
+}
+if (align == "left") {
+    contentWraper = 'flex items-start justify-start ';
+}
+if (align == "right") {
+    contentWraper = 'flex items-end justify-end ';
+}
 ---
 <html class="bg-background h-full flex flex-col scroll-smooth" lang="es">
 <head>
@@ -12,41 +42,42 @@ import {ClientRouter} from 'astro:transitions';
     <title>adardev</title>
     <ClientRouter/>
 </head>
-<body class="bg-background min-h-screen flex flex-col scroll-smooth">
-<header class="fixed top-0 left-0 w-full z-50 bg-background flex flex-row justify-between items-center px-[20rem] py-5">
-    <div>
-        <a href="/">
-            <img src="/src/assets/logos/adardev_logo.svg" class="w-12 h-12" alt="Imagen">
-        </a>
-    </div>
-    <div class="flex flex-row gap-12">
-        <a href="/">
-            <p class="text-xl font-bold !m-0 text-primary">Inicio</p>
-        </a>
-        <a href="#about">
-            <p class="text-xl font-bold !m-0 text-secondary">Sobre Mi</p>
-        </a>
-        <a href="#experience">
-            <p class="text-xl font-bold !m-0 text-secondary">Experiencia</p>
-        </a>
-        <a href="#projects">
-            <p class="text-xl font-bold !m-0 text-secondary">Proyectos</p>
-        </a>
-        <a href="#skills">
-            <p class="text-xl font-bold !m-0 text-secondary">Habilidades</p>
-        </a>
-    </div>
-    <a href="/" class="relative w-12 h-12 group  overflow-visible pt-3">
-        <div class="rounded-2xl p-3 transition duration-200 relative z-0">
-            <img src="/src/assets/flags/mexico_flag.svg" alt="Bandera de México" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"/>
-            <img src="/src/assets/flags/unitedkingdom_flag.svg" alt="Bandera de United Kingdom" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"/>
-        </div>
-        <p class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm font-semibold bg-backgroundPrimary text-[#15a4a2] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10">
-            Cambiar idioma
-        </p>
-    </a>
+<body class="flex flex-col scroll-smooth font-sans bg-background min-h-screen">
+<header>
+    <SubSection orientation="col" align="center">
+        <SubSection>
+            <Button design="icon" icon={adardev_logo} href="/"/>
+        </SubSection>
+        <SubSection extraClass="gap-12">
+            <Button design="slot" href="/">
+                <Text type="subTitle" text="Inicio"/>
+            </Button>
+            <Button design="slot" href="#about">
+                <Text type="subTitle" text="Sobre Mi"/>
+            </Button>
+            <Button design="slot" href="#experience">
+                <Text type="subTitle" text="Experiencia"/>
+            </Button>
+            <Button design="slot" href="#projects">
+                <Text type="subTitle" text="Proyectos"/>
+            </Button>
+            <Button design="slot" href="#skills">
+                <Text type="subTitle" text="Habilidades"/>
+            </Button>
+        </SubSection>
+        <ToolTip text="Cambiar idioma">
+            <a href="/" class="relative w-12 h-12 group  overflow-visible pt-3">
+                <div class="rounded-2xl p-3 transition duration-200 relative z-0">
+                    <Mexico_flag/>
+                    <Unitedkingdom_flag/>
+                    <img src="/src/assets/flags/mexico_flag.svg" alt="Bandera de México" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"/>
+                    <img src="/src/assets/flags/unitedkingdom_flag.svg" alt="Bandera de United Kingdom" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"/>
+                </div>
+            </a>
+        </ToolTip>
+    </SubSection>
 </header>
-<main class="pt-[5.5rem] flex flex-col mx-[20rem]">
+<main class="flex-grow p-12 pt-0 ${contentWraper} ${layoutOrientation}">
     <slot/>
 </main>
 </body>
