@@ -71,10 +71,6 @@ con sincronización en tiempo real.
 🔗 [Ver código](#) | 🌐 [Visitar sitio](#)
 -->
 
-# 🛠 Habilidades Técnicas
-
-  <img src="https://adardev.com/dist/screenshots/skills.jpg" alt="GitHub" width="750px"/>
-
 ## Lenguajes de Programación
 <div align="center">
   
