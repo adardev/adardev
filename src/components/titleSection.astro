@@ -1,9 +1,9 @@
 ---
-const { imageSrc, imageAlt, title } = Astro.props;
+const { imageSrc: Icon, title } = Astro.props;
 ---
 <div class="flex flex-row gap-10 mb-8 items-center">
     <div class="flex items-center justify-center">
-        <img src={imageSrc} alt={imageAlt} class="w-12" />
+        <Icon class="w-12" alt=""/>
     </div>
     <div>
         <p class="text-4xl font-semibold text-primary">{title}</p>

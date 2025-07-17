@@ -4,6 +4,7 @@ let marginTop = "mt-none";
 let marginBottom = "mb-none";
 let textSize = "";
 let textWeight = "";
+let color = "";
 if (mt == "true"){
     marginTop = "mt-4"
 }
@@ -12,19 +13,23 @@ if (mb == "true"){
 }
 if (type == "text") {
     textSize = "text-2xl";
-    textWeight = "font-medium"
+    textWeight = "font-medium";
+    color = "text-secondary";
 }
 if (type == "title") {
     textWeight = "font-semibold"
     textSize = "text-4xl";
+    color = "text-primary";
 }
 if (type == "subTitle") {
     textWeight = "font-bold"
     textSize = "text-xl";
+    color = "text-primary";
 }
 if (type == "mini") {
     textSize = "text-sm";
     textWeight = "font-light";
+    color = "text-secondary";
 }
 ---
-<p class={`${textSize} ${marginTop} ${marginBottom} ${textWeight} text-primary`}>{text}</p>
+<p class={`${textSize} ${marginTop} ${marginBottom} ${textWeight} ${color}`}>{text}</p>

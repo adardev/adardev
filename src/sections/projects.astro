@@ -2,9 +2,10 @@
 import TitleSection from "/src/components/titleSection.astro";
 import Section from "/src/components/section.astro";
 import Text from "/src/components/text.astro";
+import Code_icon from "../assets/icons/code_icon.svg";
 ---
 <Section id="projects" mt="true" mb="true">
-    <TitleSection imageSrc="/src/assets/icons/code_icon.svg" imageAlt="Ícono de perfil" title="Proyectos"/>
+    <TitleSection imageSrc={Code_icon} title="Proyectos"/>
     <div class="w-full max-w-[1400px] px-4 mx-auto flex flex-col gap-10 items-center justify-center">
         <div class="w-full bg-backgroundPrimary rounded-2xl p-5 flex flex-col md:flex-row gap-6 shadow-xl">
             <div class="w-full md:w-1/2 h-[250px] bg-white rounded-xl overflow-hidden flex items-center justify-center">

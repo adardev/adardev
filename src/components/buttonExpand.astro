@@ -1,9 +1,9 @@
 ---
-const { iconSrc, label, hoverClass, link, altIconSrc } = Astro.props;
+const { iconSrc: Icon, label, hoverClass, link, altIconSrc } = Astro.props;
 ---
 <div class={`group relative flex items-center bg-backgroundPrimary hover:brightness-150 rounded-2xl h-12 w-12 ${hoverClass} transition-all duration-300 overflow-hidden pl-3`}>
     <a href={link} class="block flex items-center">
-        <img src={iconSrc} class="w-6 h-8 transition-all duration-300" alt="Ícono"/>
+        <Icon class="w-6 h-8 transition-all duration-300" alt=""/>
         <p class="ml-3 text-sm font-semibold text-secondary w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
             {label}
         </p>

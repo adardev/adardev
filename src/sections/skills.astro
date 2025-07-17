@@ -2,9 +2,10 @@
 import TitleSection from "/src/components/titleSection.astro";
 import Section from "/src/components/section.astro";
 import Text from "/src/components/text.astro";
+import Portfolio_icon from "../assets/icons/portfolio_icon.svg";
 ---
 <Section id="skills" mt="true" mb="true">
-    <TitleSection imageSrc="/src/assets/icons/portfolio_icon.svg" imageAlt="Ícono de perfil" title="Habilidades"/>
+    <TitleSection imageSrc={Portfolio_icon} title="Habilidades"/>
     <div class="flex flex-row justify-center">
         <div class="flex flex-row bg-[#002a2e] m-8 mx-0 mt-0 p-4 gap-4 rounded-tl-3xl rounded-bl-3xl">
             <a class="group [perspective:1000px] cursor-pointer">
