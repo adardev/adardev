@@ -1,5 +1,4 @@
 ---
-import '@fontsource-variable/montserrat';
 import '/src/styles/global.css';
 import {ClientRouter} from 'astro:transitions';
 import Text from "../components/text.astro";
@@ -41,7 +40,7 @@ if (align == "right") {
     <title>adardev</title>
     <ClientRouter/>
 </head>
-<body class="flex flex-col scroll-smooth font-sans bg-background min-h-screen">
+<body class="flex flex-col scroll-smooth bg-background min-h-screen">
 <header>
     <Section orientation="row" align="center">
         <Section padding="false">
@@ -79,8 +78,3 @@ if (align == "right") {
 </main>
 </body>
 </html>
-<style>
-    body {
-        font-family: 'Montserrat Variable', sans-serif;
-    }
-</style>
