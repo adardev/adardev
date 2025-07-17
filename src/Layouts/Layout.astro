@@ -65,14 +65,12 @@ if (align == "right") {
             </Button>
         </Section>
         <ToolTip text="Cambiar idioma">
-            <a href="/" class="relative w-12 h-12 group  overflow-visible pt-3">
-                <div class="rounded-2xl p-3 transition duration-200 relative z-0">
-                    <Mexico_flag/>
-                    <Unitedkingdom_flag/>
-                    <img src="/src/assets/flags/mexico_flag.svg" alt="Bandera de México" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"/>
-                    <img src="/src/assets/flags/unitedkingdom_flag.svg" alt="Bandera de United Kingdom" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"/>
-                </div>
-            </a>
+            <Button href="/" customClass="relative w-12 h-12 group  overflow-visible pt-3">
+                <Section extraClass="rounded-2xl p-3 transition duration-200 relative z-0">
+                    <Mexico_flag class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"/>
+                    <Unitedkingdom_flag class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"/>
+                </Section>
+            </Button>
         </ToolTip>
     </Section>
 </header>
