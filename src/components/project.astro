@@ -1,0 +1,45 @@
+---
+const {name, logo, platforms, technologies, description, demoImg, href, repo}
+import Text from "../components/text.astro";
+import Section from "../components/section.astro";
+import Button from "../components/button.astro";
+import { Image } from 'astro:assets';
+import Github_logo from "../assets/logos/github_logo.svg";
+import Web_icon from "../assets/icons/web_icon.svg";
+---
+
+<div class="w-full bg-backgroundPrimary rounded-2xl p-5 flex flex-col md:flex-row gap-6 shadow-xl">
+    <div class="w-full md:w-1/2 h-[250px] bg-white rounded-xl overflow-hidden flex items-center justify-center">
+        <img src="/src/assets/demos/tekkure_demo.jpg" alt="Preview Densora" class="object-cover w-full h-full"/>
+    </div>
+    <div class="w-full md:w-1/2 flex flex-col gap-4 justify-between">
+        <div class="flex flex-row justify-between flex-wrap">
+            <div class="flex flex-row items-center gap-5">
+                <img src="/src/assets/logos/adardev_logo.svg" width="50px" alt="Logo"/>
+                <Text text="Spotify" type="title" />
+            </div>
+            <div class="flex flex-row mt-4 sm:mt-0">
+                <div class="flex flex-row gap-2">
+                    <img src="/src/assets/icons/web_icon.svg" width="30px" alt="Android"/>
+                </div>
+                <div class="w-[2px] h-auto rounded-2xl bg-white mx-4"></div>
+                <div class="flex flex-row gap-2">
+                    <img src="/src/assets/logos/astro_logo.svg" width="30px" alt="NodeJS"/>
+                    <img src="/src/assets/logos/tailwind_logo.svg" width="30px" alt="Tailwind"/>
+                </div>
+            </div>
+        </div>
+        <Text text="Aplicación que muestra estadísticas personalizadas sobre tus hábitos de escucha en Spotify y te conecta con personas con gustos musicales similares." type="text" />
+        <div class="flex justify-between">
+            <div class="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
+                <img src="/src/assets/logos/github_logo.svg" width="25px" alt="GitHub"/>
+                <Text text="Ver código" type="mini" />
+            </div>
+            <div class="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
+                <img src="/src/assets/icons/web_icon.svg" class="w-[25px]" alt="Sitio Web"/>
+                <Text text="Visitar" type="mini" />
+            </div>
+        </div>
+    </div>
+</div>
+
