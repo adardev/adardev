@@ -45,7 +45,7 @@ if (align == "right") {
         <Section padding="false">
             <Button design="icon" icon={adardev_logo} href="/"/>
         </Section>
-        <Section orientation="row" extraClass="gap-12" padding="false">
+        <Section orientation="row" extraClass="gap-4 sm:gap-12 flex-wrap items-center" padding="false">
             <Button design="slot" href="/">
                 <Text type="subTitle" text="Inicio"/>
             </Button>
@@ -63,8 +63,8 @@ if (align == "right") {
             </Button>
         </Section>
         <ToolTip text="Cambiar idioma">
-            <Button href="/" customClass="relative w-12 h-12 group  overflow-visible pt-3">
-                <Section extraClass="rounded-2xl p-3 transition duration-200 relative z-0">
+            <Button href="/" customClass="relative w-10 h-10 sm:w-12 sm:h-12 group overflow-visible pt-2 sm:pt-3">
+                <Section extraClass="rounded-2xl p-2 sm:p-3 transition duration-200 relative z-0">
                     <Mexico_flag class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"/>
                     <Unitedkingdom_flag class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"/>
                 </Section>
