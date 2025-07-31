@@ -1,9 +1,39 @@
 ---
-import TitleSection from "/src/components/titleSection.astro";
-import Section from "/src/components/section.astro";
-import Text from "/src/components/text.astro";
+import TitleSection from "../components/titleSection.astro";
+import Section from "../components/section.astro";
+import Text from "../components/text.astro";
 import Portfolio_icon from "../assets/icons/portfolio_icon.svg";
-import { Image } from 'astro:assets';
+import Cpp_logo from "../assets/logos/cpp_logo.svg";
+import Csharp from "../assets/logos/csharp_logo.svg";
+import Python from "../assets/logos/python_logo.svg";
+import Php_logo from "../assets/logos/php_logo.svg";
+import Angular_logo from "../assets/logos/angular_logo.svg";
+import Java_logo from "../assets/logos/java_logo.svg";
+import Docker_logo from "../assets/logos/docker_logo.svg";
+import Xd_logo from "../assets/logos/xd_logo.svg";
+import Photoshop_logo from "../assets/logos/photoshop_logo.svg";
+import Ilustrator_logo from "../assets/logos/ilustrator_logo.svg";
+import Notion_logo from "../assets/logos/notion_logo.svg";
+import Dart_logo from "../assets/logos/dart_logo.svg";
+import Astro_logo from "../assets/logos/astro_logo.svg";
+import React_logo from "../assets/logos/react_logo.svg";
+import Nodejs_logo from "../assets/logos/nodejs_logo.svg";
+import Electron_logo from "../assets/logos/electron_logo.svg";
+import Kotlin_logo from "../assets/logos/kotlin_logo.svg";
+import Flutter_logo from "../assets/logos/flutter_logo.svg";
+import Django_logo from "../assets/logos/django_logo.svg";
+import Html5_logo from "../assets/logos/html5_logo.svg";
+import Css3_logo from "../assets/logos/css3_logo.svg";
+import Tailwind_logo from "../assets/logos/tailwind_logo.svg";
+import Bootstrap_logo from "../assets/logos/bootstrap_logo.svg";
+import Sql_logo from "../assets/logos/sql_logo.svg";
+import Supabase_logo from "../assets/logos/supabase_logo.svg";
+import Firebase_logo from "../assets/logos/firebase_logo.svg";
+import Mongodb_logo from "../assets/logos/mongodb_logo.svg";
+import Figma_logo from "../assets/logos/figma_logo.svg";
+import Mockflow_logo from "../assets/logos/mockflow_logo.svg";
+import Git_logo from "../assets/logos/git_logo.svg";
+import Js_logo from "../assets/logos/js_logo.svg";
 ---
 <Section id="skills" mt="true" mb="true">
     <TitleSection imageSrc={Portfolio_icon} title="Habilidades"/>
@@ -11,9 +41,8 @@ import { Image } from 'astro:assets';
         <div class="flex flex-row bg-[#002a2e] m-8 mx-0 mt-0 p-4 gap-4 rounded-tl-3xl rounded-bl-3xl">
             <a class="group [perspective:1000px] cursor-pointer">
                 <div class="relative w-24 h-24  transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl  p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/cpp_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Cpp_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-backgroundSecondary rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -25,11 +54,9 @@ import { Image } from 'astro:assets';
         <div class="flex flex-row bg-[#002a2e] m-8 mx-0 mt-0 p-4 gap-4 ">
             <a class="group [perspective:1000px] cursor-pointer">
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/csharp_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Csharp class="w-16 h-16" />
                     </div>
-
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
                         <Text text="C#" type="text" />
                     </div>
@@ -41,7 +68,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/python_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Python class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -55,7 +82,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/js_logo.svg" class="w-16 h-16 " alt="Angular Logo"/>
+                        <Js_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -69,7 +96,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/php_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Php_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -83,7 +110,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/dart_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Dart_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -99,7 +126,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/astro_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Astro_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -113,7 +140,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/react_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <React_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -127,7 +154,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/nodejs_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Nodejs_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -141,7 +168,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/electron_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Electron_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -150,12 +177,12 @@ import { Image } from 'astro:assets';
                 </div>
             </a>
         </div>
-        <div class="flex flex-row bg-[#002a2e] m-8 p-4 mr-0 my-0 gap-4 rounded-bl-3xl">
+        <div class="flex flex-row bg-[#002a2e] m-8 mx-0 my-0 p-4 gap-4 rounded-bl-3xl">
             <a class="group [perspective:1000px] cursor-pointer">
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/kotlin_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Kotlin_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -164,12 +191,12 @@ import { Image } from 'astro:assets';
                 </div>
             </a>
         </div>
-        <div class="flex flex-row bg-[#002a2e] m-8 p-4 ml-0 my-0 gap-4 rounded-br-3xl">
+        <div class="flex flex-row bg-[#002a2e] m-8 p-4 mr-0 my-0 gap-4 rounded-br-3xl">
             <a class="group [perspective:1000px] cursor-pointer">
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/java_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Java_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -185,7 +212,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/flutter_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Flutter_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -199,7 +226,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/django_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Django_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -213,7 +240,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/html5_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Html5_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -227,7 +254,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/css3_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Css3_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -241,7 +268,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/tailwind_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Tailwind_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -255,7 +282,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/bootstrap_logo.svg" class="w-16 " alt="Angular Logo"/>
+                        <Bootstrap_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -271,7 +298,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/sql_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Sql_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -285,7 +312,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/supabase_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Supabase_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -299,7 +326,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/firebase_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Firebase_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -313,7 +340,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/mongodb_logo.svg" class="h-16" alt="Angular Logo"/>
+                        <Mongodb_logo class="h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -327,7 +354,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/figma_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Figma_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -341,7 +368,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/mockflow_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Mockflow_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -357,7 +384,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/git_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Git_logo class="w-16 h-16" />
                     </div>
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
                         <Text text="Git" type="text" />
@@ -370,7 +397,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/docker_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Docker_logo class="w-16 h-16" />
                     </div>
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
                         <Text text="Docker" type="text" />
@@ -383,7 +410,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/notion_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Notion_logo class="w-16 h-16" />
                     </div>
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
                         <Text text="Notion" type="text" />
@@ -396,7 +423,7 @@ import { Image } from 'astro:assets';
                 <div class="relative w-24 h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/ilustrator_logo.svg" class="w-16 h-16" alt="Angular Logo"/>
+                        <Ilustrator_logo class="w-16 h-16" />
                     </div>
 
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -409,7 +436,7 @@ import { Image } from 'astro:assets';
             <a class="group [perspective:1000px] cursor-pointer">
                 <div class="relative w-20 h-20 md:w-24 md:h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-3 md:p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/photoshop_logo.svg" class="w-12 h-12 md:w-16 md:h-16" alt="Photoshop Logo"/>
+                        <Photoshop_logo class="w-12 h-12 md:w-16 md:h-16" />
                     </div>
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-3 md:p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
                         <Text text="Photoshop" type="text" />
@@ -421,7 +448,7 @@ import { Image } from 'astro:assets';
             <a class="group [perspective:1000px] cursor-pointer">
                 <div class="relative w-20 h-20 md:w-24 md:h-24 transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-3 md:p-4 flex items-center justify-center [backface-visibility:hidden]">
-                        <img src="/src/assets/logos/xd_logo.svg" class="w-12 h-12 md:w-16 md:h-16" alt="XD Logo"/>
+                        <Xd_logo class="w-12 h-12 md:w-16 md:h-16" />
                     </div>
                     <div class="absolute inset-0 bg-[#003b41] rounded-2xl p-3 md:p-4 flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
                         <Text text="XD" type="text" />
