@@ -1,7 +1,6 @@
 ---
 import Button from "../components/button.astro";
 const {text, icons = [], ids = []} = Astro.props;
-
 const hasTextTooltip = text && text.trim() !== "";
 const hasIconsTooltip = icons.length > 0 && ids.length === icons.length;
 ---
