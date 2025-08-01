@@ -1,11 +1,12 @@
 ---
 const { imageSrc: Icon, title } = Astro.props;
+import Section from "./section.astro";
 ---
-<div class="flex flex-row gap-10 mb-8 items-center">
-    <div class="flex items-center justify-center">
-        <Icon class="w-12" alt=""/>
-    </div>
-    <div>
+<Section extraClass="flex flex-row gap-10 mb-8 items-center" padding="false">
+    <Section extraClass="flex items-center justify-center" padding="false">
+        <Icon class="w-12 transition-all duration-300 fill-secondary"/>
+    </Section>
+    <Section padding="false">
         <p class="text-4xl font-semibold text-primary">{title}</p>
-    </div>
-</div>
+    </Section>
+</Section>
