@@ -21,7 +21,7 @@ if (orientation == "row") {
     layoutOrientation = "flex-col"
 }
 if (align == "center") {
-    contentWraper = 'flex items-center justify-center ';
+    contentWraper = 'flex items-center justify-center';
 }
 if (align == "left") {
     contentWraper = 'flex items-start justify-start ';
@@ -72,7 +72,7 @@ if (align == "right") {
         </ToolTip>
     </Section>
 </header>
-<main class="flex-grow p-12 pt-0 ${contentWraper} ${layoutOrientation}">
+<main class={`flex-grow p-12 pt-0 ${contentWraper} ${layoutOrientation}`}>
     <slot/>
 </main>
 </body>
