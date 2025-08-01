@@ -2,26 +2,26 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.1 37.65">
   <defs>
     <style>
-      .cls-1 {
+      .figma-1 {
         fill: #8162aa;
       }
-      .cls-2 {
+      .figma-2 {
         fill: #f37264;
       }
-      .cls-3 {
+      .figma-3 {
         fill: #f05023;
       }
-      .cls-4 {
+      .figma-4 {
         fill: #48ba7f;
       }
-      .cls-5 {
+      .figma-5 {
         fill: #47b8e9;
       }
     </style>
   </defs>
-  <path id="path0_fill" data-name="path0 fill" class="cls-4" d="M6.27,37.65c3.46,0,6.27-2.81,6.27-6.27v-6.27h-6.27c-3.46,0-6.27,2.81-6.27,6.27s2.81,6.27,6.27,6.27Z"/>
-  <path id="path1_fill" data-name="path1 fill" class="cls-1" d="M0,18.82c0-3.46,2.81-6.27,6.27-6.27h6.27v12.55h-6.27c-3.46,0-6.27-2.81-6.27-6.27Z"/>
-  <path id="path1_fill-2" data-name="path1 fill" class="cls-3" d="M0,6.27C0,2.81,2.81,0,6.27,0h6.27v12.55h-6.27c-3.46,0-6.27-2.81-6.27-6.27Z"/>
-  <path id="path2_fill" data-name="path2 fill" class="cls-2" d="M12.55,0h6.27c3.46,0,6.27,2.81,6.27,6.27s-2.81,6.27-6.27,6.27h-6.27V0Z"/>
-  <path id="path3_fill" data-name="path3 fill" class="cls-5" d="M25.1,18.82c0,3.46-2.81,6.27-6.27,6.27s-6.27-2.81-6.27-6.27,2.81-6.27,6.27-6.27,6.27,2.81,6.27,6.27Z"/>
+  <path id="path0_fill" data-name="path0 fill" class="figma-4" d="M6.27,37.65c3.46,0,6.27-2.81,6.27-6.27v-6.27h-6.27c-3.46,0-6.27,2.81-6.27,6.27s2.81,6.27,6.27,6.27Z"/>
+  <path id="path1_fill" data-name="path1 fill" class="figma-1" d="M0,18.82c0-3.46,2.81-6.27,6.27-6.27h6.27v12.55h-6.27c-3.46,0-6.27-2.81-6.27-6.27Z"/>
+  <path id="path1_fill-2" data-name="path1 fill" class="figma-3" d="M0,6.27C0,2.81,2.81,0,6.27,0h6.27v12.55h-6.27c-3.46,0-6.27-2.81-6.27-6.27Z"/>
+  <path id="path2_fill" data-name="path2 fill" class="figma-2" d="M12.55,0h6.27c3.46,0,6.27,2.81,6.27,6.27s-2.81,6.27-6.27,6.27h-6.27V0Z"/>
+  <path id="path3_fill" data-name="path3 fill" class="figma-5" d="M25.1,18.82c0,3.46-2.81,6.27-6.27,6.27s-6.27-2.81-6.27-6.27,2.81-6.27,6.27-6.27,6.27,2.81,6.27,6.27Z"/>
 </svg>
