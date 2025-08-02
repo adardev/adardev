@@ -1,11 +1,11 @@
 ---
-import Text from "./text.astro";
 const {iconSrc: Icon, label, link} = Astro.props;
-import Section from "../components/section.astro";
 ---
 <a href={link} class="relative group">
-    <Section extraClass="bg-[#002a2e] rounded-2xl p-3 hover:brightness-150 transition duration-200">
+    <div class="bg-[#002a2e] rounded-2xl p-3 hover:brightness-150 transition duration-200">
         <Icon class="w-6 h-8 transition-all duration-300 fill-secondary" alt=""/>
-    </Section>
-    <Text text={label} type="mini" extraClass="absolute -bottom-2 left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm font-semibold bg-[#00393e] text-[#0fa79c] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10"/>
+    </div>
+    <p class="absolute -bottom-2 left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm font-semibold bg-[#00393e] text-[#0fa79c] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10">
+        {label}
+    </p>
 </a>
