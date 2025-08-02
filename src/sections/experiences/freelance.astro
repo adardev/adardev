@@ -1,5 +1,6 @@
 ---
 import Section from "../../components/section.astro";
+import Text from "../../components/text.astro";
 ---
 <Section extraClass="relative pl-16 group" padding="false">
     <Section extraClass="absolute left-[-1.6rem] top-[0.5rem] z-20" padding="false">
@@ -9,13 +10,9 @@ import Section from "../../components/section.astro";
     </Section>
     <Section extraClass="flex flex-row justify-between" padding="false">
         <Section padding="false">
-            <p class="text-2xl font-semibold text-secondary">Freelance</p>
-            <p class="text-lg font-medium text-secondary">Desarrollo Web y movil</p>
-            <p class="mt-2 text-neutral">
-                Durante todos estos años he trabajado en proyectos escolares y proyectos personal
-                para seguir aprendiendo y seguir desarrollando mis habilidades, muchas de estas eran webs o aplicaciones
-                móviles en los de que me encargaba del desarrollo por completo.
-            </p>
+            <Text text="Freelance" type="title" />
+            <Text text="Desarrollo Web y movil" type="text" />
+            <Text text="Durante todos estos años he trabajado en proyectos escolares y proyectos personal para seguir aprendiendo y seguir desarrollando mis habilidades, muchas de estas eran webs o aplicaciones móviles en los de que me encargaba del desarrollo por completo." mt="true" type="mini" />
         </Section>
         <Section extraClass="w-48 h-16" padding="false">
         </Section>

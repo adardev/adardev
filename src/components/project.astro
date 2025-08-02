@@ -1,10 +1,7 @@
 ---
-const {name, logo, platforms, technologies, description, demoImg, href, repo} = Astro.props;
 import Text from "../components/text.astro";
 import { Image } from 'astro:assets';
 import Section from "../components/section.astro";
-import Button from "../components/button.astro";
-import { Image } from 'astro:assets';
 import Github_logo from "../assets/logos/github_logo.svg";
 import Web_icon from "../assets/icons/web_icon.svg";
 import Astro_logo from "../assets/logos/astro_logo.svg";
@@ -12,39 +9,37 @@ import Tailwind_logo from "../assets/logos/tailwind_logo.svg";
 import Adardev_logo from "../assets/logos/adardev_logo.svg";
 import Tekkure_demo from "../assets/demos/tekkure_demo.jpg";
 ---
-
-<div class="w-full bg-backgroundPrimary rounded-2xl p-5 flex flex-col md:flex-row gap-6 shadow-xl">
-    <div class="w-full md:w-1/2 h-[250px] bg-white rounded-xl overflow-hidden flex items-center justify-center">
+<Section extraClass="w-full bg-backgroundPrimary rounded-2xl p-5 flex flex-col md:flex-row gap-6 shadow-xl">
+    <Section extraClass="w-full md:w-1/2 h-[250px] bg-white rounded-xl overflow-hidden flex items-center justify-center">
         <Image src={Tekkure_demo} alt="Preview Densora" class="object-cover w-full h-full"/>
-    </div>
-    <div class="w-full md:w-1/2 flex flex-col gap-4 justify-between">
-        <div class="flex flex-row justify-between flex-wrap">
-            <div class="flex flex-row items-center gap-5">
+    </Section>
+    <Section extraClass="w-full md:w-1/2 flex flex-col gap-4 justify-between">
+        <Section extraClass="flex flex-row justify-between flex-wrap">
+            <Section extraClass="flex flex-row items-center gap-5">
                 <Adardev_logo width="50px"/>
                 <Text text="Spotify" type="title" />
-            </div>
-            <div class="flex flex-row mt-4 sm:mt-0">
-                <div class="flex flex-row gap-2">
+            </Section>
+            <Section extraClass="flex flex-row mt-4 sm:mt-0">
+                <Section extraClass="flex flex-row gap-2">
                     <Web_icon width="30px"/>
-                </div>
-                <div class="w-[2px] h-auto rounded-2xl bg-white mx-4"></div>
-                <div class="flex flex-row gap-2">
+                </Section>
+                <Section extraClass="w-[2px] h-auto rounded-2xl bg-white mx-4"></Section>
+                <Section extraClass="flex flex-row gap-2">
                     <Astro_logo width="30px"/>
                     <Tailwind_logo width="30px"/>
-                </div>
-            </div>
-        </div>
+                </Section>
+            </Section>
+        </Section>
         <Text text="Aplicación que muestra estadísticas personalizadas sobre tus hábitos de escucha en Spotify y te conecta con personas con gustos musicales similares." type="text" />
-        <div class="flex justify-between">
-            <div class="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
+        <Section extraClass="flex justify-between">
+            <Section extraClass="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
                 <Github_logo width="25px"/>
                 <Text text="Ver código" type="mini" />
-            </div>
-            <div class="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
+            </Section>
+            <Section extraClass="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors">
                 <Web_icon width="25px"/>
                 <Text text="Visitar" type="mini" />
-            </div>
-        </div>
-    </div>
-</div>
-
+            </Section>
+        </Section>
+    </Section>
+</Section>

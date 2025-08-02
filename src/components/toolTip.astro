@@ -1,21 +1,21 @@
 ---
 import Button from "../components/button.astro";
+import Section from "../components/section.astro";
+import Text from "../components/text.astro";
 const {text, icons = [], ids = []} = Astro.props;
 const hasTextTooltip = text && text.trim() !== "";
 const hasIconsTooltip = icons.length > 0 && ids.length === icons.length;
 ---
-<div class="relative w-auto max-w-md group block">
+<Section extraClass="relative w-auto max-w-md group block p-0 bg-transparent shadow-none rounded-none">
     <slot/>
     {hasTextTooltip && (
-            <p class="absolute -bottom-2 left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm font-semibold bg-[#00393e] text-[#0fa79c] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10 pointer-events-none">
-                {text}
-            </p>
+        <Text text={text} type="mini" extraClass="absolute -bottom-2 left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm font-semibold bg-[#00393e] text-[#0fa79c] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10 pointer-events-none" />
     )}
     {!hasTextTooltip && hasIconsTooltip && (
-            <div class="absolute -bottom-2 left-1/4 -translate-x-1/4 mt-1 px-2 py-1 bg-[#00393e] text-[#0fa79c] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10 flex gap-2 items-center">
-                {icons.map((IconComponent, index) => (
-                        <Button key={index} design="icon" icon={IconComponent} id={ids[index]}/>
-                ))}
-            </div>
+        <Section extraClass="absolute -bottom-2 left-1/4 -translate-x-1/4 mt-1 px-2 py-1 bg-[#00393e] text-[#0fa79c] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10 flex gap-2 items-center">
+            {icons.map((IconComponent, index) => (
+                <Button key={index} design="icon" icon={IconComponent} id={ids[index]}/>
+            ))}
+        </Section>
     )}
-</div>
+</Section>
