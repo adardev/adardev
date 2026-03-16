@@ -1,6 +1,19 @@
 @import "tailwindcss";
-@import "@fontsource-variable/montserrat";
+@import "@fontsource/lato/300.css";
+@import "@fontsource/lato/400.css";
+@import "@fontsource/lato/700.css";
+@import "@fontsource/lato/900.css";
+
 @theme {
+    --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    --font-weight-semibold: 700;
+    /* Lato doesn't have 600, mapping to 700 */
+    --font-weight-medium: 400;
+    /* Lato doesn't have 500, mapping to 400 */
     --color-accent: #18cda9;
     --color-accent-hover: #15b999;
     --color-title: #18cda9;
@@ -12,31 +25,38 @@
     --color-border-accent: rgba(24, 205, 169, 0.2);
     --shadow-primary: 0 4px 16px rgba(24, 205, 169, 0.1);
 }
+
 @utility flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 @utility scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+
     &::-webkit-scrollbar {
         display: none;
     }
 }
+
 @utility icon-reveal {
     filter: grayscale(100%);
     transition: all 0.2s;
 }
+
 :where(.group):hover .icon-reveal {
     filter: grayscale(0%);
 }
+
 @utility glass-card {
     background-color: color-mix(in srgb, var(--color-bg-card) 80%, transparent);
     backdrop-filter: blur(12px);
     border: 1px solid var(--color-border-accent);
     border-radius: 1rem;
 }
+
 @utility nav-pill {
     position: fixed;
     z-index: 100;
@@ -48,17 +68,20 @@
     height: 50px;
     aspect-ratio: 1;
 }
+
 @media (min-width: 640px) {
     .nav-pill {
         top: 1rem;
         height: 52px;
     }
 }
+
 @media (min-width: 768px) {
     .nav-pill {
         height: 56px;
     }
 }
+
 @utility nav-btn {
     display: inline-flex;
     align-items: center;
@@ -70,33 +93,36 @@
     width: 40px;
     height: 40px;
 }
+
 @media (min-width: 640px) {
     .nav-btn {
         width: 42px;
         height: 42px;
     }
 }
+
 .nav-btn:hover {
     background-color: var(--color-bg-card-hover);
 }
+
 @utility nav-active {
     background-color: var(--color-accent);
     color: #0f1614;
     box-shadow: 0 4px 12px rgba(24, 205, 169, 0.3);
 }
+
 @utility tooltip-float {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     white-space: nowrap;
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s;
-    z-index: 20;
+    transition: all 0.2s;
+    z-index: 110;
 }
+
 :where(.group):hover .tooltip-float {
     opacity: 1;
 }
+
 @utility skill-face {
     position: absolute;
     inset: 0;
@@ -107,9 +133,11 @@
     border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
     backface-visibility: hidden;
 }
+
 @utility btn-base {
     @apply flex-center transition-all duration-200 font-medium rounded-xl;
 }
+
 @utility card-base {
     background-color: var(--color-bg-card);
     border-radius: 1.5rem;
@@ -117,12 +145,15 @@
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     transition: all 0.25s;
 }
+
 @layer base {
     body {
+        font-family: var(--font-sans);
         background-color: var(--color-bg-dark);
         color: var(--color-body);
         @apply transition-colors duration-300;
     }
+
     ::selection {
         background-color: var(--color-accent);
         color: #0f1614;

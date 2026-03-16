@@ -4,7 +4,7 @@ const { name, icon, i18nExperienceKey } = Astro.props;
 ---
 
 <div class="skill-card-container group [perspective:1000px] cursor-pointer h-24 w-24 sm:h-32 sm:w-32 mx-auto antialiased opacity-0 scale-90 transition-all duration-700">
-    <div class="skill-card-inner relative w-full h-full transition-transform duration-[600ms] ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+    <div class="skill-card-inner relative w-full h-full transition-transform duration-[600ms] ease-out [transform-style:preserve-3d] group-[.is-center]:[transform:rotateY(180deg)]">
         <div class="absolute inset-0 w-full h-full rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm p-4 [transform:rotateY(0deg)] [backface-visibility:hidden]">
             <img src={icon} class="w-10 h-10 sm:w-16 sm:h-16" alt="" />
         </div>
@@ -35,7 +35,31 @@ const { name, icon, i18nExperienceKey } = Astro.props;
         { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
     );
 
-    document.querySelectorAll(".skill-card-container").forEach((card) => {
+    const cards = document.querySelectorAll(".skill-card-container");
+
+    cards.forEach((card) => {
         observer.observe(card);
     });
+
+    function checkFocus() {
+        const centerY = window.innerHeight / 2;
+        const threshold = window.innerHeight * 0.25;
+
+        cards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            const cardCenterY = rect.top + rect.height / 2;
+
+            if (Math.abs(centerY - cardCenterY) < threshold) {
+                card.classList.add("is-center");
+            } else {
+                card.classList.remove("is-center");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkFocus, { passive: true });
+    window.addEventListener("resize", checkFocus, { passive: true });
+
+    // Initial check
+    setTimeout(checkFocus, 100);
 </script>

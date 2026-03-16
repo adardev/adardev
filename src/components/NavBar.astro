@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import NavIcon from "./NavIcon.astro";
 import Text from "./text.astro";
+import Tooltip from "./Tooltip.astro";
 import mexico_flag from "../assets/flags/mexico_flag.svg";
 import uk_flag from "../assets/flags/unitedkingdom_flag.svg";
 
@@ -27,7 +28,7 @@ const navLinks = [
                 <a href={link.href} class="nav-item nav-btn group relative" aria-label={link.name} data-i18n-aria-label={link.i18n}>
                     <Text as="span" extraClass="sr-only" i18nKey={link.i18n} text={link.name} />
                     <NavIcon icon={link.icon} />
-                    <Text as="span" type="tooltip" extraClass="tooltip-float -bottom-10 bg-bg-card px-2 py-1 rounded hidden md:block" i18nKey={link.i18n} text={link.name} />
+                    <Tooltip label={link.name} i18nKey={link.i18n} position="bottom" />
                 </a>
             ))
         }

@@ -17,10 +17,6 @@ const { title, description } = Astro.props;
         <title>{title || "adardev | Portfolio"}</title>
         <meta name="description" content={description || "Portfolio de adardev - Desarrollador Web y Movil"} />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
-
         <ClientRouter />
     </head>
 
@@ -30,10 +26,6 @@ const { title, description } = Astro.props;
         <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <slot />
         </main>
-
-        <footer class="py-10 text-center opacity-50 text-sm">
-            <Text as="p" type="mini" text={`&copy; ${new Date().getFullYear()} adardev. Casi todos los derechos reservados.`} />
-        </footer>
 
         <script>
             import { initI18n } from "../scripts/i18n.js";

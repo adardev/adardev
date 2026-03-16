@@ -41,8 +41,8 @@ const { title, description, image, logo, tech = [], github, live, platform, titl
         <div class="flex items-center gap-2 mt-auto">
             {
                 github && (
-                    <a href={github} target="_blank" rel="noopener noreferrer" class="flex-1 btn-base bg-bg-card-hover px-3 py-2 hover:brightness-125 group/btn text-body hover:text-accent transition-colors duration-300 gap-2">
-                        <img src="/logos/github_logo.svg" width="16" height="16" alt="" />
+                    <a href={github} target="_blank" rel="noopener noreferrer" class="flex-1 btn-base bg-bg-card-hover px-3 py-2 group/btn text-body transition-colors duration-300 gap-2 font-medium">
+                        <div class="w-4 h-4" style={`-webkit-mask-image: url('/logos/github_logo.svg'); mask-image: url('/logos/github_logo.svg'); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true" />
                         <Text as="span" type="badge" i18nKey="btnCode" text="Código" />
                     </a>
                 )

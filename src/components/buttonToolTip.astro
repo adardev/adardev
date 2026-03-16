@@ -1,15 +1,13 @@
 ---
 const { iconSrc, label, link, i18nKey } = Astro.props;
 import Text from "./text.astro";
+import Tooltip from "./Tooltip.astro";
 ---
 
 <a href={link} class="relative group inline-block cursor-pointer" aria-label={label} data-i18n-aria-label={i18nKey} target="_blank" rel="noopener noreferrer">
-    <div class="w-12 h-12 glass-card @flex-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-primary group-hover:bg-accent/10 text-body group-hover:text-accent">
+    <div class="w-12 h-12 glass-card flex-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-primary group-hover:bg-accent/10 text-body group-hover:text-accent">
         <div class="w-6 h-6 transition-all duration-300" style={`-webkit-mask-image: url(${iconSrc}); mask-image: url(${iconSrc}); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true"></div>
     </div>
 
-    <div class="tooltip-float bottom-full mb-3 px-3 py-1.5 min-w-max bg-bg-card rounded-lg shadow-xl invisible group-hover:visible border border-accent/20">
-        <Text as="span" type="tooltip" i18nKey={i18nKey} text={label} />
-        <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-bg-card border-b border-r border-accent/20 transform rotate-45"></div>
-    </div>
+    <Tooltip label={label} i18nKey={i18nKey} position="top" />
 </a>
