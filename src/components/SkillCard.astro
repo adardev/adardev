@@ -3,13 +3,13 @@ import Text from "./text.astro";
 const { name, icon, i18nExperienceKey } = Astro.props;
 ---
 
-<div class="skill-card-container [perspective:1000px] cursor-pointer h-24 w-24 sm:h-32 sm:w-32 mx-auto antialiased">
-    <div class="skill-card-inner relative w-full h-full transition-transform duration-[600ms] ease-out [transform-style:preserve-3d]">
-        <div class="skill-face p-4 [transform:rotateY(0deg)]">
-            <img src={icon} class="w-10 h-10 sm:w-16 sm:h-16 icon-reveal" alt="" />
+<div class="skill-card-container group [perspective:1000px] cursor-pointer h-24 w-24 sm:h-32 sm:w-32 mx-auto antialiased opacity-0 scale-90 transition-all duration-700">
+    <div class="skill-card-inner relative w-full h-full transition-transform duration-[600ms] ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div class="absolute inset-0 w-full h-full rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm p-4 [transform:rotateY(0deg)] [backface-visibility:hidden]">
+            <img src={icon} class="w-10 h-10 sm:w-16 sm:h-16" alt="" />
         </div>
 
-        <div class="skill-face flex-col p-2 sm:p-3 overflow-hidden [transform:rotateY(180deg)]">
+        <div class="absolute inset-0 w-full h-full rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm flex-col p-2 sm:p-3 overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
             <Text text={name} type="mini" extraClass="!text-center !font-semibold !text-xs sm:!text-sm mb-1 text-accent" />
 
             <div class="w-full overflow-y-auto scrollbar-hide">
@@ -23,19 +23,16 @@ const { name, icon, i18nExperienceKey } = Astro.props;
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
-                const innerCard = entry.target.querySelector(".skill-card-inner");
-                if (!innerCard) return;
                 if (entry.isIntersecting) {
                     const delay = Math.random() * 200;
                     setTimeout(() => {
-                        innerCard.classList.add("[transform:rotateY(180deg)]");
+                        entry.target.classList.remove("opacity-0", "scale-90");
+                        entry.target.classList.add("opacity-100", "scale-100");
                     }, delay);
-                } else {
-                    innerCard.classList.remove("[transform:rotateY(180deg)]");
                 }
             });
         },
-        { threshold: 0.1, rootMargin: "-25% 0px -25% 0px" },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
     );
 
     document.querySelectorAll(".skill-card-container").forEach((card) => {

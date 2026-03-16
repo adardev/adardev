@@ -4,8 +4,8 @@ import Text from "./text.astro";
 ---
 
 <a href={link} class="relative group inline-block cursor-pointer" aria-label={label} data-i18n-aria-label={i18nKey} target="_blank" rel="noopener noreferrer">
-    <div class="w-12 h-12 glass-card @flex-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-primary group-hover:bg-accent/10">
-        <img src={iconSrc} class="w-6 h-6 transition-all duration-300 group-hover:text-accent" alt="" />
+    <div class="w-12 h-12 glass-card @flex-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-primary group-hover:bg-accent/10 text-body group-hover:text-accent">
+        <div class="w-6 h-6 transition-all duration-300" style={`-webkit-mask-image: url(${iconSrc}); mask-image: url(${iconSrc}); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true"></div>
     </div>
 
     <div class="tooltip-float bottom-full mb-3 px-3 py-1.5 min-w-max bg-bg-card rounded-lg shadow-xl invisible group-hover:visible border border-accent/20">
