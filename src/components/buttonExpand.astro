@@ -1,39 +1,69 @@
 ---
-const { iconSrc: Icon, label, hoverClass, link, altIconSrc } = Astro.props;
+import Text from "./text.astro";
+const { iconSrc, label, hoverClass, link, altIconSrc, i18nKey } = Astro.props;
 ---
-<div class={`group relative flex items-center bg-backgroundPrimary hover:brightness-150 rounded-2xl h-12 w-12 ${hoverClass} transition-all duration-300 overflow-hidden pl-3`}>
-    <a href={link} class="block flex items-center">
-        <Icon class="w-6 h-8 transition-all duration-300 fill-secondary" alt=""/>
-        <p class="ml-3 text-sm font-semibold text-secondary w-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-            {label}
-        </p>
+
+<div class={`group relative flex items-center glass-card h-12 w-12 hover:w-[var(--expanded-width)] [&.is-expanded]:w-[var(--expanded-width)] transition-[width] duration-300 overflow-hidden pl-3 pr-4 shadow-sm hover:shadow-primary ${hoverClass}`} data-expandable>
+    <a href={link} class="flex items-center cursor-pointer min-w-max" target="_blank" rel="noopener noreferrer">
+        <img src={iconSrc} class="w-6 h-6 transition-all duration-300 group-hover:text-accent group-[.is-expanded]:text-accent min-w-[1.5rem]" alt="" />
+        <Text as="p" extraClass="ml-3 font-semibold transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-[.is-expanded]:opacity-100 whitespace-nowrap" i18nKey={i18nKey} text={label} />
     </a>
-    {altIconSrc && (
-            <div role="button" class="w-6 h-8 transition-all duration-300 ml-3 cursor-pointer relative" id="copy-icon">
-                <img src={altIconSrc} class="w-6 h-8 transition-all duration-300" alt="Icono alternativo"/>
-                <span id="tooltip" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black text-white text-xs rounded opacity-0 pointer-events-none transition-opacity duration-300">Copiado al portapapeles</span>
+
+    {
+        altIconSrc && (
+            <div role="button" class="w-6 h-6 transition-all duration-300 ml-3 cursor-pointer relative min-w-[1.5rem]" id="copy-icon">
+                <img src={altIconSrc} class="w-6 h-6 transition-all duration-300" alt="" />
+                <Text as="span" id="tooltip" type="tooltip" extraClass="tooltip-float bottom-full mb-2 bg-bg-card border border-accent/20 px-2 py-1 rounded shadow-lg z-50" text="Copiado!" />
             </div>
-    )}
-</div>
-<script>
-    if (typeof window !== "undefined") {
-        const copyIcon = document.getElementById("copy-icon");
-        const tooltip = document.getElementById("tooltip");
-        if (copyIcon) {
-            copyIcon.addEventListener("click", function() {
-                const label = `adarlopz.dev@gmail.com`; // Este es el texto que se va a copiar al portapapeles
-                navigator.clipboard.writeText(label).then(() => {
-                    console.log('Texto copiado al portapapeles');
-                    tooltip.classList.remove("opacity-0");
-                    tooltip.classList.add("opacity-100");
-                    setTimeout(() => {
-                        tooltip.classList.remove("opacity-100");
-                        tooltip.classList.add("opacity-0");
-                    }, 1500);
-                }).catch(err => {
-                    console.error('Error al copiar al portapapeles:', err);
-                });
-            });
-        }
+        )
     }
+</div>
+
+<script>
+    import { initNav } from "../scripts/nav.js";
+    // This is component specific script, usually stay here or move to data?
+    // I'll keep it but clean it up.
+    function updateExpandables() {
+        const expandables = document.querySelectorAll("[data-expandable]");
+        expandables.forEach((el) => {
+            const element = el as HTMLElement;
+            const originalWidth = element.style.width;
+            element.style.width = "max-content";
+            const fullWidth = element.offsetWidth;
+            element.style.width = originalWidth;
+            element.style.setProperty("--expanded-width", `${fullWidth}px`);
+        });
+    }
+
+    function setupMobileInteractions() {
+        const expandables = document.querySelectorAll("[data-expandable]");
+        expandables.forEach((el) => {
+            const container = el as HTMLElement;
+            const link = container.querySelector("a");
+            if (link) {
+                link.addEventListener("click", (e) => {
+                    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+                    if (isTouch && !container.classList.contains("is-expanded")) {
+                        e.preventDefault();
+                        expandables.forEach((other) => {
+                            if (other !== container) other.classList.remove("is-expanded");
+                        });
+                        container.classList.add("is-expanded");
+                    }
+                });
+            }
+        });
+        document.addEventListener("click", (e) => {
+            const target = e.target as HTMLElement;
+            if (!target.closest("[data-expandable]")) {
+                expandables.forEach((el) => el.classList.remove("is-expanded"));
+            }
+        });
+    }
+
+    updateExpandables();
+    setupMobileInteractions();
+    document.addEventListener("languageChanged", () => {
+        setTimeout(updateExpandables, 100);
+    });
 </script>

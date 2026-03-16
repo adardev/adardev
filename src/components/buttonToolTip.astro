@@ -1,11 +1,15 @@
 ---
-const {iconSrc: Icon, label, link} = Astro.props;
+const { iconSrc, label, link, i18nKey } = Astro.props;
+import Text from "./text.astro";
 ---
-<a href={link} class="relative group">
-    <div class="bg-[#002a2e] rounded-2xl p-3 hover:brightness-150 transition duration-200">
-        <Icon class="w-6 h-8 transition-all duration-300 fill-secondary" alt=""/>
+
+<a href={link} class="relative group inline-block cursor-pointer" aria-label={label} data-i18n-aria-label={i18nKey} target="_blank" rel="noopener noreferrer">
+    <div class="w-12 h-12 glass-card @flex-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-primary group-hover:bg-accent/10">
+        <img src={iconSrc} class="w-6 h-6 transition-all duration-300 group-hover:text-accent" alt="" />
     </div>
-    <p class="absolute -bottom-2 left-1/2 -translate-x-1/2 mt-1 px-2 py-1 text-sm font-semibold bg-[#00393e] text-[#0fa79c] rounded shadow opacity-0 group-hover:opacity-100 transition duration-200 whitespace-nowrap z-10">
-        {label}
-    </p>
+
+    <div class="tooltip-float bottom-full mb-3 px-3 py-1.5 min-w-max bg-bg-card rounded-lg shadow-xl invisible group-hover:visible border border-accent/20">
+        <Text as="span" type="tooltip" i18nKey={i18nKey} text={label} />
+        <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-bg-card border-b border-r border-accent/20 transform rotate-45"></div>
+    </div>
 </a>

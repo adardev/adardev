@@ -1,79 +1,55 @@
 ---
-import '/src/styles/global.css';
-import {ClientRouter} from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
+import NavBar from "../components/NavBar.astro";
 import Text from "../components/text.astro";
-import Section from "../components/section.astro";
-import Button from "../components/button.astro";
-import adardev_logo from "../assets/logos/adardev_logo.svg";
-import Mexico_flag from "../assets/flags/mexico_flag.svg";
-import Unitedkingdom_flag from "../assets/flags/unitedkingdom_flag.svg";
-import ToolTip from "../components/toolTip.astro";
-const {align, orientation} = Astro.props;
-let contentWraper = "";
-let layoutOrientation = "";
-if(orientation == "row"){
-    layoutOrientation = "flex-col"
-}
-if (orientation == "column"){
-    layoutOrientation = "flex-row"
-}
-if (orientation == "row") {
-    layoutOrientation = "flex-col"
-}
-if (align == "center") {
-    contentWraper = 'flex items-center justify-center';
-}
-if (align == "left") {
-    contentWraper = 'flex items-start justify-start ';
-}
-if (align == "right") {
-    contentWraper = 'flex items-end justify-end ';
-}
+import "../styles/global.css";
+
+const { title, description } = Astro.props;
 ---
-<html class="bg-background h-full flex flex-col scroll-smooth" lang="es">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" href="../assets/logos/adardev_logo.svg">
-    <meta name="generator" content={Astro.generator}/>
-    <title>adardev</title>
-    <ClientRouter/>
-</head>
-<body class="flex flex-col scroll-smooth font-['Montserrat Variable',sans-serif] bg-background min-h-screen">
-<header>
-    <Section orientation="row" align="center">
-        <Section padding="false">
-            <Button design="icon" icon={adardev_logo} href="/"/>
-        </Section>
-        <Section orientation="row" extraClass="gap-4 sm:gap-12 flex-wrap items-center" padding="false">
-            <Button design="slot" href="/">
-                <Text type="subTitle" text="Inicio"/>
-            </Button>
-            <Button design="slot" href="#about">
-                <Text type="subTitle" text="Sobre Mi"/>
-            </Button>
-            <Button design="slot" href="#experience">
-                <Text type="subTitle" text="Experiencia"/>
-            </Button>
-            <Button design="slot" href="#projects">
-                <Text type="subTitle" text="Proyectos"/>
-            </Button>
-            <Button design="slot" href="#skills">
-                <Text type="subTitle" text="Habilidades"/>
-            </Button>
-        </Section>
-        <ToolTip text="Cambiar idioma">
-            <Button href="/" customClass="relative w-10 h-10 sm:w-12 sm:h-12 group overflow-visible pt-2 sm:pt-3">
-                <Section extraClass="rounded-2xl p-2 sm:p-3 transition duration-200 relative z-0">
-                    <Mexico_flag class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"/>
-                    <Unitedkingdom_flag class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"/>
-                </Section>
-            </Button>
-        </ToolTip>
-    </Section>
-</header>
-<main class={`flex-grow p-12 pt-0 ${contentWraper} ${layoutOrientation}`}>
-    <slot/>
-</main>
-</body>
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" href="/logos/adardev_logo.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title || "adardev | Portfolio"}</title>
+        <meta name="description" content={description || "Portfolio de adardev - Desarrollador Web y Movil"} />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+
+        <ClientRouter />
+    </head>
+
+    <body class="bg-bg-dark text-body font-sans selection:bg-accent/30 selection:text-accent overflow-x-hidden antialiased">
+        <NavBar />
+
+        <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <slot />
+        </main>
+
+        <footer class="py-10 text-center opacity-50 text-sm">
+            <Text as="p" type="mini" text={`&copy; ${new Date().getFullYear()} adardev. Casi todos los derechos reservados.`} />
+        </footer>
+
+        <script>
+            import { initI18n } from "../scripts/i18n.js";
+            initI18n();
+        </script>
+    </body>
 </html>
+
+<style is:global>
+    :root {
+        color-scheme: dark;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        min-height: 100vh;
+    }
+</style>

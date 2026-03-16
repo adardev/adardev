@@ -2,13 +2,13 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.97 78.97">
   <defs>
     <style>
-      .cls-1 {
+      .windows {
         fill: #2f76bc;
       }
     </style>
   </defs>
-  <rect class="cls-1" width="37.43" height="37.43" rx="1.27" ry="1.27"/>
-  <rect class="cls-1" x="41.54" width="37.43" height="37.43" rx="1.27" ry="1.27"/>
-  <rect class="cls-1" y="41.54" width="37.43" height="37.43" rx="1.27" ry="1.27"/>
-  <rect class="cls-1" x="41.54" y="41.54" width="37.43" height="37.43" rx="1.27" ry="1.27"/>
+  <rect class="windows" width="37.43" height="37.43" rx="1.27" ry="1.27"/>
+  <rect class="windows" x="41.54" width="37.43" height="37.43" rx="1.27" ry="1.27"/>
+  <rect class="windows" y="41.54" width="37.43" height="37.43" rx="1.27" ry="1.27"/>
+  <rect class="windows" x="41.54" y="41.54" width="37.43" height="37.43" rx="1.27" ry="1.27"/>
 </svg>

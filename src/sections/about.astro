@@ -1,12 +1,11 @@
 ---
-import TitleSection from "../components/titleSection.astro";
 import Section from "../components/section.astro";
+import TitleSection from "../components/titleSection.astro";
 import Text from "../components/text.astro";
-import Profile_icon from "../assets/icons/profile_icon.svg";
 ---
-<Section id="about" mt="true" mb="true">
-    <TitleSection imageSrc={Profile_icon} title="Sobre Mi"/>
-    <Section>
-        <Text text="Desarrollador en formación, sin experiencia profesional pero con una gran pasión por la programación y la tecnología. Motivado por el aprendizaje, con ganas de crecer y aportar mis conocimientos a proyectos innovadores." type="text" />
-    </Section>
+
+<Section id="about" extraClass="my-12 sm:my-16 md:my-24">
+    <TitleSection imageSrc="/icons/user_icon.svg" title="Sobre Mí" i18nKey="aboutTitle" />
+
+    <Text as="p" type="text" extraClass="leading-relaxed sm:text-lg opacity-90" i18nKey="aboutText" text="Desarrollador en formación, sin experiencia profesional pero con una gran pasión por la programación y la tecnología. Motivado por el aprendizaje, con ganas de crecer y aportar mis conocimientos a proyectos innovadores." />
 </Section>

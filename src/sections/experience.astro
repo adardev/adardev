@@ -1,14 +1,15 @@
 ---
-import Freelance from "./experiences/freelance.astro";
 import TitleSection from "../components/titleSection.astro";
 import Section from "../components/section.astro";
-import Portfolio_icon from "../assets/icons/portfolio_icon.svg";
+import ExperienceItem from "../components/ExperienceItem.astro";
+import { experiences } from "../data/portfolio.js";
 ---
-<Section id="experience" mt="true" mb="true">
-    <TitleSection imageSrc={Portfolio_icon} title="Experiencia"/>
-    <Section extraClass="container mx-auto">
-        <Section extraClass="relative border-l-4 border-primary ml-5">
-            <Freelance/>
-        </Section>
-    </Section>
+
+<Section id="experience" extraClass="my-12 sm:my-16 md:my-24">
+    <TitleSection imageSrc="/icons/portfolio_icon.svg" title="Experiencia" i18nKey="experienceTitle" />
+
+    <div class="relative ml-4 sm:ml-16 md:ml-[5.5rem]">
+        <div class="absolute left-0 top-0 bottom-0 w-[2px] sm:w-[4px] bg-accent rounded-full"></div>
+        {experiences.map((exp) => <ExperienceItem {...exp} />)}
+    </div>
 </Section>

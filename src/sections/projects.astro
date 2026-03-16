@@ -1,53 +1,22 @@
 ---
-import TitleSection from "..//components/titleSection.astro";
+import TitleSection from "../components/titleSection.astro";
 import Section from "../components/section.astro";
-import Text from "../components/text.astro";
-import Code_icon from "../assets/icons/code_icon.svg";
-import Web_icon from "../assets/icons/web_icon.svg";
-import Adardev_logo from "../assets/logos/adardev_logo.svg";
-import Github_logo from "../assets/logos/github_logo.svg";
-import Php_logo from "../assets/logos/php_logo.svg";
-import Electron_logo from "../assets/logos/electron_logo.svg"
-import Sql_logo from "../assets/logos/sql_logo.svg";
-import Windows_logo from "../assets/logos/windows_logo.svg";
+import Project from "../components/project.astro";
+import { projects } from "../data/portfolio.js";
+
 import Tekkure_demo from "../assets/demos/tekkure_demo.jpg";
-import { Image } from 'astro:assets';
+import Densora_demo from "../assets/demos/densora_demo.png";
+
+const images: Record<string, any> = {
+    "../assets/demos/tekkure_demo.jpg": Tekkure_demo,
+    "../assets/demos/densora_demo.png": Densora_demo,
+};
 ---
-<Section id="projects" mt="true" mb="true">
-    <TitleSection imageSrc={Code_icon} title="Proyectos"/>
-    <Section extraClass="w-full bg-backgroundPrimary rounded-2xl p-5 flex flex-col md:flex-row gap-6 shadow-xl" padding="false">
-        <Section extraClass="w-full md:w-1/2 h-[250px] bg-white rounded-xl overflow-hidden flex items-center justify-center" padding="false">
-            <Image src={Tekkure_demo} alt="Preview Tekkure" class="object-cover w-full h-full"/>
-        </Section>
-        <Section extraClass="w-full md:w-1/2 flex flex-col gap-4 justify-between" padding="false">
-            <Section extraClass="flex flex-row justify-between flex-wrap" padding="false">
-                <Section extraClass="flex flex-row items-center gap-5" padding="false">
-                    <Adardev_logo width="50px"/>
-                    <Text text="Bytemana" type="title"/>
-                </Section>
-                <Section extraClass="flex flex-row mt-4 sm:mt-0" padding="false">
-                    <Section extraClass="flex flex-row gap-2" padding="false">
-                        <Windows_logo width="30px"/>
-                    </Section>
-                    <Section extraClass="w-[2px] h-auto rounded-2xl bg-white mx-4" padding="false"></Section>
-                    <Section extraClass="flex flex-row gap-2" padding="false">
-                        <Php_logo width="30px"/>
-                        <Electron_logo width="30px"/>
-                        <Sql_logo width="30px"/>
-                    </Section>
-                </Section>
-            </Section>
-            <Text text="Sistema utilizado en un minisúper para la gestión de productos, usuarios y recursos en el almacén. Desarrollado con tecnologías web y empaquetado con Electron." type="text"/>
-            <Section extraClass="flex justify-between" padding="false">
-                <Section extraClass="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors" padding="false">
-                    <Github_logo width="25px"/>
-                    <Text text="Ver código" type="mini"/>
-                </Section>
-                <Section extraClass="flex bg-backgroundSecondary px-4 py-2 rounded-2xl gap-3 items-center cursor-pointer hover:brightness-150 transition-colors" padding="false">
-                    <Web_icon width="25px"/>
-                    <Text text="Visitar" type="mini"/>
-                </Section>
-            </Section>
-        </Section>
-    </Section>
+
+<Section id="projects" extraClass="my-12 sm:my-16 md:my-24">
+    <TitleSection imageSrc="/icons/code_icon.svg" title="Proyectos" i18nKey="projectsTitle" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        {projects.map((project) => <Project {...project} image={images[project.imagePath]} />)}
+    </div>
 </Section>

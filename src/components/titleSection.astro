@@ -1,12 +1,12 @@
 ---
-const { imageSrc: Icon, title } = Astro.props;
-import Section from "./section.astro";
+import Text from "./text.astro";
+const { imageSrc, title, i18nKey } = Astro.props;
 ---
-<Section extraClass="flex flex-row gap-10 mb-8 items-center" padding="false">
-    <Section extraClass="flex items-center justify-center" padding="false">
-        <Icon class="w-12 transition-all duration-300 fill-secondary"/>
-    </Section>
-    <Section padding="false">
-        <p class="text-4xl font-semibold text-primary">{title}</p>
-    </Section>
-</Section>
+
+<div class="flex flex-row gap-4 sm:gap-6 md:gap-10 mb-6 sm:mb-8 items-center">
+    <div class="flex items-center justify-center">
+        <img src={imageSrc} class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-all duration-200" alt="" />
+    </div>
+
+    <Text as="h2" type="subTitle" extraClass="!text-2xl sm:!text-3xl md:!text-4xl" i18nKey={i18nKey} text={title} />
+</div>

@@ -1,0 +1,44 @@
+---
+import Text from "./text.astro";
+const { name, icon, i18nExperienceKey } = Astro.props;
+---
+
+<div class="skill-card-container [perspective:1000px] cursor-pointer h-24 w-24 sm:h-32 sm:w-32 mx-auto antialiased">
+    <div class="skill-card-inner relative w-full h-full transition-transform duration-[600ms] ease-out [transform-style:preserve-3d]">
+        <div class="skill-face p-4 [transform:rotateY(0deg)]">
+            <img src={icon} class="w-10 h-10 sm:w-16 sm:h-16 icon-reveal" alt="" />
+        </div>
+
+        <div class="skill-face flex-col p-2 sm:p-3 overflow-hidden [transform:rotateY(180deg)]">
+            <Text text={name} type="mini" extraClass="!text-center !font-semibold !text-xs sm:!text-sm mb-1 text-accent" />
+
+            <div class="w-full overflow-y-auto scrollbar-hide">
+                <Text as="div" i18nKey={i18nExperienceKey} text="Experiencia..." type="mini" extraClass="!text-center !text-[11px] sm:!text-xs leading-tight text-white/90 !font-normal" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const innerCard = entry.target.querySelector(".skill-card-inner");
+                if (!innerCard) return;
+                if (entry.isIntersecting) {
+                    const delay = Math.random() * 200;
+                    setTimeout(() => {
+                        innerCard.classList.add("[transform:rotateY(180deg)]");
+                    }, delay);
+                } else {
+                    innerCard.classList.remove("[transform:rotateY(180deg)]");
+                }
+            });
+        },
+        { threshold: 0.1, rootMargin: "-25% 0px -25% 0px" },
+    );
+
+    document.querySelectorAll(".skill-card-container").forEach((card) => {
+        observer.observe(card);
+    });
+</script>
