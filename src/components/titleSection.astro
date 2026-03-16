@@ -2,10 +2,9 @@
 import Text from "./text.astro";
 const { imageSrc, title, i18nKey } = Astro.props;
 ---
-
 <div class="flex flex-row gap-4 sm:gap-6 md:gap-10 mb-6 sm:mb-8 items-center">
     <div class="flex items-center justify-center text-title">
-        <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-all duration-200" style={`-webkit-mask-image: url(${imageSrc}); mask-image: url(${imageSrc}); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true"></div>
+        <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-all duration-200" style={`-webkit-mask-image: url('${imageSrc}'); mask-image: url('${imageSrc}'); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true"></div>
     </div>
 
     <Text as="h2" type="title" extraClass="!text-2xl sm:!text-3xl md:!text-4xl" i18nKey={i18nKey} text={title} />

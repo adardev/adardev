@@ -5,7 +5,6 @@ import Text from "./text.astro";
 import Tooltip from "./Tooltip.astro";
 import mexico_flag from "../assets/flags/mexico_flag.svg";
 import uk_flag from "../assets/flags/unitedkingdom_flag.svg";
-
 const navLinks = [
     { name: "Inicio", href: "/", icon: "home", i18n: "navHome" },
     { name: "Sobre Mi", href: "#about", icon: "user", i18n: "navAbout" },
@@ -14,13 +13,11 @@ const navLinks = [
     { name: "Habilidades", href: "#skills", icon: "cpu", i18n: "navSkills" },
 ];
 ---
-
 <div class="nav-pill glass-card top-3 left-3">
     <a href="/" class="nav-btn p-2 group cursor-pointer" aria-label="Inicio" data-i18n-aria-label="navHome">
         <img src="/logos/adardev_logo.svg" alt="adardev Logo" class="w-6 h-6 sm:w-8 sm:h-8 transition-transform group-hover:scale-110" />
     </a>
 </div>
-
 <header class="fixed top-0 left-0 w-full z-[90] pointer-events-none flex justify-center p-3 sm:p-4">
     <nav id="navbar-container" class="glass-card flex items-center gap-1 sm:gap-2 px-1.5 py-1.5 sm:px-2 sm:py-2 pointer-events-auto transition-all duration-300 h-[50px] sm:h-[52px] md:h-[56px]">
         {
@@ -34,14 +31,12 @@ const navLinks = [
         }
     </nav>
 </header>
-
 <div class="nav-pill glass-card top-3 right-3">
     <button id="language-toggle" class="nav-btn cursor-pointer overflow-hidden" aria-label="Cambiar idioma" data-i18n-aria-label="navLanguage">
         <Image src={mexico_flag} alt="ES" class="w-5 h-5 sm:w-6 sm:h-6 object-cover rounded-sm flag-es block" id="flag-es" />
         <Image src={uk_flag} alt="EN" class="w-5 h-5 sm:w-6 sm:h-6 object-cover rounded-sm flag-en hidden" id="flag-en" />
     </button>
 </div>
-
 <script>
     import { initNav } from "../scripts/nav.js";
     document.addEventListener("astro:page-load", initNav);

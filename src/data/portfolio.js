@@ -1,4 +1,3 @@
-
 export const socialLinks = [
     { link: "https://github.com/adardev", iconSrc: "/icons/github_logo.svg", label: "/adardev" },
     { link: "https://www.linkedin.com/in/adardev", iconSrc: "/icons/linkedin_logo.svg", label: "/in/adardev" },
@@ -6,7 +5,6 @@ export const socialLinks = [
     { link: "https://maps.app.goo.gl/jgDoBZpe1rsiSNm7", iconSrc: "/icons/map_icon.svg", label: "Guadalajara, México" },
     { link: "tel:+", iconSrc: "/icons/phone_icon.svg", label: "+52 56 6588 6939" },
 ];
-
 export const experiences = [
     {
         year: "2022", title: "Freelance", titleKey: "experienceFreelance",
@@ -25,7 +23,6 @@ export const experiences = [
         descriptionKey: "experienceSanyulnetDescription",
     },
 ];
-
 export const projects = [
     {
         title: "Bytemana", titleKey: "projectBytemanaTitle",
@@ -42,14 +39,13 @@ export const projects = [
         github: "https://github.com/adardev", live: "https://adardev.com",
     },
     {
-        title: "Aura", titleKey: "projectAuraTitle",
+        title: "Tekkure", titleKey: "projectTekkureTitle",
         description: "Experiencia musical inmersiva con enfoque minimalista.",
-        descKey: "projectAuraDesc", imagePath: "../assets/demos/tekkure_demo.jpg", logo: "/logos/adardev_logo.svg",
+        descKey: "projectTekkureDesc", imagePath: "../assets/demos/tekkure_demo.jpg", logo: "/logos/adardev_logo.svg",
         platform: null, tech: ["/logos/electron_logo.svg", "/logos/astro_logo.svg", "/logos/tailwind_logo.svg"],
         github: "https://github.com/adardev", live: "#",
     },
 ];
-
 export const skillCategories = [
     {
         title: "Front", i18nTitle: "skillsFront",

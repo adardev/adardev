@@ -8,12 +8,10 @@ const typeStyles: Record<string, { size: string; weight: string; color: string }
     badge: { size: "text-[10px] sm:text-xs", weight: "font-bold", color: "text-body" },
     tooltip: { size: "text-xs sm:text-sm", weight: "font-bold", color: "text-body" },
 };
-
 const style = typeStyles[type] || { size: "", weight: "", color: "" };
 const marginTop = mt === "true" ? "mt-4 sm:mt-6" : "";
 const marginBottom = mb === "true" ? "mb-4 sm:mb-6" : "";
 ---
-
 <Tag class={`${style.size} ${marginTop} ${marginBottom} ${style.weight} ${style.color} ${extraClass}`} data-i18n={i18nKey}>
     {text || <slot />}
 </Tag>

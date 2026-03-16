@@ -2,7 +2,6 @@
 const { id, extraClass = "", padding = "true" } = Astro.props;
 const paddingClass = padding === "false" ? "p-0" : "px-1 py-4 sm:p-6 md:p-8";
 ---
-
 <section id={id} class={`flex flex-col ${paddingClass} ${extraClass}`}>
     <slot />
 </section>

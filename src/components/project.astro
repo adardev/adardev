@@ -3,13 +3,11 @@ import { Image } from "astro:assets";
 import Text from "./text.astro";
 const { title, description, image, logo, tech = [], github, live, platform, titleKey, descKey } = Astro.props;
 ---
-
 <div class="group card-base overflow-hidden hover:-translate-y-1 h-full flex flex-col">
     <div class="w-full relative overflow-hidden bg-accent/5 aspect-video shrink-0">
         <Image src={image} alt={title} class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-250"></div>
     </div>
-
     <div class="w-full p-4 sm:p-5 flex flex-col flex-1 justify-between gap-4">
         <div class="space-y-3">
             <div class="flex items-center justify-between gap-3 flex-wrap">
@@ -17,7 +15,6 @@ const { title, description, image, logo, tech = [], github, live, platform, titl
                     {logo && <img src={logo} width="28" height="28" class="" alt="" />}
                     <Text as="h3" type="subTitle" extraClass="!text-lg sm:!text-xl tracking-tight" i18nKey={titleKey} text={title} />
                 </div>
-
                 {
                     (platform || tech.length > 0) && (
                         <div class="flex items-center gap-2 bg-accent/10 px-2 py-0.5 rounded-full">
@@ -34,10 +31,8 @@ const { title, description, image, logo, tech = [], github, live, platform, titl
                     )
                 }
             </div>
-
             <Text type="mini" extraClass="leading-relaxed line-clamp-2" i18nKey={descKey} text={description} />
         </div>
-
         <div class="flex items-center gap-2 mt-auto">
             {
                 github && (
