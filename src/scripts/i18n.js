@@ -1,1 +1,25 @@
-export function initI18n() {    const setLanguage = (lang) => {        document.documentElement.lang = lang;        document.querySelectorAll("[data-i18n]").forEach((el) => {            const key = el.getAttribute("data-i18n");            if (window.i18nData && window.i18nData[lang]?.[key]) { el.innerText = window.i18nData[lang][key]; }        });        document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {            const key = el.getAttribute("data-i18n-aria-label");            if (window.i18nData && window.i18nData[lang]?.[key]) { el.setAttribute("aria-label", window.i18nData[lang][key]); }        });    };    const lang = localStorage.getItem("language") || "es";    fetch("/i18n.json").then(r => r.json()).then(data => { window.i18nData = data; setLanguage(lang); });    window.addEventListener("languageChanged", e => setLanguage(e.detail.language));}
+export function initI18n() {
+    const setLanguage = (lang) => {
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (window.i18nData && window.i18nData[lang]?.[key]) {
+                el.innerText = window.i18nData[lang][key];
+            }
+        });
+        document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+            const key = el.getAttribute("data-i18n-aria-label");
+            if (window.i18nData && window.i18nData[lang]?.[key]) {
+                el.setAttribute("aria-label", window.i18nData[lang][key]);
+            }
+        });
+    };
+    const lang = localStorage.getItem("language") || "es";
+    fetch("/i18n.json")
+        .then((r) => r.json())
+        .then((data) => {
+            window.i18nData = data;
+            setLanguage(lang);
+        });
+    window.addEventListener("languageChanged", (e) => setLanguage(e.detail.language));
+}

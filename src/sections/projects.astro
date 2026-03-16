@@ -3,16 +3,13 @@ import TitleSection from "../components/titleSection.astro";
 import Section from "../components/section.astro";
 import Project from "../components/project.astro";
 import { projects } from "../data/portfolio.js";
-
 import Tekkure_demo from "../assets/demos/tekkure_demo.jpg";
 import Densora_demo from "../assets/demos/densora_demo.png";
-
 const images: Record<string, any> = {
     "../assets/demos/tekkure_demo.jpg": Tekkure_demo,
     "../assets/demos/densora_demo.png": Densora_demo,
 };
 ---
-
 <Section id="projects" extraClass="my-12 sm:my-16 md:my-24">
     <TitleSection imageSrc="/icons/code_icon.svg" title="Proyectos" i18nKey="projectsTitle" />
 
