@@ -119,10 +119,6 @@
     z-index: 110;
 }
 
-:where(.group):hover .tooltip-float {
-    opacity: 1;
-}
-
 @utility skill-face {
     position: absolute;
     inset: 0;
@@ -158,4 +154,25 @@
         background-color: var(--color-accent);
         color: #0f1614;
     }
+}
+
+.transition-fade-out {
+    opacity: 0 !important;
+}
+
+.i18n-animate {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.i18n-loading {
+    opacity: 0;
+    transform: translateY(4px);
+}
+
+.transition-fade-in {
+    opacity: 1 !important;
+}
+
+body {
+    transition: opacity 0.25s ease-in-out;
 }

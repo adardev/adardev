@@ -12,6 +12,7 @@ const style = typeStyles[type] || { size: "", weight: "", color: "" };
 const marginTop = mt === "true" ? "mt-4 sm:mt-6" : "";
 const marginBottom = mb === "true" ? "mb-4 sm:mb-6" : "";
 ---
-<Tag class={`${style.size} ${marginTop} ${marginBottom} ${style.weight} ${style.color} ${extraClass}`} data-i18n={i18nKey}>
+
+<Tag class={`${style.size} ${marginTop} ${marginBottom} ${style.weight} ${style.color} ${extraClass} i18n-animate`} data-i18n={i18nKey}>
     {text || <slot />}
 </Tag>

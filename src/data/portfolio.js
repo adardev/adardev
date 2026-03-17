@@ -28,27 +28,44 @@ export const projects = [
         title: "Bytemana", titleKey: "projectBytemanaTitle",
         description: "Sistema integral para la gestión de inventarios y recursos en minisúper.",
         descKey: "projectBytemanaDesc", imagePath: "../assets/demos/tekkure_demo.jpg", logo: "/logos/adardev_logo.svg",
-        platform: "/logos/windows_logo.svg", tech: ["/logos/php_logo.svg", "/logos/electron_logo.svg", "/logos/sql_logo.svg"],
+        platform: "/logos/windows_logo.svg",
+        metrics: ["projectBytemanaMetric1", "projectBytemanaMetric2", "projectBytemanaMetric3"],
+        tech: [
+            { icon: "/logos/php_logo.svg", name: "PHP", role: "Backend Logic" },
+            { icon: "/logos/electron_logo.svg", name: "Electron", role: "Desktop App" },
+            { icon: "/logos/sql_logo.svg", name: "SQL", role: "Database" }
+        ],
         github: "https://github.com/adardev", live: "#",
     },
     {
         title: "Densora", titleKey: "projectDensoraTitle",
         description: "Plataforma de portafolio personal diseñada con un enfoque premium.",
         descKey: "projectDensoraDesc", imagePath: "../assets/demos/densora_demo.png", logo: "/logos/adardev_logo.svg",
-        platform: null, tech: ["/logos/astro_logo.svg", "/logos/tailwind_logo.svg"],
+        platform: null,
+        metrics: ["projectDensoraMetric1", "projectDensoraMetric2", "projectDensoraMetric3"],
+        tech: [
+            { icon: "/logos/astro_logo.svg", name: "Astro", role: "Framework" },
+            { icon: "/logos/flutter_logo.svg", name: "Flutter", role: "Mobile App" },
+            { icon: "/logos/firebase_logo.svg", name: "Firebase", role: "Backend/DB" }
+        ],
         github: "https://github.com/adardev", live: "https://adardev.com",
     },
     {
         title: "Tekkure", titleKey: "projectTekkureTitle",
         description: "Experiencia musical inmersiva con enfoque minimalista.",
         descKey: "projectTekkureDesc", imagePath: "../assets/demos/tekkure_demo.jpg", logo: "/logos/adardev_logo.svg",
-        platform: null, tech: ["/logos/electron_logo.svg", "/logos/astro_logo.svg", "/logos/tailwind_logo.svg"],
+        platform: null,
+        metrics: ["projectTekkureMetric1", "projectTekkureMetric2", "projectTekkureMetric3"],
+        tech: [
+            { icon: "/logos/astro_logo.svg", name: "Astro", role: "Framework" },
+            { icon: "/logos/tailwind_logo.svg", name: "Tailwind", role: "UI Design" }
+        ],
         github: "https://github.com/adardev", live: "#",
     },
 ];
 export const skillCategories = [
     {
-        title: "Front", i18nTitle: "skillsFront",
+        title: "Frontend", i18nTitle: "skillsFront",
         skills: [
             { name: "HTML5", icon: "/logos/html5_logo.svg", i18nExp: "skillHtmlExp" },
             { name: "CSS3", icon: "/logos/css3_logo.svg", i18nExp: "skillCssExp" },
@@ -60,7 +77,7 @@ export const skillCategories = [
         ],
     },
     {
-        title: "Back", i18nTitle: "skillsBack",
+        title: "Backend", i18nTitle: "skillsBack",
         skills: [
             { name: "Node.js", icon: "/logos/nodejs_logo.svg", i18nExp: "skillNodejsExp" },
             { name: "PHP", icon: "/logos/php_logo.svg", i18nExp: "skillPhpExp" },
@@ -76,7 +93,7 @@ export const skillCategories = [
         ],
     },
     {
-        title: "BD", i18nTitle: "skillsBD",
+        title: "Bases de Datos", i18nTitle: "skillsBD",
         skills: [
             { name: "SQL", icon: "/logos/sql_logo.svg", i18nExp: "skillSqlExp" },
             { name: "Supabase", icon: "/logos/supabase_logo.svg", i18nExp: "skillSupabaseExp" },
