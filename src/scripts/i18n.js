@@ -1,25 +1,42 @@
 export function initI18n() {
-    const setLanguage = (lang) => {
+    const setLanguage = async (lang) => {
         document.documentElement.lang = lang;
-        document.querySelectorAll("[data-i18n]").forEach((el) => {
-            const key = el.getAttribute("data-i18n");
-            if (window.i18nData && window.i18nData[lang]?.[key]) {
-                el.innerText = window.i18nData[lang][key];
+
+        // Cache management: only fetch if not already loaded
+        if (!window.i18nData) window.i18nData = {};
+
+        if (!window.i18nData[lang]) {
+            try {
+                const response = await fetch(`/locales/${lang}.json`);
+                window.i18nData[lang] = await response.json();
+            } catch (error) {
+                console.error(`Failed to load translations for ${lang}:`, error);
+                return;
             }
-        });
-        document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
-            const key = el.getAttribute("data-i18n-aria-label");
-            if (window.i18nData && window.i18nData[lang]?.[key]) {
-                el.setAttribute("aria-label", window.i18nData[lang][key]);
-            }
-        });
+        }
+
+        const data = window.i18nData[lang];
+
+        // Smooth transition: fade out, swap content, fade in
+        document.body.classList.add("switching-language");
+
+        setTimeout(() => {
+            document.querySelectorAll("[data-i18n]").forEach((el) => {
+                const key = el.getAttribute("data-i18n");
+                if (data[key]) el.innerText = data[key];
+            });
+
+            document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+                const key = el.getAttribute("data-i18n-aria-label");
+                if (data[key]) el.setAttribute("aria-label", data[key]);
+            });
+
+            document.body.classList.remove("switching-language");
+        }, 450);
     };
-    const lang = localStorage.getItem("language") || "es";
-    fetch("/i18n.json")
-        .then((r) => r.json())
-        .then((data) => {
-            window.i18nData = data;
-            setLanguage(lang);
-        });
+
+    const initialLang = localStorage.getItem("language") || "es";
+    setLanguage(initialLang);
+
     window.addEventListener("languageChanged", (e) => setLanguage(e.detail.language));
 }

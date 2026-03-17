@@ -2,6 +2,10 @@
 import { ClientRouter } from "astro:transitions";
 import NavBar from "../components/NavBar.astro";
 import Text from "../components/text.astro";
+import "@fontsource/lato/300.css";
+import "@fontsource/lato/400.css";
+import "@fontsource/lato/700.css";
+import "@fontsource/lato/900.css";
 import "../styles/global.css";
 
 const { title, description } = Astro.props;
@@ -22,18 +26,15 @@ const { title, description } = Astro.props;
 
     <body class="bg-bg-dark text-body font-sans selection:bg-accent/30 selection:text-accent overflow-x-hidden antialiased">
         <NavBar />
-
         <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <slot />
         </main>
-
         <script>
-            import { initI18n } from "../scripts/i18n.js";
-            initI18n();
+            import { initApp } from "../scripts/main.js";
+            document.addEventListener("astro:page-load", initApp);
         </script>
     </body>
 </html>
-
 <style is:global>
     :root {
         color-scheme: dark;

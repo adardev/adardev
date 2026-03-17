@@ -1,22 +1,25 @@
 ---
 import TitleSection from "../components/titleSection.astro";
 import Section from "../components/section.astro";
+import Text from "../components/text.astro";
 import SkillCard from "../components/SkillCard.astro";
+import Portfolio_icon from "../assets/icons/portfolio_icon.svg";
 import { skillCategories } from "../data/portfolio.js";
 ---
-<Section id="skills" extraClass="my-8 sm:my-10 md:my-16">
-    <TitleSection imageSrc="/icons/portfolio_icon.svg" title="Habilidades" i18nKey="skillsTitle" />
-    <div class="flex flex-col gap-6 sm:gap-8 mt-4 sm:mt-6">
+
+<Section id="skills" mt="true" mb="true">
+    <TitleSection imageSrc={Portfolio_icon} title="Habilidades" />
+
+    <div class="space-y-16 max-w-6xl mx-auto px-4">
         {
             skillCategories.map((category) => (
-                <div class="flex flex-col gap-5 sm:gap-6 bg-white/5 border border-white/5 p-5 sm:p-7 rounded-[2rem] shadow-sm backdrop-blur-sm transition-colors duration-300 hover:bg-white/10 hover:border-white/10 group">
-                    <div class="flex items-center gap-4">
-                        <h3 class="text-xl sm:text-2xl font-black text-title whitespace-nowrap" data-i18n={category.i18nTitle}>
-                            {category.title}
-                        </h3>
-                        <div class="h-[2px] w-full bg-gradient-to-r from-accent/50 to-transparent rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                <div class="space-y-8">
+                    <div class="flex items-center gap-4 border-b border-accent/20 pb-3">
+                        <div class="w-2 h-8 bg-accent rounded-full shadow-[0_0_15px_rgba(24,205,169,0.5)]" />
+                        <Text as="h3" type="subTitle" i18nKey={category.i18nTitle} text={category.title} extraClass="!text-2xl font-black uppercase tracking-[0.2em] text-accent" />
                     </div>
-                    <div class="flex flex-wrap gap-4 sm:gap-6 justify-start">
+
+                    <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 sm:gap-8 justify-items-center">
                         {category.skills.map((skill) => (
                             <SkillCard name={skill.name} icon={skill.icon} i18nExperienceKey={skill.i18nExp} />
                         ))}

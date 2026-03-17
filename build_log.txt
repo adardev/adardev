@@ -1,0 +1,42 @@
+
+> adardev@0.0.1 build
+> astro build
+
+[2m08:16:23[22m [34m[types][39m Generated [2m45ms[22m
+[2m08:16:23[22m [34m[build][39m output: [34m"static"[39m
+[2m08:16:23[22m [34m[build][39m mode: [34m"static"[39m
+[2m08:16:23[22m [34m[build][39m directory: [34mC:\Users\adaredu\Documents\densora\adardev\dist\[39m
+[2m08:16:23[22m [34m[build][39m Collecting build info...
+[2m08:16:23[22m [34m[build][39m [32mÔ£ô Completed in 61ms.[39m
+[2m08:16:23[22m [34m[build][39m Building static entrypoints...
+[33m[1m08:16:25[22m [WARN] [vite][39m [33m"matchHostname", "matchPathname", "matchPort" and "matchProtocol" are imported from external module "@astrojs/internal-helpers/remote" but never used in "node_modules/astro/dist/assets/utils/index.js".[39m
+[2m08:16:25[22m [34m[vite][39m [32mÔ£ô built in 1.65s[39m
+[2m08:16:25[22m [34m[vite][39m [32mÔ£ô built in 101ms[39m
+[2m08:16:25[22m [34m[build][39m Rearranging server assets...
+
+[42m[30m generating static routes [39m[49m
+08:16:25 [ERROR] ReferenceError: experiences is not defined
+    at file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/index_uPEIbUpj.mjs:1061:211
+    at AstroComponentInstance.experience [as factory] (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/index_uPEIbUpj.mjs:164:12)
+    at AstroComponentInstance.init (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3985:29)
+    at AstroComponentInstance.render (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3995:30)
+    at Object.render (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:4635:23)
+    at renderChild (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3885:18)
+    at file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3448:22
+    at new BufferedRenderer (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3212:26)
+    at createBufferedRenderer (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3236:10)
+    at RenderTemplateResult.render (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3446:25)
+08:16:25 [ERROR] [build] Caught error rendering /: ReferenceError: experiences is not defined
+experiences is not defined
+  Stack trace:
+    at file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/index_uPEIbUpj.mjs:1061:211
+    at AstroComponentInstance.init (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3985:29)
+    at Object.render (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:4635:23)
+    at file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3448:22
+    at createBufferedRenderer (file:///C:/Users/adaredu/Documents/densora/adardev/dist/.prerender/chunks/prerender_Xzlrje07.mjs:3236:10)
+npm notice
+npm notice New major version of npm available! 10.9.2 -> 11.11.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.1
+npm notice To update run: npm install -g npm@11.11.1
+npm notice
+[2m08:16:25[22m   [34mÔö£ÔöÇ[39m [2m/index.html[22m

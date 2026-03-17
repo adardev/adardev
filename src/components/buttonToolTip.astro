@@ -1,11 +1,15 @@
 ---
-const { iconSrc, label, link, i18nKey } = Astro.props;
-import Text from "./text.astro";
-import Tooltip from "./Tooltip.astro";
+const {iconSrc: Icon, label, link} = Astro.props;
 ---
-<a href={link} class="relative group inline-block cursor-pointer" aria-label={label} data-i18n-aria-label={i18nKey} target="_blank" rel="noopener noreferrer">
-    <div class="w-12 h-12 glass-card flex-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-primary group-hover:bg-accent/10 text-body group-hover:text-accent">
-        <div class="w-6 h-6 transition-all duration-300" style={`-webkit-mask-image: url(${iconSrc}); mask-image: url(${iconSrc}); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true"></div>
+<a href={link} class="relative group inline-block cursor-pointer" aria-label={label} target="_blank" rel="noopener noreferrer">
+    <div class="w-12 h-12 glass-button rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-primary group-hover:bg-accent/10">
+        <Icon class="w-6 h-6 transition-all duration-300 text-body fill-current group-hover:text-accent"/>
     </div>
-    <Tooltip label={label} i18nKey={i18nKey} position="top" />
+    
+    <!-- Tooltip -->
+    <div class="absolute left-1/2 -translate-x-1/2 top-full mt-3 px-3 py-1.5 min-w-max text-xs sm:text-sm font-medium bg-bg-card text-body rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 border border-accent/20 pointer-events-none">
+        {label}
+        <!-- Arrow -->
+        <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-bg-card border-t border-l border-accent/20 transform rotate-45"></div>
+    </div>
 </a>

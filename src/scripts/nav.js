@@ -25,6 +25,15 @@ export function initNav() {
             item.classList.toggle("nav-active", item.getAttribute("href") === `#${current}` || (current === "" && item.getAttribute("href") === "/"));
         });
     }
+    const langBtn = document.getElementById("language-toggle");
+
+    langBtn?.addEventListener("click", () => {
+        const currentLang = localStorage.getItem("language") || "es";
+        const newLang = currentLang === "es" ? "en" : "es";
+        localStorage.setItem("language", newLang);
+        window.dispatchEvent(new CustomEvent("languageChanged", { detail: { language: newLang } }));
+    });
+
     window.addEventListener("scroll", updateActiveLink);
     window.addEventListener("languageChanged", updateLanguageUI);
     updateLanguageUI();

@@ -1,17 +1,33 @@
 ---
-const { text, mt, mb, type, extraClass = "", i18nKey, as: Tag = "p" } = Astro.props;
-const typeStyles: Record<string, { size: string; weight: string; color: string }> = {
-    text: { size: "text-base sm:text-lg", weight: "font-normal", color: "text-body" },
-    title: { size: "text-3xl sm:text-4xl md:text-5xl", weight: "font-bold", color: "text-title" },
-    subTitle: { size: "text-lg sm:text-xl md:text-2xl", weight: "font-bold", color: "text-subtitle" },
-    mini: { size: "text-xs sm:text-sm", weight: "font-light", color: "text-body" },
-    badge: { size: "text-[10px] sm:text-xs", weight: "font-bold", color: "text-body" },
-    tooltip: { size: "text-xs sm:text-sm", weight: "font-bold", color: "text-body" },
-};
-const style = typeStyles[type] || { size: "", weight: "", color: "" };
-const marginTop = mt === "true" ? "mt-4 sm:mt-6" : "";
-const marginBottom = mb === "true" ? "mb-4 sm:mb-6" : "";
+const {text, mt, mb, type, extraClass = ""} = Astro.props;
+let marginTop = "";
+let marginBottom = "";
+let textSize = "";
+let textWeight = "";
+let color = "";
+
+if (mt == "true") marginTop = "mt-4 sm:mt-6";
+if (mb == "true") marginBottom = "mb-4 sm:mb-6";
+
+if (type == "text") {
+    textSize = "text-base sm:text-lg";
+    textWeight = "font-medium";
+    color = "text-body";
+}
+if (type == "title") {
+    textWeight = "font-semibold";
+    textSize = "text-3xl sm:text-4xl md:text-5xl";
+    color = "text-title";
+}
+if (type == "subTitle") {
+    textWeight = "font-bold";
+    textSize = "text-lg sm:text-xl md:text-2xl";
+    color = "text-subtitle";
+}
+if (type == "mini") {
+    textSize = "text-xs sm:text-sm";
+    textWeight = "font-light";
+    color = "text-subtitle";
+}
 ---
-<Tag class={`${style.size} ${marginTop} ${marginBottom} ${style.weight} ${style.color} ${extraClass}`} data-i18n={i18nKey}>
-    {text || <slot />}
-</Tag>
+<p class={`${textSize} ${marginTop} ${marginBottom} ${textWeight} ${color} ${extraClass}`}>{text}</p>

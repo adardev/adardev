@@ -1,8 +1,4 @@
 @import "tailwindcss";
-@import "@fontsource/lato/300.css";
-@import "@fontsource/lato/400.css";
-@import "@fontsource/lato/700.css";
-@import "@fontsource/lato/900.css";
 
 @theme {
     --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
@@ -10,10 +6,6 @@
     --font-weight-normal: 400;
     --font-weight-bold: 700;
     --font-weight-black: 900;
-    --font-weight-semibold: 700;
-    /* Lato doesn't have 600, mapping to 700 */
-    --font-weight-medium: 400;
-    /* Lato doesn't have 500, mapping to 400 */
     --color-accent: #18cda9;
     --color-accent-hover: #15b999;
     --color-title: #18cda9;
@@ -22,8 +14,8 @@
     --color-bg-dark: #0f1614;
     --color-bg-card: #1a2321;
     --color-bg-card-hover: #1f2b28;
-    --color-border-accent: rgba(24, 205, 169, 0.2);
-    --shadow-primary: 0 4px 16px rgba(24, 205, 169, 0.1);
+    --color-border-accent: rgba(24, 205, 169, 0.15);
+    --shadow-primary: 0 4px 20px rgba(24, 205, 169, 0.12);
 }
 
 @utility flex-center {
@@ -51,10 +43,17 @@
 }
 
 @utility glass-card {
-    background-color: color-mix(in srgb, var(--color-bg-card) 80%, transparent);
+    background-color: color-mix(in srgb, var(--color-bg-card) 85%, transparent);
     backdrop-filter: blur(12px);
     border: 1px solid var(--color-border-accent);
     border-radius: 1rem;
+}
+
+@utility glass-nav {
+    background-color: color-mix(in srgb, var(--color-bg-dark) 70%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 @utility nav-pill {
@@ -144,6 +143,33 @@
     border: 1px solid var(--color-border-accent);
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     transition: all 0.25s;
+    overflow: visible;
+}
+
+@utility category-pill {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 20;
+    padding: 0.375rem 0.75rem;
+    background-color: color-mix(in srgb, var(--color-bg-dark) 80%, transparent);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@utility tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
 }
 
 @layer base {
@@ -158,4 +184,27 @@
         background-color: var(--color-accent);
         color: #0f1614;
     }
+}
+
+/* Language Switch Animation */
+[data-i18n] {
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform, filter;
+}
+
+.switching-language [data-i18n] {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translateY(2px) scale(0.99);
+}
+
+/* Smooth container resizing - The 'Liquid' Effect */
+.glass-card,
+.btn-base,
+.category-pill,
+.tech-pill,
+.nav-item,
+.nav-pill,
+.card-base {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }

@@ -1,0 +1,53 @@
+---
+import Section from "../components/section.astro";
+import TitleSection from "../components/titleSection.astro";
+import Text from "../components/text.astro";
+import { testimonials } from "../data/portfolio.js";
+---
+<Section id="testimonials" extraClass="my-12 sm:my-16 md:my-24">
+    <TitleSection imageSrc="/icons/user_icon.svg" title="Testimonios" i18nKey="testimonialsTitle" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        {testimonials.map((t: any) => (
+            <div class="relative group card-base p-6 sm:p-8 flex flex-col gap-5 hover:border-accent/30 transition-all duration-300 overflow-hidden">
+                <!-- Comillas decorativas -->
+                <span class="absolute top-4 right-6 text-8xl font-black text-accent/5 leading-none select-none group-hover:text-accent/10 transition-colors duration-300">"</span>
+
+                <!-- Cita -->
+                <blockquote class="relative z-10">
+                    <Text
+                        as="p"
+                        type="text"
+                        extraClass="leading-relaxed italic opacity-90 text-base sm:text-lg"
+                        i18nKey={t.quoteKey}
+                        text={t.quote}
+                    />
+                </blockquote>
+
+                <!-- Autor -->
+                <div class="flex items-center gap-4 pt-2 border-t border-border-accent">
+                    <div class="w-10 h-10 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center text-accent font-black text-lg shrink-0">
+                        {t.name.charAt(0)}
+                    </div>
+                    <div class="flex flex-col">
+                        <Text as="span" type="subTitle" extraClass="!text-sm sm:!text-base" i18nKey={t.nameKey} text={t.name} />
+                        <span class="text-xs text-subtitle opacity-75" data-i18n={t.roleKey}>{t.role} · {t.company}</span>
+                    </div>
+                </div>
+            </div>
+        ))}
+
+        <!-- Card CTA para solicitar referencia -->
+        <div class="card-base p-6 sm:p-8 flex flex-col justify-center items-center gap-4 border-dashed hover:border-accent/30 transition-all duration-300 text-center">
+            <div class="text-3xl">🤝</div>
+            <Text as="p" type="mini" extraClass="leading-relaxed opacity-70 max-w-xs" i18nKey="testimonialsCta" text="¿Trabajaste conmigo o me conoces profesionalmente? Me encantaría contar con tu referencia." />
+            <a
+                href="mailto:adarlopz.dev@gmail.com"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent/10 border border-accent/20 text-accent text-sm font-medium hover:bg-accent/20 transition-colors duration-200"
+            >
+                <span>✉️</span>
+                <span data-i18n="testimonialsCtaBtn">Escríbeme</span>
+            </a>
+        </div>
+    </div>
+</Section>

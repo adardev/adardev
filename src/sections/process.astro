@@ -1,0 +1,64 @@
+---
+import Section from "../components/section.astro";
+import TitleSection from "../components/titleSection.astro";
+import Text from "../components/text.astro";
+
+const steps = [
+    {
+        number: "01",
+        icon: "🎨",
+        title: "Diseño",
+        titleKey: "processStep1Title",
+        desc: "Prototipo en Figma o Adobe XD. Defino paleta, tipografía y flujo de usuario antes de escribir una línea de código.",
+        descKey: "processStep1Desc",
+    },
+    {
+        number: "02",
+        icon: "⚙️",
+        title: "Desarrollo",
+        titleKey: "processStep2Title",
+        desc: "Implemento con las tecnologías adecuadas al proyecto. Priorizo código limpio, componentes reutilizables y buenas prácticas.",
+        descKey: "processStep2Desc",
+    },
+    {
+        number: "03",
+        icon: "🔍",
+        title: "Pruebas",
+        titleKey: "processStep3Title",
+        desc: "Verifico rendimiento, responsividad y compatibilidad. Optimizo antes de entregar para garantizar la mejor experiencia.",
+        descKey: "processStep3Desc",
+    },
+    {
+        number: "04",
+        icon: "🚀",
+        title: "Despliegue",
+        titleKey: "processStep4Title",
+        desc: "Publico en la nube (Firebase, Vercel, etc.) con CI/CD cuando aplica. Monitoreo y doy soporte post-lanzamiento.",
+        descKey: "processStep4Desc",
+    },
+];
+---
+<Section id="process" extraClass="my-12 sm:my-16 md:my-24">
+    <TitleSection imageSrc="/icons/portfolio_icon.svg" title="Mi Proceso" i18nKey="processTitle" />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-6">
+        {steps.map((step, i) => (
+            <div class="group relative flex flex-col gap-4 p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-accent/20 transition-all duration-300">
+                <!-- Número de fondo decorativo -->
+                <span class="absolute top-3 right-4 text-6xl font-black text-accent/5 group-hover:text-accent/10 transition-colors duration-300 select-none leading-none">
+                    {step.number}
+                </span>
+                <!-- Icono -->
+                <div class="text-3xl">{step.icon}</div>
+                <!-- Línea conectora (solo en desktop, no en el último) -->
+                {i < steps.length - 1 && (
+                    <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-[2px] bg-accent/20 group-hover:bg-accent/40 transition-colors duration-300 z-10" />
+                )}
+                <div class="flex flex-col gap-2 z-10 relative">
+                    <Text as="h3" type="subTitle" extraClass="!text-base sm:!text-lg" i18nKey={step.titleKey} text={step.title} />
+                    <Text type="mini" extraClass="leading-relaxed opacity-80" i18nKey={step.descKey} text={step.desc} />
+                </div>
+            </div>
+        ))}
+    </div>
+</Section>

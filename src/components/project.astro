@@ -1,52 +1,90 @@
 ---
 import { Image } from "astro:assets";
 import Text from "./text.astro";
-const { title, description, image, logo, tech = [], github, live, platform, titleKey, descKey } = Astro.props;
+import Tooltip from "./Tooltip.astro";
+const { title, description, image, logo, tech = [], metrics = [], github, live, platform, titleKey, descKey, category, categoryKey } = Astro.props;
 ---
-<div class="group card-base overflow-hidden hover:-translate-y-1 h-full flex flex-col">
-    <div class="w-full relative overflow-hidden bg-accent/5 aspect-video shrink-0">
-        <Image src={image} alt={title} class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-250"></div>
+
+<div class="card-base border-border-accent/30 hover:border-accent/50 transition-all duration-300 h-full flex flex-col bg-bg-card/50 backdrop-blur-sm relative group/project hover:z-[60]">
+    <!-- Image Section -->
+    <div class="w-full relative overflow-hidden aspect-video shrink-0 rounded-t-[1.5rem]">
+        <Image src={image} alt={title} class="object-cover w-full h-full transition-transform duration-500 group-hover/project:scale-105" />
+
+        <!-- Floating Category -->
+        {
+            category && (
+                <div class="category-pill">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-accent leading-none" data-i18n={categoryKey}>
+                        {category}
+                    </span>
+                </div>
+            )
+        }
     </div>
+
+    <!-- Card Body -->
     <div class="w-full p-4 sm:p-5 flex flex-col flex-1 justify-between gap-4">
-        <div class="space-y-3">
+        <div class="space-y-4">
             <div class="flex items-center justify-between gap-3 flex-wrap">
-                <div class="flex items-center gap-2.5">
-                    {logo && <img src={logo} width="28" height="28" class="" alt="" />}
+                <div class="flex items-center gap-3">
+                    {logo && <img src={logo} width="28" height="28" class="drop-shadow-[0_0_8px_rgba(24,205,169,0.3)]" alt="" />}
                     <Text as="h3" type="subTitle" extraClass="!text-lg sm:!text-xl tracking-tight" i18nKey={titleKey} text={title} />
                 </div>
                 {
                     (platform || tech.length > 0) && (
-                        <div class="flex items-center gap-2 bg-accent/10 px-2 py-0.5 rounded-full">
-                            {platform && <img src={platform} width="14" height="14" class="" alt="" />}
-                            {platform && tech.length > 0 && <div class="w-[1px] h-2.5 bg-accent/30 mx-0.5" />}
+                        <div class="tech-pill">
+                            {platform && <img src={platform} width="14" height="14" class="opacity-80 object-contain" alt="" />}
+                            {platform && tech.length > 0 && <div class="w-[1px] h-3 bg-white/20 mx-0.5" />}
                             {tech.length > 0 && (
-                                <div class="flex gap-1">
-                                    {tech.map((icon: string) => (
-                                        <img src={icon} width="14" height="14" class="" alt="" />
-                                    ))}
+                                <div class="flex items-center gap-2">
+                                    {tech.map((t: any) => {
+                                        const icon = typeof t === "string" ? t : t.icon;
+                                        const role = typeof t === "string" ? null : t.role;
+                                        const name = typeof t === "string" ? "" : t.name || "";
+                                        return (
+                                            <div class="relative group cursor-help flex items-center">
+                                                <img src={icon} width="14" height="14" class="object-contain transition-transform group-hover:scale-110" alt="" />
+                                                {role && <Tooltip label={role} techName={name} position="top" />}
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             )}
                         </div>
                     )
                 }
             </div>
-            <Text type="mini" extraClass="leading-relaxed line-clamp-2" i18nKey={descKey} text={description} />
+
+            <Text type="mini" extraClass="leading-relaxed line-clamp-2 opacity-80" i18nKey={descKey} text={description} />
+
+            {
+                metrics.length > 0 && (
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        {metrics.map((m: string, index: number) => (
+                            <span class="inline-flex items-center text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md bg-accent/5 text-accent border border-accent/20 group-hover/project:border-accent/40 transition-colors duration-300" data-i18n={Astro.props.metricsKeys?.[index]}>
+                                {m}
+                            </span>
+                        ))}
+                    </div>
+                )
+            }
         </div>
-        <div class="flex items-center gap-2 mt-auto">
+
+        <!-- Footer Actions -->
+        <div class="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
             {
                 github && (
-                    <a href={github} target="_blank" rel="noopener noreferrer" class="flex-1 btn-base bg-bg-card-hover px-3 py-2 group/btn text-body transition-colors duration-300 gap-2 font-medium">
-                        <div class="w-4 h-4" style={`-webkit-mask-image: url('/logos/github_logo.svg'); mask-image: url('/logos/github_logo.svg'); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true" />
-                        <Text as="span" type="badge" i18nKey="btnCode" text="Código" />
+                    <a href={github} target="_blank" rel="noopener noreferrer" class="flex-1 btn-base bg-white/5 hover:bg-white/10 px-3 py-2 group/btn text-body transition-all duration-300 gap-2 font-bold text-[10px] uppercase tracking-widest text-center justify-center">
+                        <div class="w-3.5 h-3.5 opacity-70 group-hover/btn:opacity-100" style={`-webkit-mask-image: url('/logos/github_logo.svg'); mask-image: url('/logos/github_logo.svg'); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true" />
+                        <Text as="span" type="badge" extraClass="!text-body" i18nKey="btnCode" text="Código" />
                     </a>
                 )
             }
             {
                 live && (
-                    <a href={live} target="_blank" rel="noopener noreferrer" class="flex-1 btn-base bg-accent text-bg-dark px-3 py-2 hover:brightness-110 shadow-lg shadow-accent/20 gap-2">
-                        <img src="/icons/web_icon.svg" width="16" height="16" alt="" class="dark:invert" />
-                        <Text as="span" type="badge" extraClass="!text-bg-dark" i18nKey="btnVisit" text="Visitar" />
+                    <a href={live} target="_blank" rel="noopener noreferrer" class="flex-1 btn-base bg-white/5 hover:bg-accent hover:text-bg-dark px-3 py-2 group/btn2 transition-all duration-300 gap-2 font-bold text-[10px] uppercase tracking-widest border border-white/5 hover:border-accent text-center justify-center">
+                        <img src="/icons/web_icon.svg" width="14" height="14" alt="" class="opacity-70 group-hover/btn2:opacity-100 group-hover/btn2:invert group-hover/btn2:brightness-0" />
+                        <Text as="span" type="badge" extraClass="group-hover/btn2:!text-bg-dark" i18nKey="btnVisit" text="Visitar" />
                     </a>
                 )
             }

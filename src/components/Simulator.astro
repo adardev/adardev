@@ -1,0 +1,280 @@
+---
+
+---
+
+<!-- Simulator Modal Wrapper -->
+<div id="simulator-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-bg-dark/90 backdrop-blur-md opacity-0 transition-opacity duration-300" id="simulator-backdrop"></div>
+
+    <!-- Modal Content -->
+    <div class="relative w-full max-w-2xl bg-bg-card border border-white/10 rounded-[2rem] shadow-[0_30px_100px_rgba(0,0,0,0.8)] overflow-hidden transform scale-95 opacity-0 transition-all duration-300 flex flex-col h-[550px] max-h-[85vh]" id="simulator-container">
+        <!-- Header -->
+        <div class="flex items-center justify-between p-5 border-b border-white/5 shrink-0 bg-bg-card/50 backdrop-blur-md">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
+                <h4 class="text-sm font-black uppercase tracking-widest text-accent" id="simulator-title">Demo Simulator</h4>
+            </div>
+            <button id="close-simulator" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/5 transition-colors group">
+                <span class="text-xl group-hover:rotate-90 transition-transform duration-300 text-subtitle">✕</span>
+            </button>
+        </div>
+
+        <!-- Body / Simulated Interaction Area -->
+        <div class="flex-1 overflow-y-auto p-6" id="simulator-body">
+            <!-- Content will be injected via JS -->
+            <div class="flex items-center justify-center h-full opacity-50 italic">Cargando interactividad...</div>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="p-4 border-t border-white/5 bg-accent/5 shrink-0">
+            <p class="text-[10px] text-center text-subtitle/60 uppercase tracking-widest">⚡ Modo Simulación Interactiva · 100% Funcional</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById("simulator-modal");
+    const backdrop = document.getElementById("simulator-backdrop");
+    const container = document.getElementById("simulator-container");
+    const body = document.getElementById("simulator-body");
+    const title = document.getElementById("simulator-title");
+    const closeBtn = document.getElementById("close-simulator");
+
+    const simulators = {
+        densora: {
+            title: "Simulador WhatsApp Bot (Densora)",
+            render: () => `
+                <div class="flex flex-col h-full gap-4 font-sans">
+                    <div class="flex-1 bg-bg-dark/50 rounded-2xl p-4 overflow-y-auto flex flex-col gap-3" id="chat-window">
+                        <div class="bg-white/5 p-3 rounded-2xl rounded-tl-none self-start max-w-[80%] text-sm">
+                            <p class="text-accent font-bold mb-1">🤖 Densora Bot</p>
+                            ¡Hola! Bienvenido a la Clínica Dental Densora. ¿En qué puedo ayudarte hoy?
+                            <div class="mt-2 flex flex-col gap-1">
+                                <button class="text-left py-1.5 px-3 rounded-lg bg-accent/10 hover:bg-accent/20 text-xs transition-colors chat-option">1. Agendar Cita</button>
+                                <button class="text-left py-1.5 px-3 rounded-lg bg-accent/10 hover:bg-accent/20 text-xs transition-colors chat-option">2. Ver Mis Citas</button>
+                                <button class="text-left py-1.5 px-3 rounded-lg bg-accent/10 hover:bg-accent/20 text-xs transition-colors chat-option">3. Emergencias</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 shrink-0">
+                        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-accent transition-colors" />
+                        <button id="chat-send" class="bg-accent text-bg-dark px-4 rounded-xl font-bold transition-transform active:scale-90">Enviar</button>
+                    </div>
+                </div>
+            `,
+            init: () => {
+                const win = document.getElementById("chat-window");
+                const input = document.getElementById("chat-input") as HTMLInputElement;
+                const send = document.getElementById("chat-send");
+                const addMsg = (text: string, isBot: boolean) => {
+                    const div = document.createElement("div");
+                    div.className = isBot ? "bg-white/5 p-3 rounded-2xl rounded-tl-none self-start max-w-[80%] text-sm" : "bg-accent/20 p-3 rounded-2xl rounded-tr-none self-end max-w-[80%] text-sm border border-accent/20";
+                    div.innerHTML = isBot ? `<p class="text-accent font-bold mb-1">🤖 Densora Bot</p>${text}` : text;
+                    win?.appendChild(div);
+                    win?.scrollTo(0, win.scrollHeight);
+                };
+
+                const botReply = (msg: string) => {
+                    setTimeout(() => {
+                        if (msg.includes("1") || msg.toLowerCase().includes("cita")) {
+                            addMsg("Excelente. Por favor, dime tu nombre completo para comenzar el registro de tu cita.", true);
+                        } else if (msg.includes("2")) {
+                            addMsg("Para consultar tus citas necesito tu número de teléfono registrado.", true);
+                        } else {
+                            addMsg("Lo siento, no entendí eso. Puedes presionar una de las opciones arriba.", true);
+                        }
+                    }, 800);
+                };
+
+                send?.addEventListener("click", () => {
+                    if (!input.value) return;
+                    addMsg(input.value, false);
+                    botReply(input.value);
+                    input.value = "";
+                });
+
+                input?.addEventListener("keypress", (e) => {
+                    if (e.key === "Enter") send?.click();
+                });
+
+                document.querySelectorAll(".chat-option").forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        const txt = btn.textContent || "";
+                        addMsg(txt, false);
+                        botReply(txt);
+                    });
+                });
+            },
+        },
+        bytemana: {
+            title: "Simulador Inventario POS (Bytemana)",
+            render: () => `
+                <div class="flex flex-col h-full gap-4">
+                    <div class="flex gap-2">
+                        <input type="text" id="inv-search" placeholder="Escribe 'Leche' o 'Pan'..." class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent" />
+                    </div>
+                    <div class="flex-1 bg-bg-dark/30 border border-white/5 rounded-2xl p-4 flex flex-col gap-3" id="inv-results">
+                        <div class="opacity-30 text-center py-10 italic text-sm">Ingresa un término para buscar stock real...</div>
+                    </div>
+                </div>
+            `,
+            init: () => {
+                const input = document.getElementById("inv-search") as HTMLInputElement;
+                const res = document.getElementById("inv-results");
+                const products = [
+                    { name: "Leche Entera 1L", stock: 45, price: "$24.50", code: "75010" },
+                    { name: "Pan Blanco 12p", stock: 12, price: "$32.00", code: "75020" },
+                    { name: "Refresco Cola 600ml", stock: 104, price: "$18.00", code: "75030" },
+                ];
+
+                input?.addEventListener("input", () => {
+                    const q = input.value.toLowerCase();
+                    if (!q) {
+                        if (res) res.innerHTML = `<div class="opacity-30 text-center py-10 italic text-sm">Ingresa un término para buscar stock real...</div>`;
+                        return;
+                    }
+                    const filtered = products.filter((p) => p.name.toLowerCase().includes(q));
+                    if (res) {
+                        res.innerHTML =
+                            filtered
+                                .map(
+                                    (p) => `
+                            <div class="bg-white/5 p-4 rounded-xl flex items-center justify-between border border-white/5 group hover:border-accent/30 transition-colors">
+                                <div>
+                                    <p class="font-bold text-sm">${p.name}</p>
+                                    <p class="text-[10px] opacity-60">Código: ${p.code}</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-accent font-black">${p.price}</p>
+                                    <p class="text-[10px] ${p.stock < 20 ? "text-red-400" : "text-green-400"}">${p.stock} pz en stock</p>
+                                </div>
+                            </div>
+                        `,
+                                )
+                                .join("") || `<div class="opacity-30 text-center py-10 italic text-sm">Sin coincidencias</div>`;
+                    }
+                });
+            },
+        },
+        tekkure: {
+            title: "Simulador Reproductor Hi-Fi (Tekkure)",
+            render: () => `
+                <div class="flex flex-col h-full items-center justify-center gap-8 py-4">
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-accent/20 blur-3xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="w-48 h-48 bg-bg-dark border border-white/10 rounded-2xl overflow-hidden shadow-2xl relative z-10">
+                            <img src="/logos/adardev_logo.svg" class="w-full h-full p-10 opacity-20" />
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                                <p class="font-black text-xs uppercase tracking-tighter text-accent" id="player-title">Tekkure Beats</p>
+                                <p class="text-[10px] opacity-40">adardev Studio</p>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-white/5">
+                                <div id="player-progress" class="h-full bg-accent w-0 transition-all duration-300"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-6">
+                        <button class="text-subtitle hover:text-accent transition-colors">⏮</button>
+                        <button id="player-play" class="w-16 h-16 bg-accent text-bg-dark rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 active:scale-90 transition-all">▶</button>
+                        <button class="text-subtitle hover:text-accent transition-colors">⏭</button>
+                    </div>
+
+                    <div class="flex gap-1 items-end h-8 overflow-hidden" id="visualizer">
+                        ${Array(12)
+                            .fill(0)
+                            .map(() => `<div class="w-1 bg-accent/20 rounded-full vis-bar" style="height: 20%"></div>`)
+                            .join("")}
+                    </div>
+                </div>
+            `,
+            init: () => {
+                const playBtn = document.getElementById("player-play");
+                const progress = document.getElementById("player-progress");
+                const bars = document.querySelectorAll(".vis-bar");
+                let playing = false;
+                let interval: any;
+                let pct = 0;
+
+                playBtn?.addEventListener("click", () => {
+                    playing = !playing;
+                    playBtn.textContent = playing ? "⏸" : "▶";
+
+                    if (playing) {
+                        interval = setInterval(() => {
+                            pct = (pct + 1) % 100;
+                            if (progress) progress.style.width = `${pct}%`;
+                            bars.forEach((b) => {
+                                (b as HTMLElement).style.height = `${20 + Math.random() * 80}%`;
+                                (b as HTMLElement).style.backgroundColor = "var(--color-accent)";
+                                (b as HTMLElement).style.opacity = "1";
+                            });
+                        }, 200);
+                    } else {
+                        clearInterval(interval);
+                        bars.forEach((b) => {
+                            (b as HTMLElement).style.height = `20%`;
+                            (b as HTMLElement).style.opacity = "0.2";
+                        });
+                    }
+                });
+            },
+        },
+    };
+
+    function openSimulator(id: string) {
+        const config = simulators[id as keyof typeof simulators];
+        if (!config) return;
+
+        title!.textContent = config.title;
+        body!.innerHTML = config.render();
+        config.init();
+
+        modal?.classList.remove("hidden");
+        modal?.classList.add("flex");
+
+        setTimeout(() => {
+            backdrop?.classList.remove("opacity-0");
+            backdrop?.classList.add("opacity-100");
+            container?.classList.remove("scale-95", "opacity-0");
+            container?.classList.add("scale-100", "opacity-100");
+        }, 10);
+
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeSimulator() {
+        backdrop?.classList.remove("opacity-100");
+        backdrop?.classList.add("opacity-0");
+        container?.classList.add("scale-95", "opacity-0");
+        container?.classList.remove("scale-100", "opacity-100");
+
+        setTimeout(() => {
+            modal?.classList.remove("flex");
+            modal?.classList.add("hidden");
+            body!.innerHTML = "";
+            document.body.style.overflow = "auto";
+        }, 300);
+    }
+
+    // Event Delegation for triggers
+    document.addEventListener("click", (e: any) => {
+        const trigger = e.target.closest("[data-simulator-trigger]");
+        if (trigger) {
+            const id = trigger.getAttribute("data-simulator-trigger");
+            openSimulator(id);
+        }
+    });
+
+    closeBtn?.addEventListener("click", closeSimulator);
+    backdrop?.addEventListener("click", closeSimulator);
+</script>
+
+<style>
+    /* Inyectamos estilos base solo si no existen */
+    :root {
+        --color-bg-card: #0a1111;
+        --color-accent: #18cda9;
+    }
+</style>
