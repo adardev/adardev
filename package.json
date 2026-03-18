@@ -8,6 +8,7 @@
         "preview": "astro preview",
         "astro": "astro",
         "cf:project:create": "wrangler pages project create adardev",
+        "deploy": "npm run deploy:cloudflare",
         "deploy:cloudflare": "wrangler pages deploy dist --project-name adardev",
         "deploy:cloudflare:retry": "pwsh -ExecutionPolicy Bypass -File ./scripts/deploy-cloudflare.ps1"
     },
