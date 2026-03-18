@@ -1,16 +1,26 @@
 ---
 import Text from "./text.astro";
 import IconMask from "./IconMask.astro";
-const { year, title, subtitle, description, logo, titleKey, subtitleKey, descriptionKey } = Astro.props;
+const { year, title, subtitle, description, logo, titleKey, subtitleKey, descriptionKey, badge, badgeKey } = Astro.props;
 ---
+
 <div class="experience-item relative pl-14 sm:pl-24 group pb-10 sm:pb-12">
     <div class="absolute left-[-7px] sm:left-[-6px] top-[0.6rem] z-20">
-        <Text as="div" type="badge" extraClass="w-[16px] h-[16px] font-black bg-accent rounded-full flex-center text-transparent transition-all duration-300 group-[.is-center]:w-16 group-[.is-center]:h-8 group-[.is-center]:text-bg-dark group-[.is-center]:bg-accent group-[.is-center]:shadow-lg" text={year} />
+        <Text as="div" type="badge" extraClass="w-[16px] h-[16px] font-black bg-accent rounded-full flex items-center justify-center text-transparent transition-all duration-300 group-[.is-center]:w-16 group-[.is-center]:h-8 group-[.is-center]:text-bg-dark group-[.is-center]:bg-accent group-[.is-center]:shadow-lg" text={year} />
     </div>
     <div class="w-full flex flex-col">
         <div class="flex flex-row justify-between gap-3 sm:gap-4 items-start w-full">
             <div class="flex-1 min-w-0 flex flex-col">
-                <Text text={title} type="subTitle" color="text-title" i18nKey={titleKey} extraClass="break-words" />
+                <div class="flex items-center gap-3 flex-wrap">
+                    <Text text={title} type="subTitle" color="text-title" i18nKey={titleKey} extraClass="break-words" />
+                    {
+                        badge && (
+                            <div class="px-2 py-0.5 rounded-full border border-accent/30 bg-accent/10">
+                                <Text text={badge} type="badge" i18nKey={badgeKey} extraClass="!text-accent !text-[10px] uppercase tracking-wider" />
+                            </div>
+                        )
+                    }
+                </div>
                 <Text text={subtitle} type="text" extraClass="!text-subtitle !text-base sm:!text-lg pl-0" i18nKey={subtitleKey} />
             </div>
             {

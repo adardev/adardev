@@ -11,7 +11,7 @@ const typeStyles: Record<string, { size: string; weight: string; color: string }
 const style = typeStyles[type] || { size: "", weight: "", color: "" };
 const marginTop = mt === "true" ? "mt-4 sm:mt-6" : "";
 const marginBottom = mb === "true" ? "mb-4 sm:mb-6" : "";
-const i18nClass = i18nKey ? "i18n-animate" : "";
+const i18nClass = i18nKey ? "transition-[opacity,transform] duration-300" : "";
 const i18nAttrs = i18nKey ? { "data-i18n": i18nKey } : {};
 ---
 

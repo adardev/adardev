@@ -10,6 +10,7 @@ export const experiences = [
 		subtitle: "Soporte técnico y servicios digitales", subtitleKey: "experienceSanyulnetSubtitle",
 		description: "Diagnóstico de hardware y gestión de servicios digitales.",
 		descriptionKey: "experienceSanyulnetDescription",
+		badge: "Presencial", badgeKey: "badgePresencial"
 	},
 ];
 

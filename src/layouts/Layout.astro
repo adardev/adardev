@@ -1,7 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import NavBar from "../components/NavBar.astro";
-import Text from "../components/text.astro";
 import "../styles/global.css";
 
 const { title, description } = Astro.props;
@@ -14,8 +13,8 @@ const { title, description } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" href="/logos/adardev_logo.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title || "adardev | Portfolio"}</title>
-        <meta name="description" content={description || "Portfolio de adardev - Desarrollador Web y Movil"} />
+        <title>{title || "Brandon López | Portfolio"}</title>
+        <meta name="description" content={description || "Portfolio de Brandon López - Desarrollador Web y Movil"} />
 
         <ClientRouter />
     </head>
@@ -29,7 +28,10 @@ const { title, description } = Astro.props;
 
         <script>
             import { initI18n } from "../scripts/i18n.js";
+            import { initUI } from "../scripts/ui.js";
             initI18n();
+            initUI();
+            document.addEventListener("astro:page-load", initUI);
         </script>
     </body>
 </html>

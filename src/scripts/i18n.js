@@ -13,11 +13,10 @@ export function initI18n() {
 
     const triggerTextAnimation = (textElements) => {
         textElements.forEach((el) => {
-            el.classList.add("i18n-animate");
-            el.classList.remove("i18n-loading");
+            el.classList.remove("opacity-0", "translate-y-1");
             // Force reflow so the loading transition can replay on every language change.
             void el.offsetWidth;
-            el.classList.add("i18n-loading");
+            el.classList.add("opacity-0", "translate-y-1");
         });
     };
 
@@ -64,7 +63,7 @@ export function initI18n() {
             console.error("Error loading language file:", error);
         } finally {
             requestAnimationFrame(() => {
-                textElements.forEach((el) => el.classList.remove("i18n-loading"));
+                textElements.forEach((el) => el.classList.remove("opacity-0", "translate-y-1"));
             });
         }
     };
