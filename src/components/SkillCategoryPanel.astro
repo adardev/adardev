@@ -5,21 +5,12 @@ import Text from "./text.astro";
 const { category } = Astro.props;
 ---
 
-<div class="flex flex-col gap-5 sm:gap-6 bg-white/5 border border-white/5 p-5 sm:p-7 rounded-[2rem] shadow-sm backdrop-blur-sm transition-colors duration-300 hover:bg-white/10 hover:border-white/10 group">
+<div class="flex flex-col gap-5 sm:gap-6 p-5 sm:p-7 card-base group">
     <div class="flex items-center gap-4">
-        <Text
-            as="h3"
-            type="subTitle"
-            extraClass="!text-xl sm:!text-2xl !font-black !text-title whitespace-nowrap"
-            i18nKey={category.i18nTitle}
-            text={category.title}
-        />
-        <div class="h-[2px] w-full bg-gradient-to-r from-accent/50 to-transparent rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+        <Text as="h3" type="subTitle" extraClass="!text-xl sm:!text-2xl !font-black !text-title whitespace-nowrap" i18nKey={category.i18nTitle} text={category.title} />
+        <div class="h-[2px] w-full bg-[#18cda9] rounded-full opacity-30"></div>
     </div>
     <div class="flex flex-wrap gap-4 sm:gap-6 justify-start">
-        {category.skills.map((skill: any) => (
-            <SkillCard name={skill.name} icon={skill.icon} i18nExperienceKey={skill.i18nExp} />
-        ))}
+        {category.skills.map((skill: any) => <SkillCard name={skill.name} icon={skill.icon} i18nExperienceKey={skill.i18nExp} />)}
     </div>
 </div>
-

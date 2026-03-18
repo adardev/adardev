@@ -10,7 +10,7 @@ export const projects = [
             { icon: "/logos/flutter_logo.svg", name: "Flutter", role: "Mobile App" },
             { icon: "/logos/firebase_logo.svg", name: "Firebase", role: "Backend/DB" }
         ],
-        github: "https://github.com/adardev", live: "https://adardev.com",
+        live: "https://netlify.densora.com",
     },
     {
         title: "Tekkure", titleKey: "projectTekkureTitle",
@@ -22,6 +22,6 @@ export const projects = [
             { icon: "/logos/astro_logo.svg", name: "Astro", role: "Framework" },
             { icon: "/logos/tailwind_logo.svg", name: "Tailwind", role: "UI Design" }
         ],
-        github: "https://github.com/adardev", live: "#",
+        live: "https://tekkure.com",
     },
 ];

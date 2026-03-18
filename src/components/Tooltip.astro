@@ -12,7 +12,7 @@ const arrowStyles: Record<string, string> = {
 };
 ---
 
-<div class={`absolute whitespace-nowrap pointer-events-none ${positionStyles[position]} px-3 py-1.5 min-w-max bg-bg-card rounded-lg shadow-xl opacity-0 translate-y-2 ${trigger}:opacity-100 ${trigger}:translate-y-0 border border-accent/20 z-[110] transition-all duration-200`}>
+<div class={`absolute whitespace-nowrap pointer-events-none ${positionStyles[position]} px-3 py-1.5 min-w-max bg-bg-card rounded-lg shadow-xl opacity-0 translate-y-2 ${trigger}:opacity-100 ${trigger}:translate-y-0 border border-accent/20 z-[110] transition-[transform,opacity] duration-200`}>
     <Text as="span" type="tooltip" i18nKey={i18nKey} text={label} />
     <div class={`absolute w-2 h-2 bg-bg-card border-accent/20 transform rotate-45 ${arrowStyles[position]}`}></div>
 </div>

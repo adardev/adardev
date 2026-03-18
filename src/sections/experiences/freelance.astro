@@ -6,21 +6,15 @@ const data = experiences.find((exp) => exp.titleKey === "experienceFreelance") |
 
 <div class="relative pl-8 pb-12 last:pb-0 group">
     <!-- Dot -->
-    <div class="absolute -left-[10px] top-1 w-4 h-4 rounded-full bg-accent border-4 border-bg-dark z-10 transition-transform duration-300 group-hover:scale-125 shadow-[0_0_10px_rgba(24,205,169,0.5)]"></div>
+    <div class="absolute -left-[10px] top-1 w-4 h-4 rounded-full bg-accent border-4 border-bg-dark z-10 transition-transform duration-300 sm:group-hover:scale-125 shadow-[0_0_10px_rgba(24,205,169,0.5)]"></div>
 
-    <div class="p-6 space-y-3 hover:translate-x-2 transition-all duration-300 rounded-2xl border border-accent/20 bg-bg-card/80 backdrop-blur-xl">
+    <div class="p-6 space-y-3 sm:hover:translate-x-2 transition-transform duration-300 rounded-2xl border border-accent/20 bg-[#1a2321] sm:bg-bg-card/90">
         <div class="flex flex-wrap items-center justify-between gap-2">
             <div>
                 <Text as="span" type="badge" text={data.year} extraClass="!text-accent !font-black tracking-widest uppercase mb-1 block !text-xs" />
                 <Text as="h3" type="subTitle" extraClass="!text-xl" i18nKey={data.titleKey} text={data.title} />
             </div>
-            <Text
-                as="span"
-                type="badge"
-                i18nKey={data.subtitleKey}
-                text={data.subtitle}
-                extraClass="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 !text-[10px] !font-bold !text-accent uppercase tracking-wider"
-            />
+            <Text as="span" type="badge" i18nKey={data.subtitleKey} text={data.subtitle} extraClass="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 !text-[10px] !font-bold !text-accent uppercase tracking-wider" />
         </div>
         <Text type="mini" extraClass="opacity-80 leading-relaxed" i18nKey={data.descriptionKey} text={data.description} />
     </div>

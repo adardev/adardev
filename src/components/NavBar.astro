@@ -7,16 +7,17 @@ import { navLinks } from "../data/index.js";
 import mexico_flag from "../assets/flags/mexico_flag.svg";
 import uk_flag from "../assets/flags/unitedkingdom_flag.svg";
 ---
-<div class="fixed z-[100] top-3 left-3 h-[50px] sm:top-4 sm:h-[52px] md:h-[56px] aspect-square p-1 rounded-2xl flex items-center justify-center border border-accent/20 bg-bg-card/80 backdrop-blur-xl">
-    <a href="/" class="inline-flex h-10 w-10 sm:h-[42px] sm:w-[42px] items-center justify-center rounded-lg p-2 text-body transition-all duration-300 hover:bg-bg-card-hover hover:text-accent group cursor-pointer" aria-label="Inicio" data-i18n-aria-label="navHome">
-        <img src="/logos/adardev_logo.svg" alt="adardev Logo" class="w-6 h-6 sm:w-8 sm:h-8 transition-transform group-hover:scale-110" />
+
+<div class="fixed z-[100] top-3 left-3 h-[50px] sm:top-4 sm:h-[52px] md:h-[56px] aspect-square p-1 rounded-2xl flex items-center justify-center border border-[#114b3e] bg-[#1a2321] bg-opacity-100">
+    <a href="/" class="inline-flex h-10 w-10 sm:h-[42px] sm:w-[42px] items-center justify-center rounded-lg p-2 text-body transition-colors duration-300 sm:hover:bg-bg-card-hover sm:hover:text-accent group cursor-pointer" aria-label="Inicio" data-i18n-aria-label="navHome">
+        <img src="/logos/adardev_logo.svg" alt="adardev Logo" class="w-6 h-6 sm:w-8 sm:h-8 transition-transform sm:group-hover:scale-110" />
     </a>
 </div>
 <header class="hidden sm:flex fixed top-0 left-0 w-full z-[90] pointer-events-none justify-center p-3 sm:p-4">
-    <nav id="navbar-container" class="flex items-center gap-1 sm:gap-2 px-1.5 py-1.5 sm:px-2 sm:py-2 pointer-events-auto transition-all duration-300 h-[50px] sm:h-[52px] md:h-[56px] rounded-2xl border border-accent/20 bg-bg-card/80 backdrop-blur-xl">
+    <nav id="navbar-container" class="flex items-center gap-1 sm:gap-2 px-1.5 py-1.5 sm:px-2 sm:py-2 pointer-events-auto transition-transform transition-opacity duration-300 h-[50px] sm:h-[52px] md:h-[56px] rounded-2xl border border-[#114b3e] bg-[#1a2321] bg-opacity-100">
         {
             navLinks.map((link) => (
-                <a href={link.href} class="nav-item group relative inline-flex h-10 w-10 sm:h-[42px] sm:w-[42px] items-center justify-center rounded-lg transition-all duration-300 text-body hover:bg-bg-card-hover hover:text-accent" aria-label={link.name} data-i18n-aria-label={link.i18n}>
+                <a href={link.href} class="nav-item group relative inline-flex h-10 w-10 sm:h-[42px] sm:w-[42px] items-center justify-center rounded-lg transition-colors duration-300 text-body sm:hover:bg-bg-card-hover sm:hover:text-accent" aria-label={link.name} data-i18n-aria-label={link.i18n}>
                     <Text as="span" extraClass="sr-only" i18nKey={link.i18n} text={link.name} />
                     <NavIcon icon={link.icon} />
                     <Tooltip label={link.name} i18nKey={link.i18n} position="bottom" />
@@ -25,8 +26,8 @@ import uk_flag from "../assets/flags/unitedkingdom_flag.svg";
         }
     </nav>
 </header>
-<div class="fixed z-[100] top-3 right-3 h-[50px] sm:top-4 sm:h-[52px] md:h-[56px] aspect-square p-1 rounded-2xl flex items-center justify-center border border-accent/20 bg-bg-card/80 backdrop-blur-xl">
-    <button id="language-toggle" class="inline-flex h-10 w-10 sm:h-[42px] sm:w-[42px] items-center justify-center rounded-lg text-body transition-all duration-300 hover:bg-bg-card-hover hover:text-accent cursor-pointer overflow-hidden" aria-label="Cambiar idioma" data-i18n-aria-label="navLanguage">
+<div class="fixed z-[100] top-3 right-3 h-[50px] sm:top-4 sm:h-[52px] md:h-[56px] aspect-square p-1 rounded-2xl flex items-center justify-center border border-[#114b3e] bg-[#1a2321] bg-opacity-100">
+    <button id="language-toggle" class="inline-flex h-10 w-10 sm:h-[42px] sm:w-[42px] items-center justify-center rounded-lg text-body transition-colors duration-300 sm:hover:bg-bg-card-hover sm:hover:text-accent cursor-pointer overflow-hidden" aria-label="Cambiar idioma" data-i18n-aria-label="navLanguage">
         <Image src={mexico_flag} alt="ES" class="w-5 h-5 sm:w-6 sm:h-6 object-cover rounded-sm flag-es block" id="flag-es" />
         <Image src={uk_flag} alt="EN" class="w-5 h-5 sm:w-6 sm:h-6 object-cover rounded-sm flag-en hidden" id="flag-en" />
     </button>

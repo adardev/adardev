@@ -6,9 +6,9 @@ import IconMask from "./IconMask.astro";
 const { title, description, image, logo, tech = [], github, live, platform, titleKey, descKey, metrics = [] } = Astro.props;
 ---
 
-<div class="group h-full flex flex-col relative z-10 hover:z-50 transition-all duration-300 hover:-translate-y-1 rounded-3xl border border-accent/20 bg-bg-card shadow-sm">
-    <div class="w-full relative overflow-hidden bg-accent/5 aspect-video shrink-0 rounded-t-[1.5rem]">
-        <Image src={image} alt={title} class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
+<div class="group h-full flex flex-col relative z-10 card-base">
+    <div class="w-full relative overflow-hidden bg-[#111f1c] aspect-video shrink-0 rounded-t-[2rem]">
+        <Image src={image} alt={title} class="object-cover w-full h-full transition-transform duration-700" />
     </div>
 
     <div class="w-full p-4 sm:p-5 flex flex-col flex-1 justify-between gap-4">
@@ -20,9 +20,9 @@ const { title, description, image, logo, tech = [], github, live, platform, titl
                 </div>
                 {
                     (platform || tech.length > 0) && (
-                        <div class="flex items-center gap-2 bg-accent/10 px-2 py-1 rounded-full border border-accent/20">
-                            {platform && <img src={platform} width="16" height="16" class="opacity-80" alt="" />}
-                            {platform && tech.length > 0 && <div class="w-[1px] h-3 bg-accent/30 mx-1" />}
+                        <div class="flex items-center gap-2 bg-[#132c27] px-2 py-1 rounded-full border border-[#114b3e]">
+                            {platform && <img src={platform} width="16" height="16" class="opacity-100" alt="" />}
+                            {platform && tech.length > 0 && <div class="w-[1px] h-3 bg-[#18cda9] mx-1" />}
                             {tech.length > 0 && (
                                 <div class="flex gap-2">
                                     {tech.map((t: any) => (
@@ -42,9 +42,9 @@ const { title, description, image, logo, tech = [], github, live, platform, titl
 
             {
                 metrics.length > 0 && (
-                    <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5">
+                    <div class="flex flex-wrap gap-2 pt-3 border-t border-[#1a2321]">
                         {metrics.map((m: string) => (
-                            <div class="px-3 py-1.5 rounded-lg bg-bg-card-hover border border-accent/10 hover:border-accent/40 transition-all duration-300">
+                            <div class="px-3 py-1.5 rounded-lg bg-bg-card-hover border border-[#114b3e] sm:hover:border-[#18cda9] transition-[border-color] duration-300">
                                 <Text type="badge" extraClass="!text-[10px] sm:!text-[11px] !font-black !text-subtitle tracking-wider" i18nKey={m} text="..." />
                             </div>
                         ))}
@@ -55,7 +55,7 @@ const { title, description, image, logo, tech = [], github, live, platform, titl
         <div class="flex items-center gap-2 mt-auto">
             {
                 github && (
-                    <a href={github} target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center rounded-xl transition-all duration-200 font-medium bg-bg-card-hover px-3 py-2.5 group/btn text-body transition-colors duration-300 gap-2 hover:bg-white/10">
+                    <a href={github} target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center rounded-xl transition-colors duration-200 font-medium bg-bg-card-hover px-3 py-2.5 group/btn text-body gap-2 sm:hover:bg-white/10">
                         <IconMask src="/logos/github_logo.svg" extraClass="w-4 h-4" />
                         <Text as="span" type="badge" i18nKey="btnCode" text="Código" />
                     </a>
@@ -63,7 +63,7 @@ const { title, description, image, logo, tech = [], github, live, platform, titl
             }
             {
                 live && (
-                    <a href={live} target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center rounded-xl transition-all duration-200 font-medium bg-accent text-bg-dark px-3 py-2.5 hover:brightness-110 shadow-lg shadow-accent/20 gap-2">
+                    <a href={live} target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center rounded-xl transition-colors duration-200 font-medium bg-accent text-bg-dark px-3 py-2.5 sm:hover:brightness-110 shadow-lg shadow-accent/20 gap-2">
                         <img src="/icons/web_icon.svg" width="16" height="16" alt="" class="dark:invert" />
                         <Text as="span" type="badge" extraClass="!text-bg-dark" i18nKey="btnVisit" text="Visitar" />
                     </a>

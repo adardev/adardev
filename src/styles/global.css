@@ -26,25 +26,15 @@
     --shadow-primary: 0 4px 16px rgba(24, 205, 169, 0.1);
 }
 
+@utility card-base {
+    @apply rounded-[2rem] border border-[#1a2321] bg-[#1a2321] shadow-lg shadow-[#0d1614];
+}
+
 @utility scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
         display: none;
-    }
-}
-
-@layer base {
-    body {
-        font-family: var(--font-sans);
-        background-color: var(--color-bg-dark);
-        color: var(--color-body);
-        @apply transition-colors duration-300;
-    }
-
-    ::selection {
-        background-color: var(--color-accent);
-        color: #0f1614;
     }
 }

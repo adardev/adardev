@@ -45,5 +45,10 @@ const { title, description } = Astro.props;
     }
     body {
         min-height: 100vh;
+        font-family: var(--font-sans);
+        background-color: var(--color-bg-dark);
+        color: var(--color-body);
+        transition-property: background-color, color;
+        transition-duration: 300ms;
     }
 </style>

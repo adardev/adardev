@@ -3,13 +3,13 @@ import Text from "./text.astro";
 const { name, icon, i18nExperienceKey } = Astro.props;
 ---
 
-<div class="skill-card-container group [perspective:1000px] cursor-pointer h-24 w-24 sm:h-32 sm:w-32 mx-auto antialiased opacity-0 scale-90 transition-all duration-700">
-    <div class="skill-card-inner relative w-full h-full transition-transform duration-[600ms] ease-out [transform-style:preserve-3d] group-[.is-center]:[transform:rotateY(180deg)] group-hover:[transform:rotateY(180deg)]">
-        <div class="absolute inset-0 w-full h-full rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm p-5 sm:p-6 [transform:rotateY(0deg)] [backface-visibility:hidden] shadow-lg shadow-black/20">
+<div class="skill-card-container group [perspective:1000px] cursor-pointer h-24 w-24 sm:h-32 sm:w-32 mx-auto antialiased">
+    <div class="skill-card-inner relative w-full h-full transition-transform duration-[600ms] ease-out [transform-style:preserve-3d] group-[.is-center]:[transform:rotateY(180deg)]">
+        <div class="absolute inset-0 w-full h-full rounded-2xl bg-[#1a2321] sm:bg-bg-card border border-white/10 flex items-center justify-center p-5 sm:p-6 [transform:rotateY(0deg)] [backface-visibility:hidden] shadow-lg shadow-black/20">
             <img src={icon} class="w-full h-full object-contain" alt="" />
         </div>
 
-        <div class="absolute inset-0 w-full h-full rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm flex-col p-2 sm:p-3 overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+        <div class="absolute inset-0 w-full h-full rounded-2xl bg-[#1a2321] sm:bg-bg-card border border-white/10 flex items-center justify-center flex-col p-2 sm:p-3 overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
             <Text text={name} type="mini" extraClass="!text-center !font-semibold !text-xs sm:!text-sm mb-1 text-accent" />
 
             <div class="w-full overflow-y-auto scrollbar-hide">

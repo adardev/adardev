@@ -1,12 +1,19 @@
 ---
+import Pill from "./Pill.astro";
 import Text from "./text.astro";
 import IconMask from "./IconMask.astro";
 const { year, title, subtitle, description, logo, titleKey, subtitleKey, descriptionKey, badge, badgeKey } = Astro.props;
 ---
 
 <div class="experience-item relative pl-14 sm:pl-24 group pb-10 sm:pb-12">
-    <div class="absolute left-[-7px] sm:left-[-6px] top-[0.6rem] z-20">
-        <Text as="div" type="badge" extraClass="w-[16px] h-[16px] font-black bg-accent rounded-full flex items-center justify-center text-transparent transition-all duration-300 group-[.is-center]:w-16 group-[.is-center]:h-8 group-[.is-center]:text-bg-dark group-[.is-center]:bg-accent group-[.is-center]:shadow-lg" text={year} />
+    <div class="absolute left-[1px] sm:left-[2px] top-[0.8rem] z-20 flex items-center justify-center -translate-x-1/2 pointer-events-none h-8 w-14 sm:w-16">
+        <!-- Static indicator dot -->
+        <div class="absolute w-3 h-3 sm:w-3.5 sm:h-3.5 bg-accent rounded-full opacity-100 group-[.is-center]:opacity-0 transition-opacity duration-200"></div>
+
+        <!-- Year badge - pop on scroll (unified for mobile and desktop) -->
+        <div class="absolute w-14 h-6 sm:w-16 sm:h-7 opacity-0 scale-50 group-[.is-center]:opacity-100 group-[.is-center]:scale-110 bg-accent rounded-full flex items-center justify-center transition-all duration-200 will-change-transform">
+            <span class="text-[10px] sm:text-xs font-black text-bg-dark leading-none">{year}</span>
+        </div>
     </div>
     <div class="w-full flex flex-col">
         <div class="flex flex-row justify-between gap-3 sm:gap-4 items-start w-full">
@@ -15,8 +22,8 @@ const { year, title, subtitle, description, logo, titleKey, subtitleKey, descrip
                     <Text text={title} type="subTitle" color="text-title" i18nKey={titleKey} extraClass="break-words" />
                     {
                         badge && (
-                            <div class="px-2 py-0.5 rounded-full border border-accent/30 bg-accent/10">
-                                <Text text={badge} type="badge" i18nKey={badgeKey} extraClass="!text-accent !text-[10px] uppercase tracking-wider" />
+                            <div class="px-2 py-0.5 rounded-full border border-[#0b5c4a] bg-[#0d2a24]">
+                                <Text text={badge} type="badge" i18nKey={badgeKey} extraClass="!text-accent !text-[10px] uppercase tracking-wider !font-black" />
                             </div>
                         )
                     }

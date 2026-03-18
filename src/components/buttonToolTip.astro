@@ -6,17 +6,17 @@ import IconMask from "./IconMask.astro";
 
 {
     link ? (
-        <a href={link} class={`social-link-btn relative group/btn flex items-center h-12 px-3 rounded-2xl overflow-hidden border border-accent/20 bg-bg-card/80 backdrop-blur-xl transition-[width,padding,border-radius,background-color,transform] duration-300 ease-out sm:hover:bg-accent/10 sm:hover:pr-5 ${extraClass}`} aria-label={label} data-i18n-aria-label={i18nKey} target="_blank" rel="noopener noreferrer">
+        <a href={link} class={`relative group/btn flex items-center h-12 px-3 rounded-2xl overflow-hidden border border-[#114b3e] bg-[#1a2321] transition-all duration-300 ease-out sm:hover:bg-[#153a33] sm:hover:pr-5 ${extraClass}`} aria-label={label} data-i18n-aria-label={i18nKey} target="_blank" rel="noopener noreferrer">
             <IconMask src={iconSrc} extraClass="w-6 h-6 flex-shrink-0 transition-colors duration-300 text-body pointer-events-none" />
-            <div class="social-link-label max-w-0 overflow-hidden opacity-0 ml-0 flex items-center min-w-0 transition-[max-width,opacity,margin] duration-300 ease-out max-sm:group-[.is-center]:max-w-full max-sm:group-[.is-center]:opacity-100 max-sm:group-[.is-center]:ml-2 sm:group-hover/btn:max-w-xs sm:group-hover/btn:opacity-100 sm:group-hover/btn:ml-3 pointer-events-none">
-                <Text type="badge" text={label} i18nKey={i18nKey} extraClass="!text-body !font-bold whitespace-nowrap !text-[12px] sm:!text-[15px] tracking-wide" />
+            <div class="social-link-label max-w-0 overflow-hidden opacity-0 ml-0 flex items-center min-w-0 transition-all duration-300 ease-out max-sm:group-[.is-center]:max-w-xs max-sm:group-[.is-center]:opacity-100 max-sm:group-[.is-center]:ml-2 sm:group-hover/btn:max-w-xs sm:group-hover/btn:opacity-100 sm:group-hover/btn:ml-3 pointer-events-none">
+                <Text type="badge" text={label} i18nKey={i18nKey} extraClass="!text-body !font-black whitespace-nowrap !text-[12px] sm:!text-[15px] tracking-wide" />
             </div>
         </a>
     ) : (
-        <div class={`social-link-btn relative group/btn flex items-center h-12 px-3 rounded-2xl overflow-hidden border border-accent/20 bg-bg-card/80 backdrop-blur-xl transition-[width,padding,border-radius,background-color,transform] duration-300 ease-out ${extraClass}`} aria-label={label} data-i18n-aria-label={i18nKey}>
+        <div class={`relative group/btn flex items-center h-12 px-3 rounded-2xl overflow-hidden border border-[#114b3e] bg-[#1a2321] transition-all duration-300 ease-out ${extraClass}`} aria-label={label} data-i18n-aria-label={i18nKey}>
             <IconMask src={iconSrc} extraClass="w-6 h-6 flex-shrink-0 transition-colors duration-300 text-body pointer-events-none" />
-            <div class="social-link-label max-w-0 overflow-hidden opacity-0 ml-0 flex items-center min-w-0 transition-[max-width,opacity,margin] duration-300 ease-out max-sm:group-[.is-center]:max-w-full max-sm:group-[.is-center]:opacity-100 max-sm:group-[.is-center]:ml-2 sm:group-hover/btn:max-w-xs sm:group-hover/btn:opacity-100 sm:group-hover/btn:ml-3 pointer-events-none">
-                <Text type="badge" text={label} i18nKey={i18nKey} extraClass="!text-body !font-bold whitespace-nowrap !text-[12px] sm:!text-[15px] tracking-wide" />
+            <div class="social-link-label max-w-0 overflow-hidden opacity-0 ml-0 flex items-center min-w-0 transition-all duration-300 ease-out max-sm:group-[.is-center]:max-w-xs max-sm:group-[.is-center]:opacity-100 max-sm:group-[.is-center]:ml-2 sm:group-hover/btn:max-w-xs sm:group-hover/btn:opacity-100 sm:group-hover/btn:ml-3 pointer-events-none">
+                <Text type="badge" text={label} i18nKey={i18nKey} extraClass="!text-body !font-black whitespace-nowrap !text-[12px] sm:!text-[15px] tracking-wide" />
             </div>
         </div>
     )

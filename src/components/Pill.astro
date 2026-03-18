@@ -1,0 +1,19 @@
+---
+import Text from "./text.astro";
+
+interface Props {
+    text?: string;
+    i18nKey?: string;
+    extraClass?: string;
+    type?: "badge" | "mini" | "text";
+    bgColor?: string;
+    borderColor?: string;
+    textColor?: string;
+}
+
+const { text, i18nKey, extraClass = "", type = "badge", bgColor = "bg-[#1a2321]", borderColor = "border-[#114b3e]", textColor = "!text-accent" } = Astro.props;
+---
+
+<div class={`pill-base ${borderColor} ${bgColor} ${extraClass}`}>
+    <Text text={text} type={type} i18nKey={i18nKey} extraClass={`${textColor} !text-[10px] uppercase font-black tracking-wider leading-none`} />
+</div>
