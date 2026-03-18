@@ -1,23 +1,31 @@
 export function initNav() {
-    if (window.__navInitialized) {
-        return;
-    }
-    window.__navInitialized = true;
+    const state = window.__navState || {
+        initialized: false,
+        ticking: false,
+        sections: [],
+        navItems: [],
+        flagEs: null,
+        flagEn: null,
+        langToggle: null,
+    };
+    window.__navState = state;
 
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll("#navbar-container .nav-item");
-    const flagEs = document.getElementById("flag-es");
-    const flagEn = document.getElementById("flag-en");
-    const langToggle = document.getElementById("language-toggle");
+    function refreshRefs() {
+        state.sections = Array.from(document.querySelectorAll("section"));
+        state.navItems = Array.from(document.querySelectorAll("#navbar-container .nav-item"));
+        state.flagEs = document.getElementById("flag-es");
+        state.flagEn = document.getElementById("flag-en");
+        state.langToggle = document.getElementById("language-toggle");
+    }
 
     function updateLanguageUI() {
         const lang = localStorage.getItem("language") || "es";
         if (lang === "es") {
-            flagEs?.classList.replace("hidden", "block");
-            flagEn?.classList.replace("block", "hidden");
+            state.flagEs?.classList.replace("hidden", "block");
+            state.flagEn?.classList.replace("block", "hidden");
         } else {
-            flagEs?.classList.replace("block", "hidden");
-            flagEn?.classList.replace("hidden", "block");
+            state.flagEs?.classList.replace("block", "hidden");
+            state.flagEn?.classList.replace("hidden", "block");
         }
     }
 
@@ -33,19 +41,39 @@ export function initNav() {
     function updateActiveLink() {
         let current = "";
         const scrollY = window.scrollY;
-        sections.forEach((section) => {
+        state.sections.forEach((section) => {
             if (scrollY >= section.offsetTop - section.clientHeight / 3) {
                 current = section.getAttribute("id") || "";
             }
         });
-        navItems.forEach((item) => {
+        state.navItems.forEach((item) => {
             item.classList.toggle("nav-active", item.getAttribute("href") === `#${current}` || (current === "" && item.getAttribute("href") === "/"));
         });
     }
 
-    langToggle?.addEventListener("click", toggleLanguage);
-    window.addEventListener("scroll", updateActiveLink);
-    window.addEventListener("languageChanged", updateLanguageUI);
+    function onScroll() {
+        if (state.ticking) {
+            return;
+        }
+        state.ticking = true;
+        requestAnimationFrame(() => {
+            updateActiveLink();
+            state.ticking = false;
+        });
+    }
+
+    refreshRefs();
+
+    if (!state.initialized) {
+        state.initialized = true;
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("languageChanged", updateLanguageUI);
+    }
+
+    if (state.langToggle && !state.langToggle.dataset.navBound) {
+        state.langToggle.addEventListener("click", toggleLanguage);
+        state.langToggle.dataset.navBound = "true";
+    }
 
     updateLanguageUI();
     updateActiveLink();

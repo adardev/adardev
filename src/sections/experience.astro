@@ -1,13 +1,13 @@
 ---
-import TitleSection from "../components/titleSection.astro";
-import Section from "../components/section.astro";
-import ExperienceItem from "../components/ExperienceItem.astro";
-import { experiences } from "../data/portfolio.js";
+import SectionWithTitle from "../components/SectionWithTitle.astro";
+import ExperienceTimeline from "../components/ExperienceTimeline.astro";
 ---
-<Section id="experience" extraClass="my-12 sm:my-16 md:my-24">
-    <TitleSection imageSrc="/icons/portfolio_icon.svg" title="Experiencia" i18nKey="experienceTitle" />
-    <div class="relative ml-4 sm:ml-16 md:ml-[5.5rem]">
-        <div class="absolute left-0 top-0 bottom-0 w-[2px] sm:w-[4px] bg-accent rounded-full"></div>
-        {experiences.map((exp) => <ExperienceItem {...exp} />)}
-    </div>
-</Section>
+<SectionWithTitle id="experience" imageSrc="/icons/portfolio_icon.svg" title="Experiencia" i18nKey="experienceTitle">
+    <ExperienceTimeline />
+</SectionWithTitle>
+
+<script>
+    import { initExperienceFocus } from "../scripts/experienceFocus.js";
+    initExperienceFocus();
+    document.addEventListener("astro:page-load", initExperienceFocus);
+</script>

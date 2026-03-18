@@ -1,0 +1,31 @@
+---
+import ButtonToolTip from "./buttonToolTip.astro";
+import { socialLinks } from "../data/index.js";
+
+const heroLinkCompactClass = "w-12 h-12 px-0 justify-center rounded-2xl max-sm:group-[.is-center]:w-full max-sm:group-[.is-center]:px-3 max-sm:group-[.is-center]:justify-start sm:w-auto sm:h-12 sm:px-3 sm:justify-start";
+---
+
+<div id="hero-links" class="hero-links group w-full sm:w-fit">
+    <div class="hero-links-list flex flex-wrap justify-center gap-2 w-full sm:w-auto sm:flex-nowrap sm:justify-start max-sm:group-[.is-center]:grid max-sm:group-[.is-center]:grid-cols-2 max-sm:group-[.is-center]:gap-2">
+        {socialLinks.map((social) => (
+            <ButtonToolTip
+                {...social}
+                extraClass={heroLinkCompactClass}
+            />
+        ))}
+        <ButtonToolTip
+            iconSrc="/icons/cv_icon.svg"
+            label="Ver curriculum Vitae"
+            link="/cvs/adardevCV.pdf"
+            i18nKey="heroCV"
+            extraClass={heroLinkCompactClass}
+        />
+    </div>
+</div>
+
+<script>
+    import { initHeroLinks } from "../scripts/heroLinks.js";
+    initHeroLinks();
+    document.addEventListener("astro:page-load", initHeroLinks);
+</script>
+

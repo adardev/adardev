@@ -4,15 +4,17 @@ const typeStyles: Record<string, { size: string; weight: string; color: string }
     text: { size: "text-base sm:text-lg", weight: "font-normal", color: "text-body" },
     title: { size: "text-3xl sm:text-4xl md:text-5xl", weight: "font-bold", color: "text-title" },
     subTitle: { size: "text-lg sm:text-xl md:text-2xl", weight: "font-bold", color: "text-subtitle" },
-    mini: { size: "text-xs sm:text-sm", weight: "font-light", color: "text-body" },
+    mini: { size: "text-xs sm:text-sm", weight: "font-normal", color: "text-body" },
     badge: { size: "text-[10px] sm:text-xs", weight: "font-bold", color: "text-body" },
     tooltip: { size: "text-xs sm:text-sm", weight: "font-bold", color: "text-body" },
 };
 const style = typeStyles[type] || { size: "", weight: "", color: "" };
 const marginTop = mt === "true" ? "mt-4 sm:mt-6" : "";
 const marginBottom = mb === "true" ? "mb-4 sm:mb-6" : "";
+const i18nClass = i18nKey ? "i18n-animate" : "";
+const i18nAttrs = i18nKey ? { "data-i18n": i18nKey } : {};
 ---
 
-<Tag class={`${style.size} ${marginTop} ${marginBottom} ${style.weight} ${style.color} ${extraClass} i18n-animate`} data-i18n={i18nKey}>
+<Tag class={`${style.size} ${marginTop} ${marginBottom} ${style.weight} ${style.color} ${extraClass} ${i18nClass}`} {...i18nAttrs}>
     {text || <slot />}
 </Tag>

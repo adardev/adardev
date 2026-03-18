@@ -3,30 +3,54 @@ export function initI18n() {
         return;
     }
     window.__i18nInitialized = true;
+    let activeRequest = 0;
+    const localeCache = new Map();
+
+    const getI18nNodes = () => ({
+        textElements: document.querySelectorAll("[data-i18n]"),
+        ariaElements: document.querySelectorAll("[data-i18n-aria-label]"),
+    });
+
+    const triggerTextAnimation = (textElements) => {
+        textElements.forEach((el) => {
+            el.classList.add("i18n-animate");
+            el.classList.remove("i18n-loading");
+            // Force reflow so the loading transition can replay on every language change.
+            void el.offsetWidth;
+            el.classList.add("i18n-loading");
+        });
+    };
 
     const setLanguage = async (lang) => {
-        const elements = document.querySelectorAll("[data-i18n], [data-i18n-aria-label]");
+        const requestId = ++activeRequest;
+        const { textElements, ariaElements } = getI18nNodes();
 
-        elements.forEach((el) => el.classList.add("i18n-animate"));
-        elements.forEach((el) => el.classList.add("i18n-loading"));
+        triggerTextAnimation(textElements);
 
         await new Promise((resolve) => setTimeout(resolve, 140));
 
         try {
-            const response = await fetch(`/locales/${lang}.json`);
-            const data = await response.json();
+            let data = localeCache.get(lang);
+            if (!data) {
+                const response = await fetch(`/locales/${lang}.json`, { cache: "no-store" });
+                data = await response.json();
+                localeCache.set(lang, data);
+            }
+            if (requestId !== activeRequest) {
+                return;
+            }
             window.i18nData = data;
 
             document.documentElement.lang = lang;
 
-            document.querySelectorAll("[data-i18n]").forEach((el) => {
+            textElements.forEach((el) => {
                 const key = el.getAttribute("data-i18n");
                 if (data[key]) {
-                    el.innerText = data[key];
+                    el.textContent = data[key];
                 }
             });
 
-            document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+            ariaElements.forEach((el) => {
                 const key = el.getAttribute("data-i18n-aria-label");
                 if (data[key]) {
                     el.setAttribute("aria-label", data[key]);
@@ -40,7 +64,7 @@ export function initI18n() {
             console.error("Error loading language file:", error);
         } finally {
             requestAnimationFrame(() => {
-                elements.forEach((el) => el.classList.remove("i18n-loading"));
+                textElements.forEach((el) => el.classList.remove("i18n-loading"));
             });
         }
     };
@@ -49,4 +73,8 @@ export function initI18n() {
     setLanguage(initialLang);
 
     window.addEventListener("languageChanged", (e) => setLanguage(e.detail.language));
+    window.addEventListener("astro:page-load", () => {
+        const lang = localStorage.getItem("language") || initialLang;
+        setLanguage(lang);
+    });
 }

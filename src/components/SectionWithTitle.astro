@@ -1,0 +1,17 @@
+---
+import Section from "./section.astro";
+import TitleSection from "./titleSection.astro";
+
+const {
+    id,
+    extraClass = "my-12 sm:my-16 md:my-24",
+    imageSrc,
+    title,
+    i18nKey,
+} = Astro.props;
+---
+
+<Section id={id} extraClass={extraClass}>
+    <TitleSection imageSrc={imageSrc} title={title} i18nKey={i18nKey} />
+    <slot />
+</Section>

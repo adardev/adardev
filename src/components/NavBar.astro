@@ -3,15 +3,9 @@ import { Image } from "astro:assets";
 import NavIcon from "./NavIcon.astro";
 import Text from "./text.astro";
 import Tooltip from "./Tooltip.astro";
+import { navLinks } from "../data/index.js";
 import mexico_flag from "../assets/flags/mexico_flag.svg";
 import uk_flag from "../assets/flags/unitedkingdom_flag.svg";
-const navLinks = [
-    { name: "Inicio", href: "/", icon: "home", i18n: "navHome" },
-    { name: "Sobre Mi", href: "#about", icon: "user", i18n: "navAbout" },
-    { name: "Experiencia", href: "#experience", icon: "briefcase", i18n: "navExperience" },
-    { name: "Proyectos", href: "#projects", icon: "code", i18n: "navProjects" },
-    { name: "Habilidades", href: "#skills", icon: "cpu", i18n: "navSkills" },
-];
 ---
 <div class="nav-pill glass-card top-3 left-3">
     <a href="/" class="nav-btn p-2 group cursor-pointer" aria-label="Inicio" data-i18n-aria-label="navHome">

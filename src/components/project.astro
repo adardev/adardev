@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Text from "./text.astro";
 import Tooltip from "./Tooltip.astro";
+import IconMask from "./IconMask.astro";
 const { title, description, image, logo, tech = [], github, live, platform, titleKey, descKey, metrics = [] } = Astro.props;
 ---
 
@@ -55,7 +56,7 @@ const { title, description, image, logo, tech = [], github, live, platform, titl
             {
                 github && (
                     <a href={github} target="_blank" rel="noopener noreferrer" class="flex-1 btn-base bg-bg-card-hover px-3 py-2.5 group/btn text-body transition-colors duration-300 gap-2 font-medium hover:bg-white/10">
-                        <div class="w-4 h-4" style={`-webkit-mask-image: url('/logos/github_logo.svg'); mask-image: url('/logos/github_logo.svg'); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor;`} aria-hidden="true" />
+                        <IconMask src="/logos/github_logo.svg" extraClass="w-4 h-4" />
                         <Text as="span" type="badge" i18nKey="btnCode" text="Código" />
                     </a>
                 )

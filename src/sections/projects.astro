@@ -1,8 +1,7 @@
 ---
-import TitleSection from "../components/titleSection.astro";
-import Section from "../components/section.astro";
+import SectionWithTitle from "../components/SectionWithTitle.astro";
 import Project from "../components/project.astro";
-import { projects } from "../data/portfolio.js";
+import { projects } from "../data/index.js";
 import Tekkure_demo from "../assets/demos/tekkure_demo.jpg";
 import Densora_demo from "../assets/demos/densora_demo.png";
 const images: Record<string, any> = {
@@ -10,10 +9,8 @@ const images: Record<string, any> = {
     "../assets/demos/densora_demo.png": Densora_demo,
 };
 ---
-<Section id="projects" extraClass="my-12 sm:my-16 md:my-24">
-    <TitleSection imageSrc="/icons/code_icon.svg" title="Proyectos" i18nKey="projectsTitle" />
-
+<SectionWithTitle id="projects" imageSrc="/icons/code_icon.svg" title="Proyectos" i18nKey="projectsTitle">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
         {projects.map((project) => <Project {...project} image={images[project.imagePath]} />)}
     </div>
-</Section>
+</SectionWithTitle>
