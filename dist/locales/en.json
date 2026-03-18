@@ -5,7 +5,7 @@
     "navProjects": "Projects",
     "navSkills": "Skills",
     "navLanguage": "Change language",
-    "heroTitle": "Hi, I'm adardev",
+    "heroTitle": "Hi, I'm Brandon López",
     "heroSubtitle": "Software Developer & Systems Specialist",
     "heroCV": "View CV",
     "aboutTitle": "About Me",
@@ -23,7 +23,7 @@
     "projectDensoraTitle": "Densora",
     "projectDensoraDesc": "Intelligent dental management platform that eliminates administrative chaos. Ecosystem composed of a Flutter Mobile App, a Web Portal in Astro and React, and a Python Chatbot for managing appointments via WhatsApp. All backed by Google Firebase.",
     "projectTekkureTitle": "Tekkure",
-    "projectTekkureDesc": "Immersive musical experience with a minimalist focus.",
+    "projectTekkureDesc": "Technical support, IT services, and custom software development. Solutions focused on solving technological needs and optimizing digital management.",
     "btnCode": "Code",
     "btnVisit": "Visit",
     "skillsTitle": "Skills",
@@ -71,7 +71,8 @@
     "projectDensoraMetric1": "Under development",
     "projectDensoraMetric2": "3 platforms",
     "projectDensoraMetric3": "Automated WhatsApp",
-    "projectTekkureMetric1": "Native player",
-    "projectTekkureMetric2": "Minimalist UI",
-    "projectTekkureMetric3": "Electron + Astro"
+    "projectTekkureMetric1": "IT Services",
+    "projectTekkureMetric2": "Software Development",
+    "projectTekkureMetric3": "Digital Solutions",
+    "badgePresencial": "On-site"
 }

@@ -15,7 +15,7 @@ export const projects = [
     {
         title: "Tekkure", titleKey: "projectTekkureTitle",
         description: "Soporte técnico, servicios de IT y desarrollo de software a medida.",
-        descKey: "projectTekkureDesc", imagePath: "../assets/demos/tekkure_demo.jpg", logo: "/logos/tekkure_light.svg",
+        descKey: "projectTekkureDesc", imagePath: "../assets/demos/tekkure_demo.png", logo: "/logos/tekkure_light.svg",
         platform: null,
         metrics: ["projectTekkureMetric1", "projectTekkureMetric2", "projectTekkureMetric3"],
         tech: [

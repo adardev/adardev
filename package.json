@@ -6,7 +6,10 @@
         "dev": "astro dev",
         "build": "astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "cf:project:create": "wrangler pages project create adardev",
+        "deploy:cloudflare": "wrangler pages deploy dist --project-name adardev",
+        "deploy:cloudflare:retry": "pwsh -ExecutionPolicy Bypass -File ./scripts/deploy-cloudflare.ps1"
     },
     "dependencies": {
         "@astrojs/check": "^0.9.8",
@@ -18,6 +21,7 @@
     },
     "devDependencies": {
         "prettier": "^3.8.1",
-        "prettier-plugin-astro": "^0.14.1"
+        "prettier-plugin-astro": "^0.14.1",
+        "wrangler": "^4.8.0"
     }
 }
