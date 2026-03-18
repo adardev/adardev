@@ -7,10 +7,12 @@ Enfocado en crear soluciones digitales eficientes y optimizar los sistemas que l
 
 ### Documentos
 <p align="left">
-  <a href="https://adardev.com/cvs/adardevCV.pdf"><img src="./public/icons/cv_icon.svg" height="32" alt="Ver Curriculum"/></a>
+  <a href="https://adardev.com/cvs/adardevCV.pdf">
+    <img src="./public/icons/cv_icon.svg" height="28" align="center" alt="CV"/> 
+    <strong>Ver Curriculum Vitae</strong>
+  </a>
 </p>
 
 ---
 
-> [!TIP]
-> Actualmente en busca de nuevos retos y oportunidades para seguir aprendiendo :)
+Actualmente en busca de nuevos retos y oportunidades para seguir aprendiendo :)
